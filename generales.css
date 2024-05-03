@@ -1,19 +1,40 @@
 /* *******  Todos los dispositivos  ******* */
-/*@font-face { font-family: Futura; src: url('futura.ttf'); }*/
+@font-face { font-family: Futura; src: url('futura.ttf'); }
 body{
 	margin: 0 auto;
+	font-family: Futura, sans-serif;
+}
+#encabezado{
+	display: flex;
+	background-color: #a83e3e;
+	height: 50px;
+	align-items: center; /* Vertical centering */
 }
 .contPrincipal{
 	margin: auto;
-	padding: 10px;
+	padding: 5px;
 	width: 100%;
-	background:#b9ddfd;
+	border:solid #cdddcd;
 }
 h1{
-	text-align:center;
-	margin-top: 0;
-	padding:10px
+	padding-left: 10px;
 }
 #ph{
 	color:blue;
 }
+
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: #dddddd;
+  }
