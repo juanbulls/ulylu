@@ -1,0 +1,19 @@
+/* *******  Todos los dispositivos  ******* */
+/*@font-face { font-family: Futura; src: url('futura.ttf'); }*/
+body{
+	margin: 0 auto;
+}
+.contPrincipal{
+	margin: auto;
+	padding: 10px;
+	width: 100%;
+	background:#b9ddfd;
+}
+h1{
+	text-align:center;
+	margin-top: 0;
+	padding:10px
+}
+#ph{
+	color:blue;
+}

@@ -1,0 +1,12 @@
+/* *******  Estilos Especificos  ******* */
+/* Escritorios promedio y grandes */
+@media screen and (min-aspect-ratio:12/10){ /* PC escritorio promedio y grandes */
+    
+body{
+	
+}
+.contPrincipal{
+	width: 800px;
+}
+	
+}
