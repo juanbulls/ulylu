@@ -33,7 +33,7 @@ button{
 	color: white;
 	cursor: pointer;
 }
-button:hover, button:focus{
+button:hover{
 	background-color: #000000;
 	color: white;
 }
