@@ -60,11 +60,11 @@ tr:nth-of-type(n+6):nth-of-type(even) {
 	border: none;
 }
 
-.nuevaData input[type="text"]{
+.nuevaData input[type="text"], .nuevaData input[type="date"]{
 	border: none;
 	width: 100%;
 }
-.nuevaData input[type="text"]:focus{
+.nuevaData input[type="text"]:focus, .nuevaData input[type="date"]:focus{
 	outline: none;
 }
 .botonesNuevos td{
@@ -76,4 +76,5 @@ tr:nth-of-type(n+6):nth-of-type(even) {
 .botonesHistoria button{
 	padding: 5px;
 }
+
 

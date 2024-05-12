@@ -8,7 +8,7 @@ function limpiarNuevaData(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var inputs = document.querySelectorAll('.nuevaData input[type="text"]');
+    var inputs = document.querySelectorAll('.nuevaData input[type="text"], .nuevaData input[type="date"]');
     inputs.forEach(function(input) {
         input.addEventListener('focus', function() {
             var td = this.parentElement;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         input.addEventListener('blur', function() {
             var td = this.parentElement;
-            td.style.borderBottomColor  = ''; // Reset border color
+            td.style.borderBottom  = '1px solid rgb(218, 218, 218)';
         });
     });
 });
