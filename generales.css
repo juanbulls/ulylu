@@ -70,9 +70,8 @@ tr:nth-of-type(n+6):nth-of-type(even) {
 .botonesNuevos td{
 	border: none;
 }
-.botonesHistoria td{
+.botonesHistoria{
 	text-align: right;
-	border: none;
 }
 .botonesHistoria button{
 	padding: 5px;
