@@ -1,10 +1,7 @@
 /* *******  Estilos Especificos  ******* */
-/* Escritorios promedio y grandes */
-@media screen and (min-aspect-ratio:12/10){ /* PC escritorio promedio y grandes */
-    
-body{
-	
-}
+/* Mobiles TODO: invertir para que mobil sea el mas generico*/
+@media (max-width:650px){ /* Mobiles */
+
 .contPrincipal{
 	width: 1100px;
 }

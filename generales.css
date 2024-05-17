@@ -5,10 +5,10 @@ body{
 	font-family: Futura, sans-serif;
 }
 #encabezado{
-	display: flex;
+	margin: 0;
 	background-color: #a83e3e;
-	height: 50px;
-	align-items: center; /* Vertical centering */
+	height: 3rem;
+	width: 100%;
 }
 .contPrincipal{
 	width: min(100% - 2rem, 1100px);
@@ -18,6 +18,7 @@ h1{
 	padding-left: 10px;
 	letter-spacing: 5px;
 	color: white;
+	margin: 0;
 }
 #pj{
 	color:rgb(78, 58, 255);
