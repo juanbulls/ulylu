@@ -1,0 +1,1 @@
+var esLocal = false; if (window.location.protocol == 'file:') { local = true; }

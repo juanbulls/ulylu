@@ -1,12 +1,6 @@
 document.getElementById("pj").innerHTML = "En contrucción";
 
-function limpiarNuevaData(){
-    var inputs = document.querySelectorAll('.nuevaData input');
-    inputs.forEach(function(input) {
-        input.value = '';
-    });
-}
-
+// Event listener dinamico para la linea azul abajo de las filas actulmente siendo editadas
 document.addEventListener('DOMContentLoaded', function() {
     var inputs = document.querySelectorAll('.nuevaData input[type="text"], .nuevaData input[type="date"]');
     inputs.forEach(function(input) {
@@ -20,3 +14,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+let jsonData;
+fetch(data.json)
+.then(response => response.json())
+.then(data => {
+    jsonData = data;
+});
+function datearGrilla(jsonData) {
+
+}
+if (esLocal) {
+    datearGrilla()
+} // TODO: implementar el false que juego con ajax
+
+function limpiarNuevaData(){
+    var inputs = document.querySelectorAll('.nuevaData input');
+    inputs.forEach(function(input) {
+        input.value = '';
+    });
+}

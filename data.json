@@ -1,0 +1,202 @@
+[
+    {
+        "Cliente": "Carlos Mendoza",
+        "Factura": 10056,
+        "Fecha": "2021-12-10",
+        "Subtotal": 50000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 50000
+    },
+    {
+        "Cliente": "Mariana Smith",
+        "Factura": 10055,
+        "Fecha": "2021-12-09",
+        "Subtotal": 37500,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 6.5,
+        "Impuesto": 2437.50,
+        "Total": 39937.50
+    },
+    {
+        "Cliente": "Fernando Toratto",
+        "Factura": 10054,
+        "Fecha": "2021-12-08",
+        "Subtotal": 60000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 60000
+    },
+    {
+        "Cliente": "Ana Bell",
+        "Factura": 10053,
+        "Fecha": "2021-12-07",
+        "Subtotal": 28000,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 7.2,
+        "Impuesto": 2016.00,
+        "Total": 30016.00
+    },
+    {
+        "Cliente": "Woods Staton",
+        "Factura": 10052,
+        "Fecha": "2021-12-06",
+        "Subtotal": 40000,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 5.5,
+        "Impuesto": 2200.00,
+        "Total": 42200.00
+    },
+    {
+        "Cliente": "Julia Brown",
+        "Factura": 10051,
+        "Fecha": "2021-12-05",
+        "Subtotal": 33333,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 33333
+    },
+    {
+        "Cliente": "Miguel Johnson",
+        "Factura": 10050,
+        "Fecha": "2021-12-04",
+        "Subtotal": 45000,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 6.8,
+        "Impuesto": 3060.00,
+        "Total": 48060.00
+    },
+    {
+        "Cliente": "Sarah Connor",
+        "Factura": 10049,
+        "Fecha": "2021-12-03",
+        "Subtotal": 24000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 24000
+    },
+    {
+        "Cliente": "James O'Connor",
+        "Factura": 10048,
+        "Fecha": "2021-12-02",
+        "Subtotal": 56789,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 8.1,
+        "Impuesto": 4598.01,
+        "Total": 61387.01
+    },
+    {
+        "Cliente": "Emily Stone",
+        "Factura": 10047,
+        "Fecha": "2021-12-01",
+        "Subtotal": 49000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 49000
+    },
+    {
+        "Cliente": "Carlos Mendoza",
+        "Factura": 10046,
+        "Fecha": "2021-11-30",
+        "Subtotal": 19500,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 5.7,
+        "Impuesto": 1111.50,
+        "Total": 20611.50
+    },
+    {
+        "Cliente": "Fernando Toratto",
+        "Factura": 10045,
+        "Fecha": "2021-11-29",
+        "Subtotal": 27000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 27000
+    },
+    {
+        "Cliente": "Amplitude A Watch trading Corp",
+        "Factura": 10044,
+        "Fecha": "2021-11-28",
+        "Subtotal": 52000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 52000
+    },
+    {
+        "Cliente": "Chris Clementi",
+        "Factura": 10043,
+        "Fecha": "2021-11-27",
+        "Subtotal": 15047.17,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 6.33,
+        "Impuesto": 952.83,
+        "Total": 16000
+    },
+    {
+        "Cliente": "Michael Doe",
+        "Factura": 10042,
+        "Fecha": "2021-11-26",
+        "Subtotal": 30000,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 7.1,
+        "Impuesto": 2130.00,
+        "Total": 32130.00
+    },
+    {
+        "Cliente": "Lara Stone",
+        "Factura": 10041,
+        "Fecha": "2021-11-25",
+        "Subtotal": 35000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 35000
+    },
+    {
+        "Cliente": "Fernando Toratto",
+        "Factura": 10040,
+        "Fecha": "2021-11-24",
+        "Subtotal": 20500,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 6.1,
+        "Impuesto": 1250.50,
+        "Total": 21750.50
+    },
+    {
+        "Cliente": "Julia Brown",
+        "Factura": 10039,
+        "Fecha": "2021-11-23",
+        "Subtotal": 18000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 18000
+    },
+    {
+        "Cliente": "Woods Staton",
+        "Factura": 10038,
+        "Fecha": "2021-11-22",
+        "Subtotal": 38000,
+        "Aplica Impuesto": 1,
+        "Impuesto %": 5.9,
+        "Impuesto": 2242.00,
+        "Total": 40242.00
+    },
+    {
+        "Cliente": "Amplitude A Watch trading Corp",
+        "Factura": 10037,
+        "Fecha": "2021-11-21",
+        "Subtotal": 76000,
+        "Aplica Impuesto": 0,
+        "Impuesto %": 0,
+        "Impuesto": 0,
+        "Total": 76000
+    }
+]

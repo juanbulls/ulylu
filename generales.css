@@ -11,9 +11,8 @@ body{
 	align-items: center; /* Vertical centering */
 }
 .contPrincipal{
-	margin: auto;
-	padding: 5px;
-	width: 100%;
+	width: min(100% - 2rem, 1100px);
+	margin-inline: auto;  
 }
 h1{
 	padding-left: 10px;
