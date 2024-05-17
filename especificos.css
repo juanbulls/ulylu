@@ -2,8 +2,23 @@
 /* Mobiles TODO: invertir para que mobil sea el mas generico*/
 @media (max-width:650px){ /* Mobiles */
 
-.contPrincipal{
-	width: 1100px;
+th {
+    display: none;
+}
+td {
+    display: block;
+    border: none;
+}
+td::before {
+    content: attr(data-cell) " ";
+    font-weight: 700;
+}
+td:first-child {
+    padding-top: 1rem;
+}
+
+.titulos td{
+	padding-bottom: 1rem;
 }
 	
 }
