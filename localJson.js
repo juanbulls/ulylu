@@ -1,4 +1,4 @@
-[
+const localJson = [
     {
         "Cliente": "John Doe",
         "Vendedor": "Jane Smith",

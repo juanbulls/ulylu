@@ -15,17 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-let jsonData;
-fetch(data.json)
-.then(response => response.json())
-.then(data => {
-    jsonData = data;
-});
 function datearGrilla(jsonData) {
 
 }
 if (esLocal) {
-    datearGrilla()
+    datearGrilla(localJson)
 } // TODO: implementar el false que juego con ajax
 
 function limpiarNuevaData(){
