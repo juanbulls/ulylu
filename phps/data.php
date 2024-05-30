@@ -14,13 +14,7 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
 $data_result = q("SELECT * FROM $base.$tabla");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
-    $filtered_row = [];
-    foreach ($cols as $col) {
-        if (isset($row[$col])) {
-            $filtered_row[$col] = $row[$col];
-        }
-    }
-    $data[] = $filtered_row;
+    $data[] = $row;
 }
 
 $response = [
