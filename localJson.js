@@ -10,7 +10,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -36,7 +36,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -49,7 +49,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -75,7 +75,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -88,7 +88,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -101,7 +101,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -114,7 +114,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -127,7 +127,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -140,7 +140,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -166,7 +166,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -179,7 +179,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -192,7 +192,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -205,7 +205,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -218,7 +218,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -244,7 +244,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -257,7 +257,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -270,7 +270,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -283,7 +283,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -309,7 +309,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -322,7 +322,7 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -335,7 +335,7 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -348,7 +348,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     },
     {
@@ -387,7 +387,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "",
+        Comentario: null,
         modificado: "2024-05-29 19:37:19"
     }]
 }
