@@ -28,7 +28,7 @@ async function pedirData(php, variables = null){
         return ajax( php + '.php' , variables);
     }
 }
-pedirData('data').then(function(r) {
+pedirData('data', 'base=bauer&tabla=notas').then(function(r) {
     datearGrilla(r);
 });
 
