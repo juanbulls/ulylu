@@ -15,12 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function datearGrilla(jsonData) {
 
+function datearGrilla(jsonData) {
+    console.log(jsonData);
 }
-if (esLocal) {
-    datearGrilla(localJson)
-} // TODO: implementar el false que juego con ajax
+
+// Solicitud de Data
+async function pedirData(php, variables = null){
+    if ( esLocal ) {
+        return localJson;
+    }else{
+        return ajax( php + '.php' , variables);
+    }
+}
+pedirData('data').then(function(r) {
+    datearGrilla(r);
+});
 
 function limpiarNuevaData(){
     var inputs = document.querySelectorAll('.nuevaData input');

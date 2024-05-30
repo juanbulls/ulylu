@@ -1,6 +1,7 @@
 const localJson = {
     cols: ["Cliente", "Vendedor", "Fecha", "Tdoc", "Ndoc", "Cuenta", "Cantidad", "Descripcion", "Comentario"],
     data: [{
+        idnotas: "1",
         Cliente: "John Doe",
         Vendedor: "Jane Smith",
         Fecha: "2023-05-01",
@@ -9,9 +10,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Alice Johnson",
         Vendedor: "Bob Brown",
         Fecha: "2023-05-02",
@@ -20,9 +23,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Lorem ipsum dolor sit amet."
+        Comentario: "Lorem ipsum dolor sit amet.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Charlie Williams",
         Vendedor: "David Miller",
         Fecha: "2023-05-03",
@@ -31,9 +36,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Eve Wilson",
         Vendedor: "Frank Moore",
         Fecha: "2023-05-04",
@@ -42,9 +49,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Grace Taylor",
         Vendedor: "Henry Anderson",
         Fecha: "2023-05-05",
@@ -53,9 +62,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Consectetur adipiscing elit."
+        Comentario: "Consectetur adipiscing elit.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Ivy Thomas",
         Vendedor: "Jack Martin",
         Fecha: "2023-05-06",
@@ -64,9 +75,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Kate Martinez",
         Vendedor: "Leo Hernandez",
         Fecha: "2023-05-07",
@@ -75,9 +88,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Mia Garcia",
         Vendedor: "Nick Lopez",
         Fecha: "2023-05-08",
@@ -86,9 +101,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Oscar Lee",
         Vendedor: "Paul Clark",
         Fecha: "2023-05-09",
@@ -97,9 +114,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Quinn Walker",
         Vendedor: "Rachel Lewis",
         Fecha: "2023-05-10",
@@ -108,9 +127,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Sophie Young",
         Vendedor: "Thomas Hall",
         Fecha: "2023-05-11",
@@ -119,9 +140,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Uma King",
         Vendedor: "Victor Wright",
         Fecha: "2023-05-12",
@@ -130,9 +153,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Excepteur sint occaecat cupidatat non proident."
+        Comentario: "Excepteur sint occaecat cupidatat non proident.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Walter Young",
         Vendedor: "Xander Hall",
         Fecha: "2023-05-13",
@@ -141,9 +166,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Yara Diaz",
         Vendedor: "Zachary Kim",
         Fecha: "2023-05-14",
@@ -152,9 +179,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Aaron Foster",
         Vendedor: "Bella Evans",
         Fecha: "2023-05-15",
@@ -163,9 +192,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Caleb Howard",
         Vendedor: "Dana Morgan",
         Fecha: "2023-05-16",
@@ -174,9 +205,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Eli Carter",
         Vendedor: "Fiona Murphy",
         Fecha: "2023-05-17",
@@ -185,9 +218,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "George King",
         Vendedor: "Holly Wright",
         Fecha: "2023-05-18",
@@ -196,9 +231,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+        Comentario: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Ivy Nelson",
         Vendedor: "Jack Lee",
         Fecha: "2023-05-19",
@@ -207,9 +244,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Karen Hill",
         Vendedor: "Liam Young",
         Fecha: "2023-05-20",
@@ -218,9 +257,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Michael White",
         Vendedor: "Nancy Scott",
         Fecha: "2023-05-21",
@@ -229,9 +270,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Olivia Taylor",
         Vendedor: "Paul Martinez",
         Fecha: "2023-05-22",
@@ -240,9 +283,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Quinn Robinson",
         Vendedor: "Rachel Harris",
         Fecha: "2023-05-23",
@@ -251,9 +296,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        Comentario: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Sophia Clark",
         Vendedor: "Thomas Walker",
         Fecha: "2023-05-24",
@@ -262,9 +309,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Tyler Lewis",
         Vendedor: "Uma King",
         Fecha: "2023-05-25",
@@ -273,9 +322,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Victoria Hernandez",
         Vendedor: "Willie Martin",
         Fecha: "2023-05-26",
@@ -284,9 +335,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Xavier Brown",
         Vendedor: "Yary Young",
         Fecha: "2023-05-27",
@@ -295,9 +348,11 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Aaron Foster",
         Vendedor: "Bella Evans",
         Fecha: "2023-05-28",
@@ -306,9 +361,11 @@ const localJson = {
         Cuenta: "A",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        Comentario: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Caleb Howard",
         Vendedor: "Dana Morgan",
         Fecha: "2023-05-29",
@@ -317,9 +374,11 @@ const localJson = {
         Cuenta: "Q",
         Cantidad: 1,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam."
+        Comentario: "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.",
+        modificado: "2024-05-29 19:37:19"
     },
     {
+        idnotas: "1",
         Cliente: "Eli Carter",
         Vendedor: "Fiona Murphy",
         Fecha: "2023-05-30",
@@ -328,6 +387,7 @@ const localJson = {
         Cuenta: "U",
         Cantidad: 2,
         Descripcion: "ARETES - JOYARE 21696",
-        Comentario: ""
+        Comentario: "",
+        modificado: "2024-05-29 19:37:19"
     }]
 }
