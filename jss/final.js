@@ -24,6 +24,7 @@ function esFecha(cadena) {
 // Populador
 let jsonData = [];
 function datearGrilla(d) {
+    jsonData = d; // Necesario para debugeo, ELIMINAR LUEGO
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
