@@ -54,6 +54,7 @@ function datearGrilla(d) {
             td.innerHTML = f[c];
 
             tr.appendChild(td);
+            tr.id = f['id'];
         });
 
         id('dataVieja').appendChild(tr);
