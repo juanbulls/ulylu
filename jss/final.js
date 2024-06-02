@@ -15,21 +15,18 @@ function limpiarNuevaData(){
     });
 }
 
-function esFecha(cadena) {
-    // Check if the format is YYYY-MM-DD using a regular expression
-    const regex = /^\d{4}-\d{2}-\d{2}$/;
-    return regex.test(cadena);
-}
-
 // Populador
 let jsonData = [];
+const rgxTipo = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
     jsonData = d; // Necesario para debugeo, ELIMINAR LUEGO
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
-        if (esFecha(d.data[0][col])) {
+    
+        if (rgxTipo.test(col)) {
             tipo = 'date';
+            col = col.slice(0, -2);
         }
 
         const ntd = document.createElement('td');
@@ -49,6 +46,9 @@ function datearGrilla(d) {
     d.data.forEach((f) => {
         const tr = document.createElement('tr');
         d.cols.forEach((c) => {
+            if (rgxTipo.test(c)) {
+                c = c.slice(0, -2);
+            }
             const td = document.createElement('td');
             td.setAttribute('data-cell', c);
             td.innerHTML = f[c];
