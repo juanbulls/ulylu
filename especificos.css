@@ -13,12 +13,13 @@ td::before {
     content: attr(data-cell) " ";
     font-weight: 700;
 }
-td:first-child {
-    padding-top: 1rem;
-}
 
 .titulos td{
 	padding-bottom: 1rem;
+}
+
+thead td{
+    border: 1px solid rgb(197, 197, 197);
 }
 	
 }
