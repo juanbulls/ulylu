@@ -15,6 +15,16 @@ function limpiarNuevaData(){
     });
 }
 
+// Funciones para tipos especificos
+function fechaFocus(event){
+    event.target.type = 'date';
+}
+function fechaBlur(event) {
+    if (event.target.value === '') {
+        event.target.type = 'text';
+    }
+}
+
 // Populador
 let jsonData = [];
 const rgxTipo = /_(.)$/; // Regex to match underscore followed by a letter
@@ -23,15 +33,20 @@ function datearGrilla(d) {
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
-    
-        if (rgxTipo.test(col)) {
-            tipo = 'date';
-            col = col.slice(0, -2);
-        }
-
         const ntd = document.createElement('td');
         const input = document.createElement('input');
         input.type = tipo;
+        input.id = 'n' + col;
+
+        // Especificos para tipo fecha
+        if (rgxTipo.test(col)) {
+            if (col.slice(-1) == 'd'){
+                input.addEventListener('focus', fechaFocus);
+                input.addEventListener('blur', fechaBlur);
+            }
+            col = col.slice(0, -2);
+        }
+
         input.placeholder = col;
 
         ntd.appendChild(input);

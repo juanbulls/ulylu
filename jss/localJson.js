@@ -1,5 +1,5 @@
 const localJson = {
-    cols: ["Cliente", "Vendedor", "Fecha_d", "Tdoc", "Ndoc", "Cuenta", "Cantidad", "Descripcion", "Comentario"],
+    cols: ["Cliente_r", "Vendedor_r", "Fecha_d", "Tdoc", "Ndoc", "Cuenta", "Cantidad", "Descripcion", "Comentario"],
     data: [{
         idnotas: "1",
         Cliente: "John Doe",
