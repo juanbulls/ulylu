@@ -21,7 +21,7 @@ function fechaFocus(event){
     var input = event.target;
     setTimeout(function() {
         input.focus();
-    }, 0);
+    }, 50);
 }
 function fechaBlur(event) {
     if (event.target.value === '') {
