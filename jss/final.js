@@ -18,6 +18,7 @@ function limpiarNuevaData(){
 // Funciones para tipos especificos
 function fechaFocus(event){
     event.target.type = 'date';
+    event.target.focus();
 }
 function fechaBlur(event) {
     if (event.target.value === '') {
