@@ -89,4 +89,13 @@ tbody > tr:nth-of-type(odd) {
 	padding: 5px;
 }
 
+#popup{
+	position: fixed;
+	display: none;
+	top: 115px;
+	left: 290px;
+	height: 100px; width: 200px;
+	background-color: #a83e3e;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
 

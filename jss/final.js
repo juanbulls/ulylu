@@ -15,19 +15,9 @@ function limpiarNuevaData(){
     });
 }
 
-// Funciones para tipos especificos
-function fechaFocus(event){
-    event.target.type = 'date';
-}
-function fechaBlur(event) {
-    if (event.target.value === '') {
-        event.target.type = 'text';
-    }
-}
-
 // Populador
 let jsonData = [];
-const rgxTipo = /_(.)$/; // Regex to match underscore followed by a letter
+const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
     jsonData = d; // Necesario para debugeo, ELIMINAR LUEGO
     // Nueva Data y Headers registros
@@ -38,11 +28,15 @@ function datearGrilla(d) {
         input.type = tipo;
         input.id = 'n' + col;
 
-        // Especificos para tipo fecha
-        if (rgxTipo.test(col)) {
+        // Especificos EL para tipos especificos de columnas
+        if (hayUnderscore.test(col)) {
             if (col.slice(-1) == 'd'){
-                input.addEventListener('focus', fechaFocus);
-                input.addEventListener('blur', fechaBlur);
+                input.addEventListener('focus', el.fechaFocus);
+                input.addEventListener('blur', el.fechaBlur);
+            }
+            if (col.slice(-1) == 'r') {
+                input.addEventListener('focus', el.relFocus);
+                input.addEventListener('blur', el.relBlur);
             }
             col = col.slice(0, -2);
         }
@@ -61,7 +55,7 @@ function datearGrilla(d) {
     d.data.forEach((f) => {
         const tr = document.createElement('tr');
         d.cols.forEach((c) => {
-            if (rgxTipo.test(c)) {
+            if (hayUnderscore.test(c)) {
                 c = c.slice(0, -2);
             }
             const td = document.createElement('td');
