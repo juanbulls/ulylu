@@ -8,7 +8,7 @@ $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[3]) ? 
 $data_result = q("SELECT Nombre FROM $base.$tabla WHERE Nombre LIKE '%$patron%' LIMIT 5;");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
-    $data[] = $row;
+    $data[] = $row['Nombre'];
 }
 
 $response = [
