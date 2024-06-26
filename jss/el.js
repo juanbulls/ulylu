@@ -2,7 +2,9 @@
 const el = {
     campoActual: undefined,
     transitioning: false,
+    blurDisabled: false,
     fechaFocus: function(event) {
+        el.blurDisabled = true;
         const input = event.target;
         const newInput = document.createElement('input');
         newInput.type = 'date';
@@ -16,8 +18,13 @@ const el = {
         newInput.focus();
 
         newInput.addEventListener('blur', el.fechaBlur);
+
+        el.blurDisabled = false;
     },
     fechaBlur: function(event) {
+        if (el.blurDisabled || el.transitioning) {
+            return; // Do nothing if blur is disabled, transitioning, or popup item was clicked
+        }
         const input = event.target;
         if (input.value === '') {
             const newInput = document.createElement('input');
@@ -35,7 +42,7 @@ const el = {
     },
     relFocus: function(event) {
         el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 200);
+        setTimeout(() => el.transitioning = false, 100);
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
@@ -55,7 +62,7 @@ const el = {
             if (!el.transitioning) {
                 document.getElementById('popup').style.display = 'none';
             }
-        }, 200);
+        }, 100);
     },
     popup: function (tabla, str) {
         id('popup').style.display = 'block';
