@@ -5,6 +5,7 @@ async function pedirData(php, variables = null){
         await new Promise(resolve => setTimeout(resolve, 1000));
         return local[php][valor];
     }else{
+        await new Promise(resolve => setTimeout(resolve, 250));
         return ajax( php + '.php' , variables);
     }
 }
