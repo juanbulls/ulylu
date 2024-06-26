@@ -42,6 +42,8 @@ const el = {
         pedirData('subData', 'base=bauer&tabla=' + tabla + 's').then(function(r) {
             spinner.mostrar();
             datearPopup(r);
+        }).catch(function(error) {
+            console.error('Error fetching data in relFocus:', error);
         });
     },
     relBlur: function(event) {
