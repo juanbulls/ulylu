@@ -56,9 +56,6 @@ function datearGrilla(d) {
     d.data.forEach((f) => {
         const tr = document.createElement('tr');
         d.cols.forEach((c) => {
-            if (hayUnderscore.test(c)) {
-                c = c.slice(0, -2);
-            }
             const td = document.createElement('td');
             td.setAttribute('data-cell', c);
             td.innerHTML = f[c];
