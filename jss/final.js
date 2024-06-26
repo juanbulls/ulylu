@@ -15,6 +15,9 @@ function limpiarNuevaData(){
     var inputs = document.querySelectorAll('.nuevaData input');
     inputs.forEach(function(input) {
         input.value = '';
+        if (input.id.slice(-2) == '_d'){
+            input.type = 'text';
+        }
     });
 }
 
