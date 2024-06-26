@@ -3,6 +3,7 @@ const el = {
     campoActual: undefined,
     transitioning: false,
     blurDisabled: false,
+    previousValue: "",
     fechaFocus: function(event) {
         el.blurDisabled = true;
         const input = event.target;
@@ -51,11 +52,15 @@ const el = {
 
         el.popup(tabla, str);
         el.campoActual = event.target.id;
+        el.previousValue = str;
     },
     relChange: function(event) {
-        const tabla = event.target.placeholder.toLowerCase();
-        const str = event.target.value;
-        el.popup(tabla, str);
+        const newValue = event.target.value;
+        if (newValue !== el.previousValue) {
+            const tabla = event.target.placeholder.toLowerCase();
+            const str = event.target.value;
+            el.popup(tabla, str);
+        }
     },
     relBlur: function(event) {
         setTimeout(function() {
