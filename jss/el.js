@@ -1,5 +1,7 @@
 // Funciones para tipos especificos Event listeners
 const el = {
+    campoActual: undefined,
+    transitioning: false,
     fechaFocus: function(event) {
         const input = event.target;
         const newInput = document.createElement('input');
@@ -32,14 +34,16 @@ const el = {
         }
     },
     relFocus: function(event) {
+        el.transitioning = true;
+        setTimeout(() => el.transitioning = false, 200);
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
-        id('popup').style.display = 'block';
 
         el.popup(tabla, str);
+        el.campoActual = event.target.id;
     },
     relChange: function(event) {
         const tabla = event.target.placeholder.toLowerCase();
@@ -47,13 +51,23 @@ const el = {
         el.popup(tabla, str);
     },
     relBlur: function(event) {
-        id('popup').style.display = 'none';
+        setTimeout(function() {
+            if (!el.transitioning) {
+                document.getElementById('popup').style.display = 'none';
+            }
+        }, 200);
     },
     popup: function (tabla, str) {
+        id('popup').style.display = 'block';
         spinner.ocultar();
         pedirData('subData', 'base=bauer&tabla=' + tabla + 's&patron='+str).then(function(r) {
             spinner.mostrar();
             datearPopup(r);
         });
+    },
+    puItemClick: function(event) {
+        const valor = event.target.value;
+        id(el.campoActual).value = valor;
+        id(el.campoActual).focus();
     }
 };

@@ -74,10 +74,12 @@ function datearPopup(d) {
     d.data.forEach((dat) => {
         const par = document.createElement('p');
         const lmax = 35;
+        par.value = dat;
         if (dat.length > lmax) {
             dat = dat.slice(0, lmax) + '...';
         }
         par.innerHTML = dat;
+        par.addEventListener('click', el.puItemClick);
         id('subData').appendChild(par);
     });
 }
