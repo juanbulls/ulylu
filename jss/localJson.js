@@ -395,7 +395,7 @@ const local = {
         }
     },
     subData: {
-        Vendedors: {
+        vendedors: {
             data: [
                 "Sebastian Rodriguez",
                 "Victoria Blagh",
@@ -404,7 +404,7 @@ const local = {
                 "bob Brown"
             ]
         },
-        Clientes: {
+        clientes: {
             data: [
                 "John Doe",
                 "Alice Johnson",

@@ -33,7 +33,7 @@ const el = {
     },
     relFocus: function(event) {
         const celda = event.target.getBoundingClientRect();
-        const tabla = event.target.placeholder;
+        const tabla = event.target.placeholder.toLowerCase();
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
         id('popup').style.display = 'block';

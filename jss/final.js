@@ -1,7 +1,7 @@
 // Solicitud de Data
 async function pedirData(php, variables = null){
     if ( esLocal ) {
-        let valor = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1];
+        let valor = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
         await new Promise(resolve => setTimeout(resolve, 2000));
         return local[php][valor];
     }else{
