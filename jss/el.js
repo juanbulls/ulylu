@@ -38,11 +38,9 @@ const el = {
         id('popup').style.left = celda.left + 'px';
         id('popup').style.display = 'block';
 
-        id('subData').style.display = 'none';
-        id('loader').style.display = 'block';
+        spinner.ocultar();
         pedirData('subData', 'base=bauer&tabla=' + tabla + 's').then(function(r) {
-            id('loader').style.display = 'none';
-            id('subData').style.display = 'block';
+            spinner.mostrar();
             datearPopup(r);
         });
     },

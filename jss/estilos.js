@@ -14,3 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const spinner = {
+    mostrar: function () {
+        id('loader').style.display = 'none';
+        id('subData').style.display = 'block';
+    },
+    ocultar: function () {
+        id('loader').style.display = 'block';
+        id('subData').style.display = 'none';
+    },
+}
