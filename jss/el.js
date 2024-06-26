@@ -34,20 +34,26 @@ const el = {
     relFocus: function(event) {
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
+        const str = event.target.value;
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
         id('popup').style.display = 'block';
 
-        spinner.ocultar();
-        pedirData('subData', 'base=bauer&tabla=' + tabla + 's').then(function(r) {
-            spinner.mostrar();
-            datearPopup(r);
-        }).catch(function(error) {
-            console.error('Error fetching data in relFocus:', error);
-        });
+        el.popup(tabla, str);
+    },
+    relChange: function(event) {
+        const tabla = event.target.placeholder.toLowerCase();
+        const str = event.target.value;
+        el.popup(tabla, str);
     },
     relBlur: function(event) {
         id('popup').style.display = 'none';
+    },
+    popup: function (tabla, str) {
+        spinner.ocultar();
+        pedirData('subData', 'base=bauer&tabla=' + tabla + 's&patron='+str).then(function(r) {
+            spinner.mostrar();
+            datearPopup(r);
+        });
     }
 };
-

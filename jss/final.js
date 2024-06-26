@@ -37,6 +37,7 @@ function datearGrilla(d) {
             if (col.slice(-1) == 'r') {
                 input.addEventListener('focus', el.relFocus);
                 input.addEventListener('blur', el.relBlur);
+                input.addEventListener('keyup', el.relChange);
             }
             col = col.slice(0, -2);
         }
