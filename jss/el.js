@@ -52,7 +52,7 @@ const el = {
 
         el.popup(tabla, str);
         el.campoActual = event.target.id;
-        el.previousValue = str;
+        el.previousValue = event.target.value;
     },
     relChange: function(event) {
         const newValue = event.target.value;
@@ -60,6 +60,7 @@ const el = {
             const tabla = event.target.placeholder.toLowerCase();
             const str = event.target.value;
             el.popup(tabla, str);
+            el.previousValue = event.target.value;
         }
     },
     relBlur: function(event) {
@@ -81,5 +82,21 @@ const el = {
         const valor = event.target.value;
         id(el.campoActual).value = valor;
         id(el.campoActual).focus();
+    },
+    espicha: function(event) {
+        switch (event.key) {
+            case 'ArrowUp':
+                console.log('Espicho Arriba');
+                break;
+            case 'ArrowDown':
+                console.log('Espicho Abajo');
+                break;
+            case 'Tab':
+                console.log('Espicho Tab');
+                break;
+            case 'Enter':
+                console.log('Espicho Enter');
+                break;
+        }
     }
 };

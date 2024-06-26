@@ -39,6 +39,7 @@ function datearGrilla(d) {
                 input.addEventListener('focus', el.relFocus);
                 input.addEventListener('blur', el.relBlur);
                 input.addEventListener('keyup', el.relChange);
+                input.addEventListener('keydown', el.espicha);
             }
             col = col.slice(0, -2);
         }
