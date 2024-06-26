@@ -1,7 +1,9 @@
 // Solicitud de Data
 async function pedirData(php, variables = null){
     if ( esLocal ) {
-        return localJson;
+        let valor = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1];
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return local[php][valor];
     }else{
         return ajax( php + '.php' , variables);
     }
@@ -16,10 +18,8 @@ function limpiarNuevaData(){
 }
 
 // Populador
-let jsonData = [];
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
-    jsonData = d; // Necesario para debugeo, ELIMINAR LUEGO
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
@@ -67,6 +67,15 @@ function datearGrilla(d) {
         });
 
         id('dataVieja').appendChild(tr);
+    });
+}
+
+function datearPopup(d) {
+    id('subData').innerHTML = "";
+    d.data.forEach((dat) => {
+        const par = document.createElement('p');
+        par.innerHTML = dat;
+        id('subData').appendChild(par);
     });
 }
 

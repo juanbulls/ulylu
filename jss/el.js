@@ -33,11 +33,18 @@ const el = {
     },
     relFocus: function(event) {
         const celda = event.target.getBoundingClientRect();
+        const tabla = event.target.placeholder;
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
-        
         id('popup').style.display = 'block';
-        console.log('x y y del evento', celda.top, celda.left);
+
+        id('subData').style.display = 'none';
+        id('loader').style.display = 'block';
+        pedirData('subData', 'base=bauer&tabla=' + tabla + 's').then(function(r) {
+            id('loader').style.display = 'none';
+            id('subData').style.display = 'block';
+            datearPopup(r);
+        });
     },
     relBlur: function(event) {
         id('popup').style.display = 'none';
