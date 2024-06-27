@@ -79,6 +79,7 @@ const el = {
         });
     },
     puItemClick: function(event) {
+        console.log('puItemClick con:', event.target.value, el.campoActual);
         const valor = event.target.value;
         id(el.campoActual).value = valor;
         id(el.campoActual).focus();
