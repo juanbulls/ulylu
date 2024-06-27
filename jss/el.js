@@ -45,7 +45,7 @@ const el = {
     relFocus: function(event) {
         console.log('focus');
         el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 120);
+        setTimeout(() => el.transitioning = false, 100);
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
@@ -59,7 +59,6 @@ const el = {
     relChange: function(event) {
         console.log('change');
         el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 120);
         const newValue = event.target.value;
         if (newValue !== el.previousValue) {
             const tabla = event.target.placeholder.toLowerCase();
@@ -69,8 +68,9 @@ const el = {
         }
     },
     relBlur: function() {
-        console.log('blur fuera');
+        console.log('blur fuera tran fuera', el.transitioning);
         setTimeout(function() {
+            console.log('tran dentro', el.transitioning);
             if (!el.transitioning) {
                 console.log('blur dentro');
                 document.getElementById('popup').style.display = 'none';
