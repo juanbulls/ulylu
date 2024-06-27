@@ -66,10 +66,11 @@ const el = {
             el.previousValue = event.target.value;
         }
     },
-    relBlur: function(event) {
-        console.log('blur trans', el.transitioning);
+    relBlur: function() {
+        console.log('blur fuera');
         setTimeout(function() {
             if (!el.transitioning) {
+                console.log('blur dentro');
                 document.getElementById('popup').style.display = 'none';
             }
         }, 100);
