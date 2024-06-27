@@ -24,7 +24,8 @@ const el = {
     },
     fechaBlur: function(event) {
         if (el.blurDisabled || el.transitioning) {
-            return; // Do nothing if blur is disabled, transitioning, or popup item was clicked
+            console.log('escape');
+            return;
         }
         const input = event.target;
         if (input.value === '') {
