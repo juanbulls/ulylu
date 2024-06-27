@@ -15,8 +15,7 @@
   }
 body{
 	margin: 0 auto;
-	font-family: 'Futura', Arial, sans-serif;
-	font-size: 16px;
+	font-family: Futura, sans-serif;
 }
 #encabezado{
 	position: fixed;
@@ -31,7 +30,6 @@ body{
 	margin-inline: auto;  
 }
 h1{
-	font-family: 'Futura', Arial, sans-serif;
 	padding-left: 10px;
 	letter-spacing: 5px;
 	color: white;
