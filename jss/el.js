@@ -56,6 +56,8 @@ const el = {
         el.previousValue = event.target.value;
     },
     relChange: function(event) {
+        el.transitioning = true;
+        setTimeout(() => el.transitioning = false, 100);
         const newValue = event.target.value;
         if (newValue !== el.previousValue) {
             const tabla = event.target.placeholder.toLowerCase();
