@@ -1,7 +1,6 @@
 // Funciones para tipos especificos Event listeners
 const el = {
     campoActual: undefined,
-    transitioning: false,
     blurDisabled: false,
     previousValue: "",
     fechaFocus: function(event) {
@@ -23,7 +22,7 @@ const el = {
         el.blurDisabled = false;
     },
     fechaBlur: function(event) {
-        if (el.blurDisabled || el.transitioning) {
+        if (el.blurDisabled) {
             return;
         }
         const input = event.target;
@@ -42,8 +41,6 @@ const el = {
         }
     },
     relFocus: function(event) {
-        el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 100);
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
@@ -55,7 +52,6 @@ const el = {
         el.previousValue = event.target.value;
     },
     relChange: function(event) {
-        el.transitioning = true;
         const newValue = event.target.value;
         if (newValue !== el.previousValue) {
             const tabla = event.target.placeholder.toLowerCase();
