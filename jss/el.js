@@ -71,7 +71,8 @@ const el = {
         console.log('blur fuera tran fuera', el.transitioning);
         setTimeout(function() {
             console.log('tran dentro', el.transitioning);
-            if (!el.transitioning) {
+            const aei = document.activeElement.id;
+            if (aei == '' || aei.slice(-2) == '_d') {
                 console.log('blur dentro');
                 document.getElementById('popup').style.display = 'none';
             }
