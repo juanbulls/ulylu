@@ -84,8 +84,7 @@ const el = {
         });
     },
     puItemClick: function(event) {
-        el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 100);
+        el.transitioning = false;
         const valor = event.target.value;
         id(el.campoActual).value = valor;
         id(el.campoActual).focus();
