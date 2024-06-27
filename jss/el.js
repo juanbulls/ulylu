@@ -24,7 +24,6 @@ const el = {
     },
     fechaBlur: function(event) {
         if (el.blurDisabled || el.transitioning) {
-            console.log('escape');
             return;
         }
         const input = event.target;
@@ -43,7 +42,6 @@ const el = {
         }
     },
     relFocus: function(event) {
-        console.log('focus');
         el.transitioning = true;
         setTimeout(() => el.transitioning = false, 100);
         const celda = event.target.getBoundingClientRect();
@@ -57,7 +55,6 @@ const el = {
         el.previousValue = event.target.value;
     },
     relChange: function(event) {
-        console.log('change');
         el.transitioning = true;
         const newValue = event.target.value;
         if (newValue !== el.previousValue) {
@@ -68,12 +65,9 @@ const el = {
         }
     },
     relBlur: function() {
-        console.log('blur fuera tran fuera', el.transitioning);
         setTimeout(function() {
-            console.log('tran dentro', el.transitioning);
             const aei = document.activeElement.id;
             if (aei == '' || aei.slice(-2) == '_d') {
-                console.log('blur dentro');
                 document.getElementById('popup').style.display = 'none';
             }
         }, 100);
