@@ -67,7 +67,7 @@ const el = {
         }
     },
     relBlur: function(event) {
-        console.log('blur');
+        console.log('blur trans', el.transitioning);
         setTimeout(function() {
             if (!el.transitioning) {
                 document.getElementById('popup').style.display = 'none';
