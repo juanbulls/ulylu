@@ -6,7 +6,13 @@
 }
 
 /* *******  Todos los dispositivos  ******* */
-@font-face { font-family: Futura; src: url('futura.ttf'); }
+@font-face {
+	font-family: 'Futura';
+	src: url('fuentes/futura.woff2') format('woff2'),
+		 url('fuentes/futura.woff') format('woff'),
+		 url('fuentes/futura.ttf') format('truetype'),
+		 url('fuentes/futura.eot') format('eot')
+  }
 body{
 	margin: 0 auto;
 	font-family: Futura, sans-serif;
