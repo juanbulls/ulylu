@@ -75,6 +75,7 @@ function datearGrilla(d) {
 
 function datearPopup(d) {
     id('subData').innerHTML = "";
+    console.log('Las opciones son:');
     d.data.forEach((dat) => {
         const par = document.createElement('p');
         const lmax = 35;
@@ -85,6 +86,7 @@ function datearPopup(d) {
         par.innerHTML = dat;
         par.addEventListener('click', el.puItemClick);
         id('subData').appendChild(par);
+        console.log('- ' + dat);
     });
 }
 
