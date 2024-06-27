@@ -45,7 +45,7 @@ const el = {
     relFocus: function(event) {
         console.log('focus');
         el.transitioning = true;
-        setTimeout(() => el.transitioning = false, 100);
+        setTimeout(() => el.transitioning = false, 120);
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
@@ -58,6 +58,8 @@ const el = {
     },
     relChange: function(event) {
         console.log('change');
+        el.transitioning = true;
+        setTimeout(() => el.transitioning = false, 120);
         const newValue = event.target.value;
         if (newValue !== el.previousValue) {
             const tabla = event.target.placeholder.toLowerCase();
@@ -84,7 +86,6 @@ const el = {
         });
     },
     puItemClick: function(event) {
-        el.transitioning = false;
         const valor = event.target.value;
         id(el.campoActual).value = valor;
         id(el.campoActual).focus();
