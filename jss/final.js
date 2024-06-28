@@ -78,7 +78,7 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
-pedirData('data', 'base=bauer&tabla=notas').then(function(r) {
+pedirData('data', 'base=bauer&tabla=notas').then(r => {
     datearGrilla(r);
 });
 

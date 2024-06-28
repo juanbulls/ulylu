@@ -62,7 +62,7 @@ const el = {
         }
     },
     relBlur: function() {
-        setTimeout(function() {
+        setTimeout(() => {
             const aei = document.activeElement.id;
             if (aei == '' || aei.slice(-2) == '_d') {
                 document.getElementById('popup').style.display = 'none';
