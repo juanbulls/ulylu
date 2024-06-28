@@ -99,11 +99,12 @@ const el = {
         }
     },
     actSeleccion: function(dir) {
-        el.sel += dir;
-        el.sel<0 && (el.sel = 4);
-        el.sel>4 && (el.sel = 0);
-
         const sdItems = id('subData').children;
+
+        el.sel += dir;
+        el.sel<0 && (el.sel = sdItems.length-1);
+        el.sel>sdItems.length-1 && (el.sel = 0);
+
         for (let i=0; i<sdItems.length; i++) {
             sdItems[i].style.border = 'none';
         };

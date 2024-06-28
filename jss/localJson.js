@@ -399,9 +399,7 @@ const local = {
             data: [
                 "Sebastian Rodriguez",
                 "Victoria Blagh",
-                "Daniel Salas",
-                "Jane Smith",
-                "bob Brown"
+                "Daniel Salas"
             ]
         },
         clientes: {
