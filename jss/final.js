@@ -62,7 +62,7 @@ function datearGrilla(d) {
         const tr = document.createElement('tr');
         d.cols.forEach((c) => {
             const td = document.createElement('td');
-            td.setAttribute('data-cell', c);
+            td.setAttribute('data-cell', hayUnderscore.test(c) ? c.slice(0, -2) : c);
             td.innerHTML = f[c];
 
             tr.appendChild(td);
