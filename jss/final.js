@@ -10,6 +10,14 @@ async function pedirData(php, variables = null){
     }
 }
 
+async function mandarData(php, variables = null) {
+    if (esLocal) {
+        return local[php]
+    } else {
+
+    }
+}
+
 // Populador
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
@@ -95,7 +103,29 @@ function limpiarNuevaData(){
 function registrar(){
     var inputs = document.querySelectorAll('.nuevaData input');
     var vars = "";
-    inputs.forEach(v => {
-
+    inputs.forEach(i => {
+        if (i.value != '') {
+            const llave = hayUnderscore.test(i.id) ? i.id.slice(1) : i.id;
+            vars += llave + '=' + i.value + '&';
+        }
     });
+    vars = vars.slice(0, -1);
+    mandarData('registrar', vars).then(r => {
+        if (!r.error) {
+            r.data.forEach((f) => {
+                const tr = document.createElement('tr');
+                r.cols.forEach((c) => {
+                    const td = document.createElement('td');
+                    td.setAttribute('data-cell', hayUnderscore.test(c) ? c.slice(0, -2) : c);
+                    td.innerHTML = f[c];
+        
+                    tr.appendChild(td);
+                    tr.id = f['id'];
+                });
+        
+                id('dataVieja').insertBefore(tr, (id('dataVieja').firstChild));
+            })
+        }
+    });
+    
 }

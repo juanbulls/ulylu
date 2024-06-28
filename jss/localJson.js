@@ -411,5 +411,21 @@ const local = {
                 "Grace Taylor"
             ]
         }
+    },
+    registrar: {
+        cols: ["Cliente_r", "Vendedor_r", "Fecha_d", "Tdoc", "Ndoc", "Cuenta", "Cantidad", "Descripcion", "Comentario"],
+        data: [{
+            idnotas: "999",
+            Cliente_r: "Mocking Mock",
+            Vendedor_r: "Jane Smith",
+            Fecha_d: "2023-05-01",
+            Tdoc: "REC 93",
+            Ndoc: "00001",
+            Cuenta: "A",
+            Cantidad: 2,
+            Descripcion: "ARETES - JOYARE 21696",
+            Comentario: "Cualquier cosa para que este quede completo",
+            modificado: "2024-05-29 19:37:19"
+        }]
     }
 }
