@@ -10,17 +10,6 @@ async function pedirData(php, variables = null){
     }
 }
 
-// Funciones botones
-function limpiarNuevaData(){
-    var inputs = document.querySelectorAll('.nuevaData input');
-    inputs.forEach(function(input) {
-        input.value = '';
-        if (input.id.slice(-2) == '_d'){
-            input.type = 'text';
-        }
-    });
-}
-
 // Populador
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
@@ -92,3 +81,21 @@ function datearPopup(d) {
 pedirData('data', 'base=bauer&tabla=notas').then(function(r) {
     datearGrilla(r);
 });
+
+// Funciones botones
+function limpiarNuevaData(){
+    var inputs = document.querySelectorAll('.nuevaData input');
+    inputs.forEach(input => {
+        input.value = '';
+        if (input.id.slice(-2) == '_d'){
+            input.type = 'text';
+        }
+    });
+}
+function registrar(){
+    var inputs = document.querySelectorAll('.nuevaData input');
+    var vars = "";
+    inputs.forEach(v => {
+
+    });
+}
