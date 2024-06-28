@@ -72,7 +72,7 @@ const el = {
     popup: function (tabla, str) {
         id('popup').style.display = 'block';
         spinner.ocultar();
-        pedirData('subData', 'base=bauer&tabla=' + tabla + 's&patron='+str).then(function(r) {
+        pedirData('subData', 'base=bauer&tabla=' + tabla + 's&patron='+str).then(r => {
             spinner.mostrar();
             datearPopup(r);
         });
