@@ -41,6 +41,7 @@ const el = {
         }
     },
     relFocus: function(event) {
+        el.sel = -1;
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
         const str = event.target.value;
@@ -77,24 +78,35 @@ const el = {
         });
     },
     puItemClick: function(event) {
-        const valor = event.target.value;
+        const valor = typeof event === 'string' ? event : event.target.value;
         id(el.campoActual).value = valor;
         id(el.campoActual).focus();
     },
+    sel: -1,
     espicha: function(event) {
         switch (event.key) {
-            case 'ArrowUp':
-                console.log('Espicho Arriba');
-                break;
-            case 'ArrowDown':
-                console.log('Espicho Abajo');
-                break;
             case 'Tab':
-                console.log('Espicho Tab');
-                break;
             case 'Enter':
-                console.log('Espicho Enter');
-                break;
+                const val = id('subData').children[el.sel].value;
+                el.puItemClick(val);
+            break;
+            case 'ArrowUp':
+                el.actSeleccion(-1);
+            break;
+            case 'ArrowDown':
+                el.actSeleccion(1);
+            break;
         }
-    }
+    },
+    actSeleccion: function(dir) {
+        el.sel += dir;
+        el.sel<0 && (el.sel = 4);
+        el.sel>4 && (el.sel = 0);
+
+        const sdItems = id('subData').children;
+        for (let i=0; i<sdItems.length; i++) {
+            sdItems[i].style.border = 'none';
+        };
+        sdItems[el.sel].style.border = '1px solid white';
+    },
 };
