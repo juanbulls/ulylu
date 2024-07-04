@@ -1,4 +1,6 @@
 // Funciones para tipos especificos Event listeners
+const blurDelay = 250;
+// Blur delay
 const el = {
     campoActual: undefined,
     blurDisabled: false,
@@ -67,7 +69,7 @@ const el = {
             if (aei == '' || aei.slice(-2) == '_d') {
                 document.getElementById('popup').style.display = 'none';
             }
-        }, 100);
+        }, 250);
     },
     popup: function (tabla, str) {
         id('popup').style.display = 'block';

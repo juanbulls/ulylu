@@ -2,7 +2,7 @@
 async function pedirData(php, variables = null){
     if ( esLocal ) {
         let valor = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 250));
         return local[php][valor];
     }else{
         await new Promise(resolve => setTimeout(resolve, 250));
