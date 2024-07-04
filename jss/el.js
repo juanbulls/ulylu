@@ -1,6 +1,15 @@
 // Funciones para tipos especificos Event listeners
 const blurDelay = 250;
-// Blur delay
+/* Deleay en sus 3 usos debe ser igual para que funcione en ambos:
+   - en ambos blur se ejecuta primero que puItemClick, pero el delay
+    ayuda a que pase al reves, en pedirData debe ser el mismo valor para que esos dos se 
+    ejecuten en orden
+   - en local, el delay ayuda a ver el spinner aunque sea por muy poco tiempo
+   - en remoto, el delay ayuda a que cuando se escribe muy rapido no se produzca un error, 
+    ya que cada vez que se teclea una tecla, corre el onchange que usa el popup, y este usa 
+    pedir data, el delay asegura que el llamado asyncrono acabe antes si el usuario escribe
+    muy rapido
+*/
 const el = {
     campoActual: undefined,
     blurDisabled: false,
@@ -69,7 +78,7 @@ const el = {
             if (aei == '' || aei.slice(-2) == '_d') {
                 document.getElementById('popup').style.display = 'none';
             }
-        }, 250);
+        }, blurDelay);
     },
     popup: function (tabla, str) {
         id('popup').style.display = 'block';
