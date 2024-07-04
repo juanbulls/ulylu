@@ -8,7 +8,8 @@ const blurDelay = 250;
    - en remoto, el delay ayuda a que cuando se escribe muy rapido no se produzca un error, 
     ya que cada vez que se teclea una tecla, corre el onchange que usa el popup, y este usa 
     pedir data, el delay asegura que el llamado asyncrono acabe antes si el usuario escribe
-    muy rapido
+    muy rapido, para internet lento no importa, lo que importa es que el delay sea mas rapido
+    que el tiempo que toma el async
 */
 const el = {
     campoActual: undefined,
