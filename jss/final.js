@@ -72,6 +72,19 @@ function datearGrilla(d) {
 
 function datearPopup(d) {
     id('subData').innerHTML = "";
+    if (d.data.length == 0) {
+        const par = document.createElement('span');
+        par.innerHTML = "Sin coincidencias "
+        const subpar = document.createElement('span');
+        subpar.innerHTML = "Se creará uno nuevo"
+
+        id('subData').appendChild(par);
+        id('subData').appendChild(subpar);
+        par.style.color = '#c5c5c5';
+        subpar.style.color = 'rgb(255 180 52)';
+        return
+    }
+
     d.data.forEach((dat) => {
         const par = document.createElement('p');
         const lmax = 35;
