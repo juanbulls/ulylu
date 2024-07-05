@@ -81,7 +81,7 @@ function datearPopup(d) {
         id('subData').appendChild(par);
         id('subData').appendChild(subpar);
         par.style.color = '#c5c5c5';
-        subpar.style.color = 'rgb(255 180 52)';
+        subpar.style.color = 'rgb(255 161 0)';
         return
     }
 

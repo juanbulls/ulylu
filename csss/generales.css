@@ -45,6 +45,9 @@ button:hover{
 	background-color: #000000;
 	color: white;
 }
+.botonPrincipal{
+	background-color: rgb(255 161 0);
+}
 
 /*         Estilos tabla      */
 table {
