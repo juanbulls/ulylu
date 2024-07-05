@@ -23,11 +23,3 @@ thead td{
 }
 	
 }
-
-/* IOS */
-@media screen and (-webkit-min-device-pixel-ratio: 0 ){
-    td::before {
-        content: attr(data-cell) " ";
-        font-weight: 300;
-    }
-}
