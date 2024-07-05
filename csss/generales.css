@@ -173,4 +173,11 @@ tbody > tr:nth-of-type(odd) {
 	background-color: white;
 	color: black;
 	cursor: pointer;
-  }
+}
+
+.sinCoincidenciaTitulo{
+	color: #c5c5c5;
+}
+.sinCoincidenciaSubtitulo{
+	color: #00bbff;
+}
