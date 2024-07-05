@@ -60,16 +60,16 @@ const el = {
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
 
-        el.popup(tabla, str);
+        el.popup(tabla, str); // usa pedir data, usa ajax, tiene delay
         el.campoActual = event.target.id;
         el.previousValue = event.target.value;
     },
     relChange: function(event) {
         const newValue = event.target.value;
-        if (newValue !== el.previousValue) {
+        if (newValue !== el.previousValue) { // evita correr al espichar flechas
             const tabla = event.target.placeholder.toLowerCase();
             const str = event.target.value;
-            el.popup(tabla, str);
+            el.popup(tabla, str); // usa pedir data, usa ajax, tiene delay
             el.previousValue = event.target.value;
         }
     },
