@@ -11,20 +11,6 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
     }
 }
 
-// Mockeando
-$_REQUEST = [
-    "base" => "your_base_value",
-    "tabla" => "your_tabla_value",
-    "Cliente_r" => "Ruiz",
-    "Vendedor_r" => "Rodriguez",
-    "Fecha_d" => "2024-07-11",
-    "Ndoc" => "1234",
-    "Tdoc" => "dasd",
-    "Cuenta" => "U",
-    "Cantidad" => "1",
-    "Descripcion" => "fdgsdfg",
-    "Comentario" => "sdfgsdfg"
-];
 $insert_data = [];
 foreach ($_REQUEST as $key => $value) {
     if (!in_array($key, ['base', 'tabla'])) {
