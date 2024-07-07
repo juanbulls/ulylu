@@ -12,7 +12,6 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
 }
 
 // Mockeando
-/* 
 $_REQUEST = [
     "base" => "your_base_value",
     "tabla" => "your_tabla_value",
@@ -26,7 +25,6 @@ $_REQUEST = [
     "Descripcion" => "fdgsdfg",
     "Comentario" => "sdfgsdfg"
 ];
-*/
 
 $insert_data = [];
 foreach ($_REQUEST as $key => $value) {
