@@ -32,5 +32,10 @@ foreach ($_REQUEST as $key => $value) {
     }
 }
 
-echo json_encode($insert_data);
+$fields = implode(",", array_keys($insert_data));
+$values = implode("','", array_map('mysqli_real_escape_string', array_values($insert_data)));
+$insert_result = q("INSERT INTO $base.$tabla ($fields) VALUES ('$values')");
+
+
+echo json_encode($insert_result);
 ?>
