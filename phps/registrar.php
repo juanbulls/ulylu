@@ -33,9 +33,28 @@ foreach ($_REQUEST as $key => $value) {
 }
 
 $fields = implode(",", array_keys($insert_data));
-$values = implode("','", array_map('mysqli_real_escape_string', array_values($insert_data)));
+$values = implode("','", array_map(function($value) use ($con) {
+    return mysqli_real_escape_string($con, $value);
+}, array_values($insert_data)));
 $insert_result = q("INSERT INTO $base.$tabla ($fields) VALUES ('$values')");
 
+if (!$insert_result) {
+    $response = [
+        "error" => "error inserting"
+    ];
+} else {
+    $data_result = q("SELECT * FROM $base.$tabla ORDER BY id DESC LIMIT 1");
+    $data = [];
+    while ($row = mysqli_fetch_assoc($data_result)) {
+        $data[] = $row;
+    }
 
-echo json_encode($insert_result);
+    $response = [
+        "cols" => $cols,
+        "data" => $data
+    ];
+}
+
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
