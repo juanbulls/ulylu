@@ -6,6 +6,7 @@ async function pedirData(php, variables = null){
         return local[php][valor];
     }else{
         await new Promise(resolve => setTimeout(resolve, blurDelay));
+        
         return ajax( php + '.php' , variables);
     }
 }
@@ -21,6 +22,9 @@ async function mandarData(php, variables = null) {
 // Populador
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
+    id('inputsDataNueva').innerHTML = "";
+    id('headerDataVieja').innerHTML = "";
+
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
@@ -136,8 +140,7 @@ function registrar(){
                     tr.id = f['id'];
                 });
         
-                id('dataVieja').insertBefore(tr, (id('dataVieja').firstChild));
-            })
+            datearGrilla(r);
         }
     });
     
