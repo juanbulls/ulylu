@@ -139,8 +139,8 @@ function registrar(){
                     tr.appendChild(td);
                     tr.id = f['id'];
                 });
-        
-            datearGrilla(r);
+            });
+            // datearGrilla(r);
         }
     });
     
