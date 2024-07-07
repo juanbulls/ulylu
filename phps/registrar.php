@@ -22,8 +22,8 @@ $_REQUEST = [
     "Tdoc" => "dasd",
     "Cuenta" => "U",
     "Cantidad" => "1",
-    "Descripcion" => "fdgsdfg",
-    "Comentario" => "sdfgsdfg"
+    "Descripcion" => "prueba error handeling",
+    "Comentario" => "prueba numero 2"
 ];
 
 $insert_data = [];
@@ -37,24 +37,24 @@ $fields = implode(",", array_keys($insert_data));
 $values = implode("','", array_map(function($value) use ($con) {
     return mysqli_real_escape_string($con, $value);
 }, array_values($insert_data)));
-$insert_result = q("INSERT INTO $base.$tabla ($fields) VALUES ('$values')");
-
-if (!$insert_result) {
+try {
+    $insert_result = q("INSERT INTO $base.$tabla ($fields) VALUES ('$values')");
+} catch (mysqli_sql_exception $e) {
     $response = [
-        "error" => "error inserting"
-    ];
-} else {
-    $data_result = q("SELECT * FROM $base.$tabla ORDER BY id DESC LIMIT 1");
-    $data = [];
-    while ($row = mysqli_fetch_assoc($data_result)) {
-        $data[] = $row;
-    }
-
-    $response = [
-        "cols" => $cols,
-        "data" => $data
+        "error" => "Error inserting: " . $e->getMessage()
     ];
 }
+
+$data_result = q("SELECT * FROM $base.$tabla ORDER BY id DESC LIMIT 1");
+$data = [];
+while ($row = mysqli_fetch_assoc($data_result)) {
+    $data[] = $row;
+}
+
+$response = [
+    "cols" => $cols,
+    "data" => $data
+];
 
 header('Content-Type: application/json');
 echo json_encode($response);
