@@ -120,8 +120,7 @@ function registrar(){
     var vars = `base=${bdBase}&tabla=${bdTabla}&`;
     inputs.forEach(i => {
         if (i.value != '') {
-            const llave = hayUnderscore.test(i.id) ? i.id.slice(1) : i.id;
-            vars += llave + '=' + i.value + '&';
+            vars += i.id.slice(1) + '=' + i.value + '&';
         }
     });
     vars = vars.slice(0, -1);
