@@ -20,10 +20,10 @@ $_REQUEST = [
     "Fecha_d" => "2024-07-11",
     "Ndoc" => "1234",
     "Tdoc" => "dasd",
-    "Cuenta" => "A",
+    "Cuenta" => "AUQ",
     "Cantidad" => "1",
     "Descripcion" => "prueba error handeling",
-    "Comentario" => "prueba numero 3"
+    "Comentario" => "prueba numero 4"
 ];
 
 $insert_data = [];
