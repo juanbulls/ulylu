@@ -68,6 +68,17 @@ th {
 tbody > tr:nth-of-type(odd) {
 	background-color: #f5f5f5; /* prefiero #f5f5f5 pero mientras cuadro lo dejo como esta */
 }
+@keyframes colorTransition {
+	0% {
+		color: rgb(255, 161, 0);
+	}
+	100% {
+		color: black;
+	}
+}
+.filaIngresada {
+	animation: colorTransition 10s forwards;
+}
 
 .titulos{
 	color: #a83e3e;

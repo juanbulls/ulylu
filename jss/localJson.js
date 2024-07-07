@@ -1,3 +1,6 @@
+const bdBase = 'bauer';
+const bdTabla = 'notas'
+
 const local = {
     data: {
         notas: {

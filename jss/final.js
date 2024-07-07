@@ -22,9 +22,6 @@ async function mandarData(php, variables = null) {
 // Populador
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
-    id('inputsDataNueva').innerHTML = "";
-    id('headerDataVieja').innerHTML = "";
-
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         let tipo = 'text';
@@ -60,6 +57,7 @@ function datearGrilla(d) {
     
     // Registros historia
     d.data.forEach((f) => {
+        // Llenar Linea, repetido en 2 partes
         const tr = document.createElement('tr');
         d.cols.forEach((c) => {
             const td = document.createElement('td');
@@ -103,7 +101,7 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
-pedirData('data', 'base=bauer&tabla=notas').then(r => {
+pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     datearGrilla(r);
 });
 
@@ -129,8 +127,9 @@ function registrar(){
     vars = vars.slice(0, -1);
     mandarData('registrar', vars).then(r => {
         if (!r.error) {
+            // Llenar Linea, repetido en 2 partes
+            const tr = document.createElement('tr');
             r.data.forEach((f) => {
-                const tr = document.createElement('tr');
                 r.cols.forEach((c) => {
                     const td = document.createElement('td');
                     td.setAttribute('data-cell', hayUnderscore.test(c) ? c.slice(0, -2) : c);
@@ -140,7 +139,10 @@ function registrar(){
                     tr.id = f['id'];
                 });
             });
-            // datearGrilla(r);
+
+            id('dataVieja').insertBefore(tr, id('dataVieja').firstChild);
+            limpiarNuevaData()
+            tr.classList.add('filaIngresada');
         }
     });
     
