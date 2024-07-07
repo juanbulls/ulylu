@@ -117,7 +117,7 @@ function limpiarNuevaData(){
 }
 function registrar(){
     var inputs = document.querySelectorAll('.nuevaData input');
-    var vars = "";
+    var vars = `base=${bdBase}&tabla=${bdTabla}&`;
     inputs.forEach(i => {
         if (i.value != '') {
             const llave = hayUnderscore.test(i.id) ? i.id.slice(1) : i.id;
