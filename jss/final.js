@@ -142,6 +142,8 @@ function registrar(){
             id('dataVieja').insertBefore(tr, id('dataVieja').firstChild);
             limpiarNuevaData()
             tr.classList.add('filaIngresada');
+        } else {
+            alert (r.error);
         }
     });
     
