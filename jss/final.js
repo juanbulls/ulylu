@@ -6,7 +6,7 @@ async function pedirData(php, variables = null){
         return local[php][valor];
     }else{
         await new Promise(resolve => setTimeout(resolve, blurDelay));
-        local.data = ajax( php + '.php' , variables)
+        local.data = ajax( php + '.php' , variables);
         return local.data;
     }
 }
@@ -15,7 +15,7 @@ async function mandarData(php, variables = null) {
     if (esLocal) {
         return local[php]
     } else {
-
+        return ajax( php + '.php' , variables);
     }
 }
 
