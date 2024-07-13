@@ -1,0 +1,18 @@
+.botonesHistoria{
+	text-align: right;
+}
+.botonesHistoria button{
+	padding: 0px;
+}
+
+.botonesHistoria svg{
+    background-colors: blue;
+    height: 24px;
+    width: 24px;
+    stroke: #a83e3e;
+    fill: rgba(255, 255, 255, 0);
+}
+.botonesHistoria svg:hover{
+    stroke: rgb(255 161 0);
+	cursor: pointer;
+}

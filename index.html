@@ -6,6 +6,7 @@
 <link rel="icon" href="csss/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="csss/generales.css">
 <link rel="stylesheet" type="text/css" href="csss/especificos.css">
+<link rel="stylesheet" type="text/css" href="csss/boticones.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -34,8 +35,21 @@
             <tr class="titulos">
                 <td colspan="8">Registros:</td>
                 <td class="botonesHistoria">
-                    <button>CSV</button>
-                    <button>] [</button>
+                    <!-- Buscador -->
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke-width="3" />
+                        <line x1="25" y1="25" x2="20" y2="20" stroke-width="3" />
+                    </svg>
+                    
+                    <!-- Descargador -->
+                    <svg xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <marker id="flecha" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+                                <path d="M 0 0 L 6 3 L 0 6 z" />
+                            </marker>
+                        </defs>
+                        <line x1="12" y1="0" x2="12" y2="6" marker-end="url(#flecha)" stroke-width="3" />
+                    </svg>
                 </td>
             </tr>
             <tr id="headerDataVieja">

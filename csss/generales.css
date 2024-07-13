@@ -99,12 +99,6 @@ tbody > tr:nth-of-type(odd) {
 .botonesNuevos td{
 	border: none;
 }
-.botonesHistoria{
-	text-align: right;
-}
-.botonesHistoria button{
-	padding: 5px;
-}
 
 #popup{
 	position: fixed;
