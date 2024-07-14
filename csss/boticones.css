@@ -1,18 +1,34 @@
 .botonesHistoria{
 	text-align: right;
+	padding: 0px;
+	vertical-align: bottom;
 }
 .botonesHistoria button{
 	padding: 0px;
 }
 
 .botonesHistoria svg{
-    background-colors: blue;
-    height: 24px;
-    width: 24px;
+    background-colors: rgb(214, 214, 255);
+    height: 30px;
+    width: 30px;
     stroke: #a83e3e;
     fill: rgba(255, 255, 255, 0);
+}
+#buscador {
+    width: 600px;
+}
+.buscAnim {
+    transition: all 0.5s ease;
 }
 .botonesHistoria svg:hover{
     stroke: rgb(255 161 0);
 	cursor: pointer;
+}
+
+@media (max-width:650px){ /* Mobiles */
+
+#buscador {
+    width: 300px;
+}
+        
 }
