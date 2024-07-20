@@ -1,5 +1,7 @@
 :root {
 	--altoEncabezado: 2.5rem;
+	--bordeTopHeader: 20px;
+	--altoTitulo: 20px;
 
 	--altoPopup: 104px;
 	--largoPopup: 300px;
@@ -37,7 +39,7 @@ button{
 	padding: 8px;
 	padding-left: 15px;
 	padding-right: 15px;
-	background-color: #a83e3e;
+	background: #a83e3e;
 	color: white;
 	cursor: pointer;
 }
@@ -62,7 +64,7 @@ td, th {
 th {
 	position: -webkit-sticky;
 	position: sticky;
-	top: var(--altoEncabezado);
+	top: calc(var(--altoEncabezado) - var(--bordeTopHeader) + 58px);
 	background-color: white;
 }
 tbody > tr:nth-of-type(odd) {
@@ -80,15 +82,21 @@ tbody > tr:nth-of-type(odd) {
 	animation: colorTransition 10s forwards;
 }
 
+.registros {
+	position: -webkit-sticky;
+	position: sticky;
+	top: calc(var(--altoEncabezado) - var(--bordeTopHeader));
+	background-color: white;
+}
 .titulos{
 	color: #a83e3e;
 	font-size: 1.2em;
-	border-top: 40px solid white;
+	border-top: 40px solid white; /* 40px debe ajustarse con bordeTopHeader */
+	height: var(--altoTitulo);
 }
 .titulos td{
 	border: none;
 }
-
 .nuevaData input[type="text"], .nuevaData input[type="date"]{
 	border: none;
 	width: 100%;
