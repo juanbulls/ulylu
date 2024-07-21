@@ -20,7 +20,7 @@
 .buscAnim {
     transition: all 0.5s ease;
 }
-.botonesHistoria svg:hover{
+.buscClickeable:hover{
     stroke: rgb(255 161 0);
 	cursor: pointer;
 }

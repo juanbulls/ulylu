@@ -37,8 +37,15 @@
                 <td colspan="7" class="botonesHistoria">
                     <!-- Buscador -->
                     <svg id="buscador" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="buscAnim" id="buscRect" width="23" height="23" x="3" y="3" rx="23" ry="23" stroke-width="3" />
-                        <line class="buscAnim" id="buscLine" x1="30" y1="30" x2="23" y2="23" stroke-width="3" />
+                        <g id="lupa" class="buscClickeable">
+                            <rect class="buscAnim" id="buscRect" width="23" height="23" x="3" y="3" rx="23" ry="23" stroke-width="3" />
+                            <line class="buscAnim" id="buscLine" x1="30" y1="30" x2="23" y2="23" stroke-width="3" />
+                        </g>
+                        <g id="buscCancelar" class="buscClickeable" onclick="buscColapsar()" style="display: none">
+                            <rect id="cancRect" x="4" y="4" width="21" height="21" fill="transparent" stroke="none" pointer-events="all"/>
+                            <line class="buscAnim" id="cancLin1" x1="22" y1="22" x2="7" y2="7" stroke-width="3" />
+                            <line class="buscAnim" id="cancLin2" x1="7" y1="22" x2="22" y2="7" stroke-width="3" />
+                        </g>
                     </svg>
                     
                     <!-- Descargador -->

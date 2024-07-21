@@ -29,36 +29,47 @@ const spinner = {
 // Icono Buscador
 const rect = id('buscRect');
 const line = id('buscLine');
+const lx1 = id('cancLin1');
+const lx2 = id('cancLin2');
 const desplazoX = buscador.clientWidth - 30;
+const ajusteX = -3;
 
 rect.setAttribute("x", desplazoX + 3);
 rect.setAttribute('width', 23);
-
 line.setAttribute("x1", desplazoX + 30);
 line.setAttribute("x2", desplazoX + 23);
 
-id('buscador').addEventListener('click', toggleBuscador);
+id('cancRect').setAttribute("x", desplazoX + 4);
+lx1.setAttribute("x1", desplazoX + 25 + ajusteX);
+lx1.setAttribute("x2", desplazoX + 10 + ajusteX);
+lx2.setAttribute("x1", desplazoX + 10 + ajusteX);
+lx2.setAttribute("x2", desplazoX + 25 + ajusteX);
 
-let valToggle = false;
-function toggleBuscador() {
-    if (valToggle) { // Colapsado
-        rect.setAttribute("x", desplazoX + 3);
-        rect.setAttribute('width', 23);
-        rect.setAttribute("rx", 23);
-        rect.setAttribute("ry", 23);
-        rect.setAttribute("stroke-width", 3);
-        
-        line.setAttribute("x1", desplazoX + 30);
-        line.setAttribute("x2", desplazoX + 23);
-    } else { // Expandido
-        rect.setAttribute("x", 3);
-        rect.setAttribute('width', desplazoX + 23);
-        rect.setAttribute("rx", 2);
-        rect.setAttribute("ry", 2);
-        rect.setAttribute("stroke-width", 1);
-        
-        line.setAttribute("x1", 30);
-        line.setAttribute("x2", 23);
-    }
-    valToggle = !valToggle
+id('buscador').addEventListener('click', buscExpandir);
+
+let expandido = false;
+function buscExpandir() {
+    if (expandido) { return }
+    rect.setAttribute("x", 3);
+    rect.setAttribute('width', desplazoX + 23);
+    rect.setAttribute("rx", 2);
+    rect.setAttribute("ry", 2);
+    rect.setAttribute("stroke-width", 1);
+    line.style.display = 'none';
+    id('lupa').classList.remove('buscClickeable');
+    id('buscador').removeEventListener('click', buscExpandir);
+    id('buscCancelar').style.display = 'block';
+    setTimeout(() => { expandido = true }, 100);
+}
+function buscColapsar(){
+    rect.setAttribute("x", desplazoX + 3);
+    rect.setAttribute('width', 23);
+    rect.setAttribute("rx", 23);
+    rect.setAttribute("ry", 23);
+    rect.setAttribute("stroke-width", 3);
+    line.style.display = 'block';
+    id('lupa').classList.add('buscClickeable');
+    id('buscador').addEventListener('click', buscExpandir);
+    id('buscCancelar').style.display = 'none';
+    setTimeout(() => { expandido = false }, 100);
 }
