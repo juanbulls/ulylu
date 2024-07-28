@@ -79,7 +79,7 @@ tbody > tr:nth-of-type(odd) {
 	}
 }
 .filaIngresada {
-	animation: colorTransition 10s forwards;
+	animation: colorTransition 20s forwards;
 }
 
 .registros {

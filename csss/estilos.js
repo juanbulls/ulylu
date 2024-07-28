@@ -54,12 +54,14 @@ function buscExpandir() {
     rect.setAttribute('width', desplazoX + 23);
     rect.setAttribute("rx", 2);
     rect.setAttribute("ry", 2);
-    rect.setAttribute("stroke-width", 1);
+    rect.setAttribute("stroke-width", 2);
     line.style.display = 'none';
     id('lupa').classList.remove('buscClickeable');
     id('buscador').removeEventListener('click', buscExpandir);
     id('buscCancelar').style.display = 'block';
     setTimeout(() => { expandido = true }, 100);
+    id('buscTexto').style.display = 'block';
+    id('buscTexto').style.width = (desplazoX - 10) + 'px';
 }
 function buscColapsar(){
     rect.setAttribute("x", desplazoX + 3);
@@ -72,4 +74,5 @@ function buscColapsar(){
     id('buscador').addEventListener('click', buscExpandir);
     id('buscCancelar').style.display = 'none';
     setTimeout(() => { expandido = false }, 100);
+    id('buscTexto').display = 'none';
 }
