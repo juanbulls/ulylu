@@ -114,6 +114,7 @@ function limpiarNuevaData(){
         input.value = '';
         if (input.id.slice(-2) == '_d'){
             input.type = 'text';
+            input.addEventListener('focus', el.fechaFocus);
         }
     });
 }
