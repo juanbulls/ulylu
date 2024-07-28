@@ -76,11 +76,13 @@ function datearPopup(d) {
     id('subData').innerHTML = "";
     if (d.data.length == 0) {
         const par = document.createElement('span');
-        par.innerHTML = "Sin coincidencias\n Luego"
+        par.innerHTML = "Sin coincidencias"
+        const br = document.createElement('br');
         const subpar = document.createElement('span');
         subpar.innerHTML = "Se creará uno nuevo"
 
         id('subData').appendChild(par);
+        id('subData').appendChild(br);
         id('subData').appendChild(subpar);
         par.style.color = '#c5c5c5';
         subpar.style.color = 'rgb(255 161 0)';
