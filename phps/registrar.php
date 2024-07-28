@@ -14,8 +14,6 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
 // Mockeando
 
 $_REQUEST = [
-    "base" => "your_base_value",
-    "tabla" => "your_tabla_value",
     "Cliente_r" => "David Mendoza",
     "Vendedor_r" => "Javier Murillo",
     "Fecha_d" => "2024-07-11",
@@ -31,23 +29,21 @@ $insert_data = [];
 $related_entities = [];
 
 foreach ($_REQUEST as $key => $value) {
-    if (!in_array($key, ['base', 'tabla'])) {
-        if(substr($key, -1) == '_r'){
-            $entity_table = strtolower(substr($key, 0, -2));
-            $entity_name = mysqli_real_escape_string($con, $value);
+    if(substr($key, -2) == '_r'){
+        $entity_table = strtolower(substr($key, 0, -2));
+        $entity_name = mysqli_real_escape_string($con, $value);
 
-            // Revisar si existe
-            $entity_result = q("SELECT * FROM $base.$entity_table WHERE Nombre = '$entity_name';");
-            if(mysqli_num_rows($entity_result) == 0) {
-                $insert = q("INSERT INTO $base.$entity_table (Nombre) VALUES ('$entity_name');");
-                if (!$insert) {
-                    throw new Exception("Error insertando entidad: $entity_table con valor: $entity_name");
-                }
+        // Revisar si existe
+        $entity_result = q("SELECT * FROM $base.$entity_table WHERE Nombre = '$entity_name';");
+        if(mysqli_num_rows($entity_result) == 0) {
+            $insert = q("INSERT INTO $base.$entity_table (Nombre) VALUES ('$entity_name');");
+            if (!$insert) {
+                throw new Exception("Error insertando entidad: $entity_table con valor: $entity_name");
             }
-        } else {
-            $insert_data[$key] = $value;
         }
     }
+    
+    $insert_data[$key] = $value;
 }
 
 $fields = implode(",", array_keys($insert_data));
