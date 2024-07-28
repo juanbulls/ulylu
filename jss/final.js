@@ -76,7 +76,7 @@ function datearPopup(d) {
     id('subData').innerHTML = "";
     if (d.data.length == 0) {
         const par = document.createElement('span');
-        par.innerHTML = "Sin coincidencias "
+        par.innerHTML = "Sin coincidencias\n"
         const subpar = document.createElement('span');
         subpar.innerHTML = "Se creará uno nuevo"
 
