@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
 }
 
 // Mockeando
-
+/*
 $_REQUEST = [
     "Cliente_r" => "David Mendoza",
     "Vendedor_r" => "Javier Murillo",
@@ -24,7 +24,7 @@ $_REQUEST = [
     "Descripcion" => "prueba error handeling",
     "Comentario" => "prueba numero 4"
 ];
-
+*/
 $insert_data = [];
 $related_entities = [];
 
