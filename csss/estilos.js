@@ -74,5 +74,5 @@ function buscColapsar(){
     id('buscador').addEventListener('click', buscExpandir);
     id('buscCancelar').style.display = 'none';
     setTimeout(() => { expandido = false }, 100);
-    id('buscTexto').display = 'none';
+    id('buscTexto').style.display = 'none';
 }
