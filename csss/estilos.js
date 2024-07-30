@@ -1,5 +1,3 @@
-document.getElementById("pj").innerHTML = "En contrucción";
-
 // Event listener dinamico para la linea azul abajo de las filas actulmente siendo editadas
 document.addEventListener('DOMContentLoaded', function() {
     var inputs = document.querySelectorAll('.nuevaData input[type="text"], .nuevaData input[type="date"]');
@@ -23,6 +21,15 @@ const spinner = {
     ocultar: function () {
         id('loader').style.display = 'block';
         id('subData').style.display = 'none';
+    },
+}
+
+const dataSpinner = {
+    mostrar: function () {
+        id('dataSpinner').style.display = 'none';
+    },
+    ocultar: function () {
+        id('dataSpinner').style.display = 'none';
     },
 }
 
