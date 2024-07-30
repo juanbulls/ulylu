@@ -119,7 +119,7 @@ tbody > tr:nth-of-type(odd) {
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Loader Spinner */
+/* Loader Spinners */
 .loader {
 	width: 40px;
 	height: 20px;
@@ -175,6 +175,19 @@ tbody > tr:nth-of-type(odd) {
   @keyframes l6-3 {
 	0%,80%,100% {transform:translate(0)}
 	90%         {transform:translate(26px)}
+  }
+
+  #dataLoader{
+	position: fixed;
+  }
+  .dataL{
+	--c:no-repeat radial-gradient(farthest-side,#000000 93%,#ffffff00);
+  }
+  .dataL:before{
+	background: #000000;
+  }
+  .dataL:after{
+	background: #000000;
   }
   /* finish spinner */
 

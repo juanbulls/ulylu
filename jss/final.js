@@ -103,8 +103,10 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
+dataSpinner.mostrar();
 pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     datearGrilla(r);
+    dataSpinner.ocultar();
 });
 
 // Funciones botones
