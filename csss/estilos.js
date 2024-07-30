@@ -62,6 +62,7 @@ function buscExpandir() {
     setTimeout(() => { expandido = true }, 100);
     id('buscTexto').style.display = 'block';
     id('buscTexto').style.width = (desplazoX - 10) + 'px';
+    id('buscTexto').focus();
 }
 function buscColapsar(){
     rect.setAttribute("x", desplazoX + 3);
