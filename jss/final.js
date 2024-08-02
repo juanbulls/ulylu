@@ -67,7 +67,20 @@ function datearGrilla(d) {
         id('inputsDataNueva').appendChild(ntd); // Nueva Data
 
         const th = document.createElement('th');
-        th.innerHTML = col;
+        const span = document.createElement('span');
+        span.textContent = col;
+        th.appendChild(span);
+        
+        const botonFiltro = document.createElement('button');
+        botonFiltro.innerHTML = " &#9662;";
+        botonFiltro.classList.add('filtro');
+        th.addEventListener('mouseover', (event) => {
+            th.appendChild(botonFiltro);
+        });
+        th.addEventListener('mouseout', () => {
+            botonFiltro.remove();
+        });
+        
         id('headerDataVieja').appendChild(th); // Encabezado
     });
     

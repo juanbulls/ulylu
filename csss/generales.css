@@ -203,3 +203,10 @@ tbody > tr:nth-of-type(odd) {
 	color: black;
 	cursor: pointer;
 }
+
+.filtro {
+	background-color: transparent;
+	color: black;
+	padding: none;
+	margin: 0;
+}
