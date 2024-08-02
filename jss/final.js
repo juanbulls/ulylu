@@ -11,6 +11,7 @@ async function esperarEscritura(elmnt) {
         await new Promise(resolve => setTimeout(resolve, blurDelay));
         console.log('Reespero');
     }
+    console.log('Salio');
 }
 
 async function pedirData(php, variables = null, elmnt = null){
