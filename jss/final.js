@@ -9,7 +9,6 @@ async function esperarEscritura(elmnt) {
     while (patronAnterior != elmnt.value) {
         patronAnterior = elmnt.value;
         await new Promise(resolve => setTimeout(resolve, blurDelay));
-        console.log('Reespero');
     }
     return patronAnterior;
 }
@@ -62,6 +61,7 @@ function datearGrilla(d) {
         }
 
         input.placeholder = col;
+        input.setAttribute('autocomplete', 'off');
 
         ntd.appendChild(input);
         id('inputsDataNueva').appendChild(ntd); // Nueva Data
