@@ -1,11 +1,24 @@
 // Solicitud de Data
-async function pedirData(php, variables = null){
+async function esperarEscritura(elmnt) {
+    if (elmnt === null) {
+        await new Promise(resolve => setTimeout(resolve, blurDelay));
+        return;
+    }
+    
+    let patronAnterior = '';
+    while (patronAnterior != elmnt.value) {
+        patronAnterior = elmnt.value;
+        await new Promise(resolve => setTimeout(resolve, blurDelay));
+    }
+}
+
+async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
-        let valor = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
-        await new Promise(resolve => setTimeout(resolve, blurDelay));
-        return local[php][valor];
+        let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
+        await esperarEscritura(elmnt);
+        return local[php][accion];
     }else{
-        await new Promise(resolve => setTimeout(resolve, blurDelay));
+        await esperarEscritura(elmnt);
         local.data = ajax( php + '.php' , variables);
         return local.data;
     }
@@ -107,13 +120,14 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
-function buscarRegistros(str='') {
+function buscarRegistros(elmnt=null) {
     let patron = '';
+    const str = elmnt.value;
     if (str !== '') { patron = '&patron=' + str }
     id('dataVieja').innerHTML = '';
 
     dataSpinner.mostrar();
-    pedirData('data', `base=${bdBase}&tabla=${bdTabla}` + patron).then(r => {
+    pedirData('data', `base=${bdBase}&tabla=${bdTabla}` + patron, elmnt).then(r => {
         datearRegistros(r);
         dataSpinner.ocultar();
     });

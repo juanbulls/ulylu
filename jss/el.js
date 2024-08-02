@@ -60,7 +60,7 @@ const el = {
         id('popup').style.top = celda.top + 27 + 'px';
         id('popup').style.left = celda.left + 'px';
 
-        el.popup(tabla, str); // usa pedir data, usa ajax, tiene delay
+        el.popup(tabla, str, event.target); // usa pedir data, usa ajax, tiene delay
         el.campoActual = event.target.id;
         el.previousValue = event.target.value;
     },
@@ -69,7 +69,7 @@ const el = {
         if (newValue !== el.previousValue) { // evita correr al espichar flechas
             const tabla = event.target.placeholder.toLowerCase();
             const str = event.target.value;
-            el.popup(tabla, str); // usa pedir data, usa ajax, tiene delay
+            el.popup(tabla, str, event.target); // usa pedir data, usa ajax, tiene delay
             el.previousValue = event.target.value;
         }
     },
@@ -81,10 +81,10 @@ const el = {
             }
         }, blurDelay);
     },
-    popup: function (tabla, str) {
+    popup: function (tabla, str, elmnt) {
         id('popup').style.display = 'block';
         spinner.ocultar();
-        pedirData('subData', `base=${bdBase}&tabla=` + tabla + 's&patron='+str).then(r => {
+        pedirData('subData', `base=${bdBase}&tabla=` + tabla + 's&patron='+str, elmnt).then(r => {
             spinner.mostrar();
             datearPopup(r);
         });
