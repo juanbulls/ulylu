@@ -9,6 +9,7 @@ async function esperarEscritura(elmnt) {
     while (patronAnterior != elmnt.value) {
         patronAnterior = elmnt.value;
         await new Promise(resolve => setTimeout(resolve, blurDelay));
+        console.log('Reespero');
     }
 }
 
@@ -122,7 +123,7 @@ function datearPopup(d) {
 // Ejecuciones
 function buscarRegistros(elmnt=null) {
     let patron = '';
-    const str = elmnt.value;
+    const str = elmnt? elmnt.value : '';
     if (str !== '') { patron = '&patron=' + str }
     id('dataVieja').innerHTML = '';
 
