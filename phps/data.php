@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
     }
 }
 $patronQ = "";
-if (!is_null($patron)) { $patronQ = "WHERE Nombre LIKE '%$patron%'"; }
+if (!is_null($patron)) { $patronQ = "WHERE Cliente_r LIKE '%$patron%'"; }
 $data_result = q("SELECT * FROM $base.$tabla $patronQ ORDER BY id DESC");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
