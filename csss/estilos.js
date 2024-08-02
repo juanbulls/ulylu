@@ -30,7 +30,6 @@ const dataSpinner = {
     },
     ocultar: function () {
         id('dataLoader').style.display = 'none';
-        id('buscTexto').value = '';
     },
 }
 
@@ -84,4 +83,6 @@ function buscColapsar(){
     id('buscCancelar').style.display = 'none';
     setTimeout(() => { expandido = false }, 100);
     id('buscTexto').style.display = 'none';
+    id('buscTexto').value = '';
+    buscarRegistros();
 }
