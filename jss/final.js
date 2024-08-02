@@ -56,6 +56,10 @@ function datearGrilla(d) {
     });
     
     // Registros historia
+    datearRegistros(d);
+}
+
+function datearRegistros(d) {
     d.data.forEach((f) => {
         // Llenar Linea, repetido en 2 partes
         const tr = document.createElement('tr');
@@ -103,6 +107,19 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
+function buscarRegistros(str='') {
+    let patron = '';
+    if (str !== '') { patron = '&patron=' + str }
+    id('dataVieja').innerHTML = '';
+
+    dataSpinner.mostrar();
+    pedirData('data', `base=${bdBase}&tabla=${bdTabla}` + patron).then(r => {
+        datearRegistros(r);
+        dataSpinner.ocultar();
+    });
+}
+
+// Carga inicial de datos
 dataSpinner.mostrar();
 pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     datearGrilla(r);
