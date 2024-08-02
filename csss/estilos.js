@@ -30,6 +30,7 @@ const dataSpinner = {
     },
     ocultar: function () {
         id('dataLoader').style.display = 'none';
+        id('buscTexto').value = '';
     },
 }
 
