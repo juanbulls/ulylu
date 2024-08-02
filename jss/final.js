@@ -122,7 +122,10 @@ function datearPopup(d) {
 }
 
 // Ejecuciones
+let procesando = false;
 function buscarRegistros(elmnt=null) {
+    if (procesando) { return }
+    procesando = true;
     let patron = '';
     const str = elmnt? elmnt.value : '';
     if (str !== '') { patron = '&patron=' + str }
@@ -132,6 +135,7 @@ function buscarRegistros(elmnt=null) {
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}` + patron, elmnt).then(r => {
         datearRegistros(r);
         dataSpinner.ocultar();
+        procesando = false;
     });
 }
 

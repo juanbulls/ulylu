@@ -15,6 +15,7 @@ const el = {
     campoActual: undefined,
     blurDisabled: false,
     previousValue: "",
+    procesando: false,
     fechaFocus: function(event) {
         el.blurDisabled = true;
         const input = event.target;
@@ -82,11 +83,14 @@ const el = {
         }, blurDelay);
     },
     popup: function (tabla, str, elmnt) {
+        if (el.procesando) { return }
+        el.procesando = true;
         id('popup').style.display = 'block';
         spinner.ocultar();
         pedirData('subData', `base=${bdBase}&tabla=` + tabla + 's&patron='+str, elmnt).then(r => {
             spinner.mostrar();
             datearPopup(r);
+            el.procesando = false;
         });
     },
     puItemClick: function(event) {
