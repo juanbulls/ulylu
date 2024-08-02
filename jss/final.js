@@ -2,7 +2,7 @@
 async function esperarEscritura(elmnt) {
     if (elmnt === null) {
         await new Promise(resolve => setTimeout(resolve, blurDelay));
-        return;
+        return '';
     }
     
     let patronAnterior = '';
@@ -11,7 +11,7 @@ async function esperarEscritura(elmnt) {
         await new Promise(resolve => setTimeout(resolve, blurDelay));
         console.log('Reespero');
     }
-    console.log('Salio');
+    return patronAnterior;
 }
 
 async function pedirData(php, variables = null, elmnt = null){
@@ -20,8 +20,9 @@ async function pedirData(php, variables = null, elmnt = null){
         await esperarEscritura(elmnt);
         return local[php][accion];
     }else{
-        await esperarEscritura(elmnt);
-        local.data = ajax( php + '.php' , variables);
+        const str = await esperarEscritura(elmnt);
+        const patron = str ? '&patron=' + str : '';
+        local.data = ajax( php + '.php', variables + patron);
         return local.data;
     }
 }
@@ -126,13 +127,10 @@ let procesando = false;
 function buscarRegistros(elmnt=null) {
     if (procesando) { return }
     procesando = true;
-    let patron = '';
-    const str = elmnt? elmnt.value : '';
-    if (str !== '') { patron = '&patron=' + str }
     id('dataVieja').innerHTML = '';
 
     dataSpinner.mostrar();
-    pedirData('data', `base=${bdBase}&tabla=${bdTabla}` + patron, elmnt).then(r => {
+    pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
         datearRegistros(r);
         dataSpinner.ocultar();
         procesando = false;
