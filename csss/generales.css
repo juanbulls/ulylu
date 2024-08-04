@@ -209,4 +209,5 @@ tbody > tr:nth-of-type(odd) {
 	color: black;
 	padding: none;
 	margin: 0;
+	padding: 2px;
 }
