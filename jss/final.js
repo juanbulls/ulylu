@@ -48,8 +48,10 @@ function datearGrilla(d) {
         // Especificos EL para tipos especificos de columnas
         if (hayUnderscore.test(col)) {
             if (col.slice(-1) == 'd'){
+                input.type = 'date';
                 input.addEventListener('focus', el.fechaFocus);
                 input.addEventListener('blur', el.fechaBlur);
+                input.value = el.hoy;
             }
             if (col.slice(-1) == 'r') {
                 input.addEventListener('focus', el.relFocus);
@@ -163,8 +165,8 @@ function limpiarNuevaData(){
     inputs.forEach(input => {
         input.value = '';
         if (input.id.slice(-2) == '_d'){
-            input.type = 'text';
             input.addEventListener('focus', el.fechaFocus);
+            input.value = el.hoy;
         }
     });
 }

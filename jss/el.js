@@ -16,6 +16,7 @@ const el = {
     blurDisabled: false,
     previousValue: "",
     procesando: false,
+    hoy: new Date().toISOString().split('T')[0],
     fechaFocus: function(event) {
         el.blurDisabled = true;
         const input = event.target;
@@ -37,20 +38,6 @@ const el = {
     fechaBlur: function(event) {
         if (el.blurDisabled) {
             return;
-        }
-        const input = event.target;
-        if (input.value === '') {
-            const newInput = document.createElement('input');
-            newInput.type = 'text';
-            newInput.id = input.id;
-            newInput.name = input.name;
-            newInput.className = input.className;
-            newInput.value = input.value;
-            newInput.placeholder = input.placeholder;
-
-            input.replaceWith(newInput);
-
-            newInput.addEventListener('focus', el.fechaFocus);
         }
     },
     relFocus: function(event) {
