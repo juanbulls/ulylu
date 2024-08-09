@@ -11,12 +11,19 @@ const blurDelay = 250;
     muy rapido, para internet lento no importa, lo que importa es que el delay sea mas rapido
     que el tiempo que toma el async
 */
+
+const today = new Date();
+const hoy = today.toLocaleDateString(idioma, {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).split('/').reverse().join('-');
+
 const el = {
     campoActual: undefined,
     blurDisabled: false,
     previousValue: "",
     procesando: false,
-    hoy: new Date().toISOString().split('T')[0],
     fechaFocus: function(event) {
         el.blurDisabled = true;
         const input = event.target;

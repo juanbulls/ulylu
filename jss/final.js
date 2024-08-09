@@ -51,7 +51,7 @@ function datearGrilla(d) {
                 input.type = 'date';
                 input.addEventListener('focus', el.fechaFocus);
                 input.addEventListener('blur', el.fechaBlur);
-                input.value = el.hoy;
+                input.value = hoy;
             }
             if (col.slice(-1) == 'r') {
                 input.addEventListener('focus', el.relFocus);
@@ -166,7 +166,7 @@ function limpiarNuevaData(){
         input.value = '';
         if (input.id.slice(-2) == '_d'){
             input.addEventListener('focus', el.fechaFocus);
-            input.value = el.hoy;
+            input.value = hoy;
         }
     });
 }

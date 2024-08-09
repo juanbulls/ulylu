@@ -1,3 +1,6 @@
+// Idioma
+const idioma = navigator.language;
+
 // Event listener dinamico para la linea azul abajo de las filas actulmente siendo editadas
 document.addEventListener('DOMContentLoaded', function() {
     var inputs = document.querySelectorAll('.nuevaData input[type="text"], .nuevaData input[type="date"]');
