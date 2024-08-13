@@ -49,9 +49,8 @@ function datearGrilla(d) {
         if (hayUnderscore.test(col)) {
             if (col.slice(-1) == 'd'){
                 input.type = 'date';
-                input.addEventListener('focus', el.fechaFocus);
-                input.addEventListener('blur', el.fechaBlur);
-                input.value = hoy;
+                input.setAttribute('lang', idioma);
+                input.value = today.toISOString().split('T')[0];
             }
             if (col.slice(-1) == 'r') {
                 input.addEventListener('focus', el.relFocus);
@@ -165,8 +164,7 @@ function limpiarNuevaData(){
     inputs.forEach(input => {
         input.value = '';
         if (input.id.slice(-2) == '_d'){
-            input.addEventListener('focus', el.fechaFocus);
-            input.value = hoy;
+            input.value = today.toISOString().split('T')[0];
         }
     });
 }

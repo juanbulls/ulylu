@@ -21,32 +21,8 @@ const hoy = today.toLocaleDateString(idioma, {
 
 const el = {
     campoActual: undefined,
-    blurDisabled: false,
     previousValue: "",
     procesando: false,
-    fechaFocus: function(event) {
-        el.blurDisabled = true;
-        const input = event.target;
-        const newInput = document.createElement('input');
-        newInput.type = 'date';
-        newInput.id = input.id;
-        newInput.name = input.name;
-        newInput.className = input.className;
-        newInput.value = input.value;
-        newInput.placeholder = input.placeholder;
-
-        input.replaceWith(newInput);
-        newInput.focus();
-
-        newInput.addEventListener('blur', el.fechaBlur);
-
-        el.blurDisabled = false;
-    },
-    fechaBlur: function(event) {
-        if (el.blurDisabled) {
-            return;
-        }
-    },
     relFocus: function(event) {
         el.sel = -1;
         const celda = event.target.getBoundingClientRect();
