@@ -46,22 +46,19 @@ function datearGrilla(d) {
         input.id = 'n' + col;
 
         // Especificos EL para tipos especificos de columnas
-        if (hayUnderscore.test(col)) {
-            if (col.slice(-1) == 'd'){
-                input.type = 'date';
-                input.setAttribute('lang', idioma);
-                input.value = today.toISOString().split('T')[0];
-            }
-            if (col.slice(-1) == 'r') {
-                input.addEventListener('focus', el.relFocus);
-                input.addEventListener('blur', el.relBlur);
-                input.addEventListener('keyup', el.relChange);
-                input.addEventListener('keydown', el.espicha);
-            }
-            col = col.slice(0, -2);
+        if (col.slice(-2) == '_d'){
+            input.type = 'date';
+            input.setAttribute('lang', idioma);
+            input.value = today.toISOString().split('T')[0];
+        }
+        if (col.slice(-2) == '_r') {
+            input.addEventListener('focus', el.relFocus);
+            input.addEventListener('blur', el.relBlur);
+            input.addEventListener('keyup', el.relChange);
+            input.addEventListener('keydown', el.espicha);
         }
 
-        input.placeholder = col;
+        input.placeholder = col.slice(0, -2);
         input.setAttribute('autocomplete', 'off');
 
         ntd.appendChild(input);
@@ -69,7 +66,7 @@ function datearGrilla(d) {
 
         const th = document.createElement('th');
         const span = document.createElement('span');
-        span.textContent = col;
+        span.textContent = col.slice(0, -2);
         th.appendChild(span);
         
         const iconoCelda = document.createElement('button');
