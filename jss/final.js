@@ -72,15 +72,14 @@ function datearGrilla(d) {
         span.textContent = col;
         th.appendChild(span);
         
-        const botonFiltro = document.createElement('button');
-        botonFiltro.innerHTML = " &#9662;";
-        botonFiltro.classList.add('filtro');
-        th.addEventListener('mouseover', (event) => {
-            th.appendChild(botonFiltro);
-        });
-        th.addEventListener('mouseout', () => {
-            botonFiltro.remove();
-        });
+        const iconoCelda = document.createElement('button');
+        if (col.slice(-2) == '_r') {
+            iconoCelda.innerHTML = "✎";
+        } else {
+            iconoCelda.innerHTML = "▾";
+        }
+        iconoCelda.classList.add('icono');
+        th.appendChild(iconoCelda);
         
         id('headerDataVieja').appendChild(th); // Encabezado
     });
