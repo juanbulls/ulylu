@@ -82,7 +82,7 @@ function buscColapsar(){
     rect.setAttribute("stroke-width", 3);
     line.style.display = 'block';
     id('lupa').classList.add('buscClickeable');
-    id('buscador').addEventListener('click', buscExpandir);
+    id('lupa').addEventListener('click', buscExpandir);
     id('buscCancelar').style.display = 'none';
     setTimeout(() => { expandido = false }, 100);
     id('buscTexto').style.display = 'none';
