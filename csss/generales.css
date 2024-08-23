@@ -217,5 +217,4 @@ tbody > tr:nth-of-type(odd) {
 	margin: 0;
 	padding: 2px;
 	display: none;
-	transform: scaleX(-1);
 }
