@@ -58,7 +58,7 @@ function datearGrilla(d) {
             input.addEventListener('keydown', el.espicha);
         }
 
-        input.placeholder = col.slice(0, -2);
+        input.placeholder = col.indexOf("_") != -1 ? col.slice(0, -2): col;
         input.setAttribute('autocomplete', 'off');
 
         ntd.appendChild(input);
@@ -66,7 +66,7 @@ function datearGrilla(d) {
 
         const th = document.createElement('th');
         const span = document.createElement('span');
-        span.textContent = col.slice(0, -2);
+        span.textContent = col.indexOf("_") != -1 ? col.slice(0, -2): col;
         th.appendChild(span);
         
         const iconoCelda = document.createElement('button');
