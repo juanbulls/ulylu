@@ -70,11 +70,8 @@ function datearGrilla(d) {
         th.appendChild(span);
         
         const iconoCelda = document.createElement('button');
-        if (col.slice(-2) == '_r') {
-            iconoCelda.innerHTML = "✎";
-        } else {
-            iconoCelda.innerHTML = "▾";
-        }
+        iconoCelda.innerHTML = "▾";
+        //iconoCelda.innerHTML = "✎";
         iconoCelda.classList.add('icono');
         th.appendChild(iconoCelda);
         
