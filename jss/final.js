@@ -162,7 +162,7 @@ function filtrar(columna) {
         id('dataVieja').innerHTML = '';
         dataSpinner.mostrar();
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
-        pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, elmnt).then(r => {
+        pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, patron).then(r => {
             datearRegistros(r);
             dataSpinner.ocultar();
             id('filtro_' + columna).classList.add('filtroActivo');
@@ -174,7 +174,7 @@ function filtrar(columna) {
         id('dataVieja').innerHTML = '';
         dataSpinner.mostrar();
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
-        pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
+        pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, patron).then(r => {
             datearRegistros(r);
             dataSpinner.ocultar();
         });
