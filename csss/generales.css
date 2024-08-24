@@ -63,7 +63,7 @@ td, th {
 }
 th:hover .icono,
 td:hover .icono {
-	display: inline-block; /* Show the button on hover */
+	display: inline-block;
 }
 th {
 	position: -webkit-sticky;
@@ -217,4 +217,13 @@ tbody > tr:nth-of-type(odd) {
 	margin: 0;
 	padding: 2px;
 	display: none;
+}
+
+.filtroActivo {
+	display: inline-block;
+	background-color: #000000;
+	color: white;
+}
+.filtroActivo:hover {
+	background-color: #b60000;
 }

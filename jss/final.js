@@ -58,7 +58,7 @@ function datearGrilla(d) {
             input.addEventListener('keydown', el.espicha);
         }
 
-        input.placeholder = col.indexOf("_") != -1 ? col.slice(0, -2): col;
+        input.placeholder = col.indexOf('_') != -1 ? col.slice(0, -2): col;
         input.setAttribute('autocomplete', 'off');
 
         ntd.appendChild(input);
@@ -66,14 +66,19 @@ function datearGrilla(d) {
 
         const th = document.createElement('th');
         const span = document.createElement('span');
-        span.textContent = col.indexOf("_") != -1 ? col.slice(0, -2): col;
+        span.textContent = col.indexOf('_') != -1 ? col.slice(0, -2): col;
         th.appendChild(span);
         
-        const iconoCelda = document.createElement('button');
-        iconoCelda.innerHTML = "▾";
-        //iconoCelda.innerHTML = "✎";
-        iconoCelda.classList.add('icono');
-        th.appendChild(iconoCelda);
+        if (col.slice(-2) == '_e'){
+            const iconoCelda = document.createElement('button');
+            iconoCelda.innerHTML = '▾';
+            iconoCelda.classList.add('icono');
+            iconoCelda.addEventListener('click', () => filtrar(col));
+            iconoCelda.id = 'filtro_' + col;
+            th.appendChild(iconoCelda);
+        } else if (col.slice(-2) == '_r') {
+            //iconoCelda.innerHTML = '✎';
+        }
         
         id('headerDataVieja').appendChild(th); // Encabezado
     });
@@ -100,13 +105,13 @@ function datearRegistros(d) {
 }
 
 function datearPopup(d) {
-    id('subData').innerHTML = "";
+    id('subData').innerHTML = '';
     if (d.data.length == 0) {
         const par = document.createElement('span');
-        par.innerHTML = "Sin coincidencias"
+        par.innerHTML = 'Sin coincidencias';
         const br = document.createElement('br');
         const subpar = document.createElement('span');
-        subpar.innerHTML = "Se creará uno nuevo"
+        subpar.innerHTML = 'Se creará uno nuevo';
 
         id('subData').appendChild(par);
         id('subData').appendChild(br);
@@ -144,11 +149,44 @@ function buscarRegistros(elmnt=null) {
     });
 }
 
+// Filtro
+let filtroActivo = '';
+function filtrar(columna) {
+    if (filtroActivo != '') {
+        const elmConFiltro = id('filtro_' + filtroActivo);
+        elmConFiltro.classList.remove('filtroActivo');
+        filtroActivo = '';
+    }
+    if (filtroActivo != columna) {
+        // Filtrar
+        id('dataVieja').innerHTML = '';
+        dataSpinner.mostrar();
+        const patron = id('buscText').value != '' ? id('buscText').value : null;
+        pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, elmnt).then(r => {
+            datearRegistros(r);
+            dataSpinner.ocultar();
+            id('filtro_' + columna).classList.add('filtroActivo');
+            filtroActivo = columna;
+        });
+    }
+    else {
+        // Desfiltrar
+        id('dataVieja').innerHTML = '';
+        dataSpinner.mostrar();
+        const patron = id('buscText').value != '' ? id('buscText').value : null;
+        pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
+            datearRegistros(r);
+            dataSpinner.ocultar();
+        });
+    }
+}
+
 // Carga inicial de datos
 dataSpinner.mostrar();
 pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     datearGrilla(r);
     dataSpinner.ocultar();
+    
 });
 
 // Funciones botones
