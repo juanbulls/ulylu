@@ -13,6 +13,7 @@ async function esperarEscritura(elmnt) {
     return patronAnterior;
 }
 
+const filtrando = false; // se activa en el filtro
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
@@ -20,7 +21,8 @@ async function pedirData(php, variables = null, elmnt = null){
         return local[php][accion];
     }else{
         const str = await esperarEscritura(elmnt);
-        const patron = str ? '&patron=' + str : '';
+        const patron = str || filtrando ? '&patron=' + str : '';
+        filtrando = false;
         local.data = ajax( php + '.php', variables + patron);
         return local.data;
     }
@@ -152,6 +154,7 @@ function buscarRegistros(elmnt=null) {
 // Filtro
 let filtroActivo = '';
 function filtrar(columna) {
+    filtrando = true;
     if (filtroActivo != '') {
         const elmConFiltro = id('filtro_' + filtroActivo);
         elmConFiltro.classList.remove('filtroActivo');
