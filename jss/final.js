@@ -23,7 +23,7 @@ async function pedirData(php, variables = null, elmnt = null){
         const str = await esperarEscritura(elmnt);
         let patron;
         if (filtrando){
-            patron = elmnt;
+            patron = '&patron=' + elmnt
             filtrando = false;
         } else {
             patron = str ? '&patron=' + str : '';
