@@ -155,7 +155,6 @@ function filtrar(columna) {
     if (filtroActivo != '') {
         const elmConFiltro = id('filtro_' + filtroActivo);
         elmConFiltro.classList.remove('filtroActivo');
-        filtroActivo = '';
     }
     if (filtroActivo != columna) {
         // Filtrar
@@ -178,6 +177,7 @@ function filtrar(columna) {
             datearRegistros(r);
             dataSpinner.ocultar();
         });
+        filtroActivo = '';
     }
 }
 
