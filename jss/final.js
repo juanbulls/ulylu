@@ -173,7 +173,7 @@ function filtrar(columna) {
         // Desfiltrar
         id('dataVieja').innerHTML = '';
         dataSpinner.mostrar();
-        const patron = id('buscText').value != '' ? id('buscText').value : null;
+        const patron = id('buscText') != null ? id('buscText').value : null;
         pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
             datearRegistros(r);
             dataSpinner.ocultar();
