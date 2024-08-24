@@ -13,7 +13,7 @@ async function esperarEscritura(elmnt) {
     return patronAnterior;
 }
 
-const filtrando = false; // se activa en el filtro
+let filtrando = false; // se activa en el filtro
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
