@@ -25,6 +25,9 @@ async function pedirData(php, variables = null, elmnt = null){
         if (filtrando && elmnt != null){
             patron = '&patron=' + elmnt
         }
+        if (filtroActivo != ''){
+            variables += `&orden=${filtroActivo}`;
+        }
         local.data = ajax( php + '.php', variables + patron);
         
         filtrando = false;
@@ -158,7 +161,6 @@ function buscarRegistros(elmnt=null) {
 // Filtro
 let filtroActivo = '';
 function filtrar(columna) {
-    filtrando = true;
     if (filtroActivo != '') {
         const elmConFiltro = id('filtro_' + filtroActivo);
         elmConFiltro.classList.remove('filtroActivo');
