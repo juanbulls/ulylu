@@ -22,9 +22,9 @@ async function pedirData(php, variables = null, elmnt = null){
     }else{
         const str = await esperarEscritura(elmnt);
         let patron = str ? '&patron=' + str : '';
-        if (filtrando && elmnt != null){
+        if (filtrando && elmnt != null){ // cuando se hace un filtro con un patron existente
             patron = '&patron=' + elmnt
-        }else if (filtroActivo != ''){
+        }else if (filtroActivo != ''){ // cuando se hace una busqueda con un filtro existente
             variables += `&orden=${filtroActivo}`;
         }
         local.data = ajax( php + '.php', variables + patron);
