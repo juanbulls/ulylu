@@ -21,14 +21,13 @@ async function pedirData(php, variables = null, elmnt = null){
         return local[php][accion];
     }else{
         const str = await esperarEscritura(elmnt);
-        let patron;
+        let patron = str ? '&patron=' + str : '';
         if (filtrando && elmnt != null){
             patron = '&patron=' + elmnt
-            filtrando = false;
-        } else {
-            patron = str ? '&patron=' + str : '';
         }
         local.data = ajax( php + '.php', variables + patron);
+        
+        filtrando = false;
         return local.data;
     }
 }
