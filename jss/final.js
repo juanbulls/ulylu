@@ -108,7 +108,7 @@ function datearRegistros(d) {
 
         const limite = 90;
         if(textoResumen.length > limite) {
-            id('resumen').setAttribute('title', textoResumen);
+            id('resumen').setAttribute('title', textoResumen.replace('<b>', '').replace('</b>', ''));
             textoResumen = textoResumen.slice(0, limite) + '...';
         }
         id('resumen').innerHTML = textoResumen;
