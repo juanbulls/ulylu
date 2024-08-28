@@ -109,7 +109,7 @@ function datearRegistros(d) {
         const limite = 100;
         if(textoResumen.length > limite) {
             id('resumen').setAttribute('title', textoResumen);
-            textoResumen = textoResumen.slice(limite) + '...';
+            textoResumen = textoResumen.slice(0, limite) + '...';
         }
         id('resumen').innerHTML = textoResumen;
     }
