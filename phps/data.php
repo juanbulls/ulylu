@@ -33,7 +33,7 @@ if (!is_null($orden)) {
     $patronResumen = "";
     if(!is_null($patron)) { $patronResumen = "WHERE Cliente_r LIKE '%$patron%'"; }
 
-    $resumen_result = q("SELECT $orden, SUM(Cantidad) as Cantidad FROM $base.$tabla $patronResumen GROUP BY $orden;");
+    $resumen_result = q("SELECT $orden, SUM(Cantidad) as Cantidad FROM $base.$tabla $patronResumen GROUP BY $orden ORDER BY $orden;");
     $resumen = [];
     while ($row = mysqli_fetch_assoc($resumen_result)) {
         $resumen[] = $row;
