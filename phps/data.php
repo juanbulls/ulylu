@@ -30,12 +30,12 @@ $response = [
 ];
 
 if (!is_null($orden)) {
-    $resumes_result = q("SELECT $orden, SUM(Cantidad) as Cantidad FROM $base.$tabla GROUP BY $orden;");
-    $resumes = [];
-    while ($row = mysqli_fetch_assoc($resumes_result)) {
-        $resumes[] = $row;
+    $resumen_result = q("SELECT $orden, SUM(Cantidad) as Cantidad FROM $base.$tabla GROUP BY $orden;");
+    $resumen = [];
+    while ($row = mysqli_fetch_assoc($resumen_result)) {
+        $resumen[] = $row;
     }
-    $response['resumes'] = $resumes;
+    $response['resumen'] = $resumen;
 }
 
 header('Content-Type: application/json');
