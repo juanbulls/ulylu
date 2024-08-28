@@ -90,6 +90,16 @@ function datearGrilla(d) {
         
         id('headerDataVieja').appendChild(th); // Encabezado
     });
+
+    // Si hay resumentes se llenan
+    if (d.resumen) {
+        let textoResumen = '<b>Totales: </b>';
+        const llaves = Object.keys(d.resumen[0]);
+        d.resumen.forEach((item) => {
+            textoResumen += item[llaves[0]] + " $" + item[llaves[1]].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " <b>|</b> ";
+        });
+        id('resumen').innerHTML = textoResumen.slice(0, -6);
+    }
     
     // Registros historia
     datearRegistros(d);

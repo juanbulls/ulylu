@@ -111,6 +111,12 @@ tbody > tr:nth-of-type(odd) {
 .botonesNuevos td{
 	border: none;
 }
+#resumen{
+	display: inline;
+	color: black;
+	padding-bottom: 10px;
+	font-size: 0.8em;
+}
 
 #popup{
 	position: fixed;

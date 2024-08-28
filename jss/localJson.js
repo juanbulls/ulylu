@@ -394,7 +394,21 @@ const local = {
                 Descripcion: "ARETES - JOYARE 21696",
                 Comentario: null,
                 modificado: "2024-05-29 19:37:19"
-            }]
+            }],
+            resumen: [
+                {
+                    "Cuenta_e": "A",
+                    "Cantidad": "404090171"
+                },
+                {
+                    "Cuenta_e": "U",
+                    "Cantidad": "103421212"
+                },
+                {
+                    "Cuenta_e": "Q",
+                    "Cantidad": "3126918"
+                },
+            ]
         }
     },
     subData: {
