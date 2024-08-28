@@ -90,8 +90,14 @@ function datearGrilla(d) {
         
         id('headerDataVieja').appendChild(th); // Encabezado
     });
+    
+    // Registros historia
+    datearRegistros(d);
+}
 
+function datearRegistros(d) {
     // Si hay resumentes se llenan
+    id('resumen').innerHTML = '';
     if (d.resumen) {
         let textoResumen = '<b>Totales: </b>';
         const llaves = Object.keys(d.resumen[0]);
@@ -100,12 +106,8 @@ function datearGrilla(d) {
         });
         id('resumen').innerHTML = textoResumen.slice(0, -6);
     }
-    
-    // Registros historia
-    datearRegistros(d);
-}
 
-function datearRegistros(d) {
+    // Datos
     d.data.forEach((f) => {
         // Llenar Linea, repetido en 2 partes
         const tr = document.createElement('tr');
