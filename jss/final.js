@@ -104,7 +104,14 @@ function datearRegistros(d) {
         d.resumen.forEach((item) => {
             textoResumen += item[llaves[0]] + " $" + item[llaves[1]].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " <b>|</b> ";
         });
-        id('resumen').innerHTML = textoResumen.slice(0, -6);
+        textoResumen = textoResumen.slice(0, -6);
+
+        const limite = 120;
+        if(textoResumen.length > limite) {
+            id('resumen').setAttribute('title', textoResumen);
+            textoResumen = textoResumen.slice(limite) + '...';
+        }
+        id('resumen').innerHTML = textoResumen;
     }
 
     // Datos
