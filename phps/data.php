@@ -30,7 +30,7 @@ $response = [
 ];
 
 if (!is_null($orden)) {
-    $resumes_result = q("SELECT $orden, SUM(Cantidad) FROM $base.$tabla GROUP BY $orden;");
+    $resumes_result = q("SELECT $orden, SUM(Cantidad) as Cantidad FROM $base.$tabla GROUP BY $orden;");
     $resumes = [];
     while ($row = mysqli_fetch_assoc($resumes_result)) {
         $resumes[] = $row;
