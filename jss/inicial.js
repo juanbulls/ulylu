@@ -19,3 +19,15 @@ function ajax(archivo, variables=null){
         req.send();
     });
 }
+
+function getUrlParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+function setUrlParam(param, value, withHistory = true) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(param, value);
+    if (withHistory) {
+        window.history.pushState({}, '', url);
+    }
+}

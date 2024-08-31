@@ -13,6 +13,13 @@ async function esperarEscritura(elmnt) {
     return patronAnterior;
 }
 
+function cambiarTabla(tabla){
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.searchParams.set('tabla', tabla);
+    window.location.href = url.toString();
+}
+
 let filtrando = false; // se activa en el filtro
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {

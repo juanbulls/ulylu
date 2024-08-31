@@ -31,6 +31,27 @@ h1{
 	color: white;
 	margin: 0;
 }
+#empresa{
+	color: white;
+	font-size: 1.2em;
+	margin: 10px;
+	margin-left: 0;
+	margin-right: 0;
+}
+#tabla{
+	color: white;
+	background-color: #a83e3e;
+	font-size: 1.2em;
+	margin-left: 5px;
+	font-family: Futura, sans-serif;
+	padding: 0;
+	margin-top: 3px;
+	border: none;
+}
+#tabla:hover{
+	background-color: black;
+	cursor: pointer;
+}
 #pj{
 	color:rgb(78, 58, 255);
 }
@@ -42,6 +63,8 @@ button{
 	background: #a83e3e;
 	color: white;
 	cursor: pointer;
+	font-family: Futura, sans-serif;
+	font-size: 1em
 }
 button:hover{
 	background-color: #000000;
