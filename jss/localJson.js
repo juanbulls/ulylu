@@ -406,40 +406,253 @@ const local = {
             }],
         },
         clientes: {
-            cols: ["Nombre"],
+            cols: [
+                "Nombre",
+                "A Total_e",
+                "U Total_e",
+                "Q Total_e"
+            ],
             data: [
-                {Nombre: 'Ruiz Juan'},
-                {Nombre: 'Alfonzo Lopez'},
-                {Nombre: 'Javier Casalles'},
-                {Nombre: 'Manuel Quistal'},
-                {Nombre: 'Javier Ortiz'},
-                {Nombre: 'David Mendoza'},
-                {Nombre: 'Kaleb Fernandez'},
-                {Nombre: 'Fernando Bautista'},
-                {Nombre: 'Sergei Zhamoitin'},
-                {Nombre: 'Maximiliano Alvarez'},
-                {Nombre: 'Gabriel Cure'},
-                {Nombre: 'Santiago Suarez'},
-                {Nombre: 'Nicholas Pickthall'},
-                {Nombre: 'Renzo Piza'},
-                {Nombre: 'Jorge Umaña'},
-                {Nombre: 'Woods Staton'},
-                {Nombre: 'Woods Staton'},
-                {Nombre: 'Willie Hollander'},
-                {Nombre: 'William Goldberg'},
-                {Nombre: 'Walter Kolm'},
-                {Nombre: 'Van Reali LLC'},
-                {Nombre: 'Trimex Purchasing LLC'},
-                {Nombre: 'Todd Haber'},
-                {Nombre: 'Tobar y Tobar'},
-                {Nombre: 'Thomas Greg and Sons FZCO'},
-                {Nombre: 'Teton Mountain Time LLC'},
-                {Nombre: 'Test Customer'},
-                {Nombre: 'Stanley Rattner'},
-                {Nombre: 'Sofia Vergara Enterprises'},
-                {Nombre: 'Shannon Karim'},
-                {Nombre: 'Serafino Iacano'},
-                {Nombre: 'Seneca Medical Group'},
+                {
+                    "Nombre": "Ruiz Juan",
+                    "A Total_e": "1234",
+                    "U Total_e": "5678",
+                    "Q Total_e": "9101"
+                },
+                {
+                    "Nombre": "Alfonzo Lopez",
+                    "A Total_e": "2345",
+                    "U Total_e": "6789",
+                    "Q Total_e": "1011"
+                },
+                {
+                    "Nombre": "Javier Casalles",
+                    "A Total_e": "3456",
+                    "U Total_e": "7890",
+                    "Q Total_e": "1213"
+                },
+                {
+                    "Nombre": "Manuel Quistal",
+                    "A Total_e": "4567",
+                    "U Total_e": "8901",
+                    "Q Total_e": "1415"
+                },
+                {
+                    "Nombre": "Javier Ortiz",
+                    "A Total_e": "5678",
+                    "U Total_e": "9012",
+                    "Q Total_e": "1617"
+                },
+                {
+                    "Nombre": "David Mendoza",
+                    "A Total_e": "6789",
+                    "U Total_e": "1012",
+                    "Q Total_e": "1819"
+                },
+                {
+                    "Nombre": "Kaleb Fernandez",
+                    "A Total_e": "7890",
+                    "U Total_e": "1123",
+                    "Q Total_e": "2021"
+                },
+                {
+                    "Nombre": "Fernando Bautista",
+                    "A Total_e": "8901",
+                    "U Total_e": "1234",
+                    "Q Total_e": "2223"
+                },
+                {
+                    "Nombre": "Sergei Zhamoitin",
+                    "A Total_e": "9012",
+                    "U Total_e": "1345",
+                    "Q Total_e": "2425"
+                },
+                {
+                    "Nombre": "Maximiliano Alvarez",
+                    "A Total_e": "1012",
+                    "U Total_e": "1456",
+                    "Q Total_e": "2627"
+                },
+                {
+                    "Nombre": "Gabriel Cure",
+                    "A Total_e": "1123",
+                    "U Total_e": "1567",
+                    "Q Total_e": "2829"
+                },
+                {
+                    "Nombre": "Santiago Suarez",
+                    "A Total_e": "1234",
+                    "U Total_e": "1678",
+                    "Q Total_e": "3031"
+                },
+                {
+                    "Nombre": "Nicholas Pickthall",
+                    "A Total_e": "1345",
+                    "U Total_e": "1789",
+                    "Q Total_e": "3233"
+                },
+                {
+                    "Nombre": "Renzo Piza",
+                    "A Total_e": "1456",
+                    "U Total_e": "1901",
+                    "Q Total_e": "3435"
+                },
+                {
+                    "Nombre": "Jorge Umaña",
+                    "A Total_e": "1567",
+                    "U Total_e": "2012",
+                    "Q Total_e": "3637"
+                },
+                {
+                    "Nombre": "Woods Staton",
+                    "A Total_e": "1678",
+                    "U Total_e": "2123",
+                    "Q Total_e": "3839"
+                },
+                {
+                    "Nombre": "Woods Staton",
+                    "A Total_e": "1789",
+                    "U Total_e": "2234",
+                    "Q Total_e": "4041"
+                },
+                {
+                    "Nombre": "Willie Hollander",
+                    "A Total_e": "1901",
+                    "U Total_e": "2345",
+                    "Q Total_e": "4243"
+                },
+                {
+                    "Nombre": "William Goldberg",
+                    "A Total_e": "2012",
+                    "U Total_e": "2456",
+                    "Q Total_e": "4445"
+                },
+                {
+                    "Nombre": "Walter Kolm",
+                    "A Total_e": "2123",
+                    "U Total_e": "2567",
+                    "Q Total_e": "4647"
+                },
+                {
+                    "Nombre": "Van Reali LLC",
+                    "A Total_e": "2234",
+                    "U Total_e": "2678",
+                    "Q Total_e": "4849"
+                },
+                {
+                    "Nombre": "Trimex Purchasing LLC",
+                    "A Total_e": "2345",
+                    "U Total_e": "2789",
+                    "Q Total_e": "5051"
+                },
+                {
+                    "Nombre": "Todd Haber",
+                    "A Total_e": "2456",
+                    "U Total_e": "2901",
+                    "Q Total_e": "5253"
+                },
+                {
+                    "Nombre": "Tobar y Tobar",
+                    "A Total_e": "2567",
+                    "U Total_e": "3012",
+                    "Q Total_e": "5455"
+                },
+                {
+                    "Nombre": "Thomas Greg and Sons FZCO",
+                    "A Total_e": "2678",
+                    "U Total_e": "3123",
+                    "Q Total_e": "5657"
+                },
+                {
+                    "Nombre": "Teton Mountain Time LLC",
+                    "A Total_e": "2789",
+                    "U Total_e": "3234",
+                    "Q Total_e": "5859"
+                },
+                {
+                    "Nombre": "Test Customer",
+                    "A Total_e": "2901",
+                    "U Total_e": "3345",
+                    "Q Total_e": "6061"
+                },
+                {
+                    "Nombre": "Stanley Rattner",
+                    "A Total_e": "3012",
+                    "U Total_e": "3456",
+                    "Q Total_e": "6263"
+                },
+                {
+                    "Nombre": "Sofia Vergara Enterprises",
+                    "A Total_e": "3123",
+                    "U Total_e": "3567",
+                    "Q Total_e": "6465"
+                },
+                {
+                    "Nombre": "Shannon Karim",
+                    "A Total_e": "3234",
+                    "U Total_e": "3678",
+                    "Q Total_e": "6667"
+                },
+                {
+                    "Nombre": "Serafino Iacano",
+                    "A Total_e": "3345",
+                    "U Total_e": "3789",
+                    "Q Total_e": "6869"
+                },
+                {
+                    "Nombre": "Seneca Medical Group",
+                    "A Total_e": "3456",
+                    "U Total_e": "3901",
+                    "Q Total_e": "7071"
+                },
+                {
+                    "Nombre": "Kaleb King",
+                    "A Total_e": "3567",
+                    "U Total_e": "4012",
+                    "Q Total_e": "7273"
+                },
+                {
+                    "Nombre": "Jake White",
+                    "A Total_e": "3678",
+                    "U Total_e": "4123",
+                    "Q Total_e": "7475"
+                },
+                {
+                    "Nombre": "Chris Brown",
+                    "A Total_e": "3789",
+                    "U Total_e": "4234",
+                    "Q Total_e": "7677"
+                },
+                {
+                    "Nombre": "Adam Smith",
+                    "A Total_e": "3901",
+                    "U Total_e": "4345",
+                    "Q Total_e": "7879"
+                },
+                {
+                    "Nombre": "Michael Johnson",
+                    "A Total_e": "4012",
+                    "U Total_e": "4456",
+                    "Q Total_e": "8081"
+                },
+                {
+                    "Nombre": "James Wilson",
+                    "A Total_e": "4123",
+                    "U Total_e": "4567",
+                    "Q Total_e": "8283"
+                },
+                {
+                    "Nombre": "Daniel Davis",
+                    "A Total_e": "4234",
+                    "U Total_e": "4678",
+                    "Q Total_e": "8485"
+                },
+                {
+                    "Nombre": "Matthew Miller",
+                    "A Total_e": "4345",
+                    "U Total_e": "4789",
+                    "Q Total_e": "8687"
+                }
             ]
         }
     },
