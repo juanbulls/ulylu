@@ -20,6 +20,12 @@ function cambiarTabla(tabla){
     window.location.href = url.toString();
 }
 
+if(id('tabla').value == 'notas'){
+    id('buscador').style.visibility = 'visible';
+} else {
+    id('buscador').style.visibility = 'hidden';
+}
+
 let filtrando = false; // se activa en el filtro
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
