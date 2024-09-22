@@ -45,8 +45,8 @@ const el = {
     relBlur: function() {
         setTimeout(() => {
             const aei = document.activeElement.id;
-            if (aei == '' || aei.slice(-2) == '_d') {
-                document.getElementById('popup').style.display = 'none';
+            if (aei.slice(-2, -1) !== '_') {
+                id('popup').style.display = 'none';
             }
         }, blurDelay);
     },
