@@ -405,7 +405,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             }],
         },
-        clientes: {
+        clientes_v: {
             cols: [
                 "Nombre",
                 "A Total_e",

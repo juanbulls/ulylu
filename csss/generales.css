@@ -79,6 +79,9 @@ table {
 	border-collapse: collapse;
 	width: 100%;
 }
+.nuevaData td:has(input:focus) {
+    border-bottom: 2px solid rgb(255, 161, 0);
+}
 td, th {
 	text-align: left;
 	padding: 8px;
@@ -149,7 +152,7 @@ tbody > tr:nth-of-type(odd) {
 	height: var(--altoPopup);
 	width: var(--largoPopup);
 	background-color: #a83e3e;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 6px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Loader Spinners */
