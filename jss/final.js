@@ -122,7 +122,7 @@ function datearRegistros(d) {
         textoResumen = textoResumen.slice(0, -6);
         if (hayQ){
             const balance = d.resumen.reduce((sum, { Cuenta_e, Cantidad }) => 
-                sum + (Cuenta_e === 'Q' ? Number(Cantidad) * 4000 : Number(Cantidad)), 0);
+                sum + (Cuenta_e === 'Q' ? Number(Cantidad) * id('tasa').value : Number(Cantidad)), 0);
             textoResumen += "<b> Balance: </b> $" + balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
