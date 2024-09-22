@@ -27,7 +27,7 @@ const el = {
         el.sel = -1;
         const celda = event.target.getBoundingClientRect();
         const tabla = event.target.placeholder.toLowerCase();
-        id('popup').style.top = celda.top + 27 + 'px';
+        id('popup').style.top = celda.top + 32 + 'px';
         id('popup').style.left = celda.left + 'px';
 
         el.popup(tabla, event.target); // usa pedir data, usa ajax, tiene delay
@@ -45,7 +45,7 @@ const el = {
     relBlur: function() {
         setTimeout(() => {
             const aei = document.activeElement.id;
-            if (aei.slice(-2, -1) !== '_') {
+            if (aei.slice(-2) !== '_r') {
                 id('popup').style.display = 'none';
             }
         }, blurDelay);
