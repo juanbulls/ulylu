@@ -114,12 +114,19 @@ function datearRegistros(d) {
     if (d.resumen) {
         let textoResumen = '<b>Totales: </b>';
         const llaves = Object.keys(d.resumen[0]);
+        let hayQ = false;
         d.resumen.forEach((item) => {
             textoResumen += item[llaves[0]] + " $" + item[llaves[1]].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " <b>|</b> ";
+            if (item[llaves[0]] == "Q") hayQ = true;
         });
         textoResumen = textoResumen.slice(0, -6);
+        if (hayQ){
+            const balance = d.resumen.reduce((sum, { Cuenta_e, Cantidad }) => 
+                sum + (Cuenta_e === 'Q' ? Number(Cantidad) * 4000 : Number(Cantidad)), 0);
+            textoResumen += "<b> Balance: </b> $" + balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
 
-        const limite = 80;
+        const limite = 110;
         if(textoResumen.length > limite) {
             id('resumen').setAttribute('title', textoResumen.replace(new RegExp('<b>', 'g'), '').replace(new RegExp('</b>', 'g'), ''));
             textoResumen = textoResumen.slice(0, limite) + '...';

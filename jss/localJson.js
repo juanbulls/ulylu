@@ -404,6 +404,20 @@ const local = {
                 Comentario: null,
                 modificado: "2024-05-29 19:37:19"
             }],
+            resumen: [
+                {
+                  "Cuenta_e": "A",
+                  "Cantidad": "1000"
+                },
+                {
+                  "Cuenta_e": "U",
+                  "Cantidad": "-4993400"
+                },
+                {
+                  "Cuenta_e": "Q",
+                  "Cantidad": "230"
+                }
+              ]
         },
         clientes_v: {
             cols: [
