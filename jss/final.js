@@ -111,7 +111,7 @@ function datearGrilla(d) {
 function datearRegistros(d) {
     // Si hay resumentes se llenan
     id('resumen').innerHTML = '';
-    id('tasaWrapper').style.visibility = 'none';
+    id('tasaWrapper').style.display = 'none';
 
     if (d.resumen) {
         let textoResumen = '<b>Totales: </b>';
