@@ -108,6 +108,7 @@ function datearGrilla(d) {
     datearRegistros(d);
 }
 
+let resumen = null;
 function datearRegistros(d) {
     // Si hay resumentes se llenan
     id('resumen').innerHTML = '';
@@ -131,9 +132,12 @@ function datearRegistros(d) {
     });
 
     
-    if (d.resumen) imprimirResumen(d.resumen);
+    if (d.resumen) {
+        resumen = d.resumen;
+        imprimirResumen();
+    }
 }
-function imprimirResumen(resumen) {
+function imprimirResumen() {
     let textoResumen = '<b>Totales: </b>';
     const llaves = Object.keys(resumen[0]);
     let hayQ = false;
@@ -158,6 +162,10 @@ function imprimirResumen(resumen) {
     id('resumen').innerHTML = textoResumen;
 
     id('tasaWrapper').style.display = 'inline';
+}
+function cambioTRM(){
+    imprimirResumen();
+    
 }
 
 function datearPopup(d) {
