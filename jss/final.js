@@ -111,6 +111,8 @@ function datearGrilla(d) {
 function datearRegistros(d) {
     // Si hay resumentes se llenan
     id('resumen').innerHTML = '';
+    id('tasaWrapper').style.visibility = 'none';
+
     if (d.resumen) {
         let textoResumen = '<b>Totales: </b>';
         const llaves = Object.keys(d.resumen[0]);
@@ -132,6 +134,8 @@ function datearRegistros(d) {
             textoResumen = textoResumen.slice(0, limite) + '...';
         }
         id('resumen').innerHTML = textoResumen;
+
+        id('tasaWrapper').style.display = 'block';
     }
 
     // Datos
