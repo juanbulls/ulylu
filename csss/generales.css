@@ -141,6 +141,7 @@ tbody > tr:nth-of-type(odd) {
 	display: inline;
 	color: black;
 	margin: 20px;
+	margin-right: 10px;
 	font-size: 0.8em;
 }
 
