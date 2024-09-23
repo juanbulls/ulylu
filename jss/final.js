@@ -112,6 +112,7 @@ function datearRegistros(d) {
     // Si hay resumentes se llenan
     id('resumen').innerHTML = '';
     id('tasaWrapper').style.display = 'none';
+    id('resumen').removeAttribute('title');
 
     if (d.resumen) {
         let textoResumen = '<b>Totales: </b>';
