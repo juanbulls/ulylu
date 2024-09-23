@@ -114,25 +114,6 @@ function datearRegistros(d) {
     id('tasaWrapper').style.display = 'none';
     id('resumen').removeAttribute('title');
 
-    if (d.resumen) {
-        let textoResumen = '<b>Totales: </b>';
-        const llaves = Object.keys(d.resumen[0]);
-        let hayQ = false;
-        d.resumen.forEach((item) => {
-            textoResumen += item[llaves[0]] + " $" + item[llaves[1]].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " <b>|</b> ";
-            if (item[llaves[0]] == "Q") hayQ = true;
-        });
-        textoResumen = textoResumen.slice(0, -6);
-        if (hayQ){
-            let balance = d.resumen.reduce((sum, { Cuenta_e, Cantidad }) => 
-                sum + (Cuenta_e === 'Q' ? Number(Cantidad) * id('tasa').value : Number(Cantidad)), 0);
-            balance = Math.round(balance);
-            textoResumen += "<b> Balance: </b> $" + balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        imprimirResumen(textoResumen);
-    }
-
     // Datos
     d.data.forEach((f) => {
         // Llenar Linea, repetido en 2 partes
@@ -148,15 +129,33 @@ function datearRegistros(d) {
 
         id('dataVieja').appendChild(tr);
     });
+
+    
+    if (d.resumen) imprimirResumen(d.resumen);
 }
-function imprimirResumen(texto) {
-    let limite = 105;
-    if(texto.length > limite) {
-        if ( ['<b', '/b', 'b>', '|'].includes(texto.slice(limite-1, limite+1) ) ) limite -= 3;
-        id('resumen').setAttribute('title', texto.replace(new RegExp('<b>', 'g'), '').replace(new RegExp('</b>', 'g'), ''));
-        texto = texto.slice(0, limite) + '...';
+function imprimirResumen(resumen) {
+    let textoResumen = '<b>Totales: </b>';
+    const llaves = Object.keys(resumen[0]);
+    let hayQ = false;
+    resumen.forEach((item) => {
+        textoResumen += item[llaves[0]] + " $" + item[llaves[1]].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " <b>|</b> ";
+        if (item[llaves[0]] == "Q") hayQ = true;
+    });
+    textoResumen = textoResumen.slice(0, -6);
+    if (hayQ){
+        let balance = resumen.reduce((sum, { Cuenta_e, Cantidad }) => 
+            sum + (Cuenta_e === 'Q' ? Number(Cantidad) * id('tasa').value : Number(Cantidad)), 0);
+        balance = Math.round(balance);
+        textoResumen += "<b> Balance: </b> $" + balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-    id('resumen').innerHTML = texto;
+
+    let limite = 105;
+    if(textoResumen.length > limite) {
+        if ( ['<b', '/b', 'b>', '|'].includes(textoResumen.slice(limite-1, limite+1) ) ) limite -= 3;
+        id('resumen').setAttribute('title', textoResumen.replace(new RegExp('<b>', 'g'), '').replace(new RegExp('</b>', 'g'), ''));
+        textoResumen = textoResumen.slice(0, limite) + '...';
+    }
+    id('resumen').innerHTML = textoResumen;
 
     id('tasaWrapper').style.display = 'inline';
 }
