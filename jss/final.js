@@ -135,7 +135,7 @@ function datearRegistros(d) {
         }
         id('resumen').innerHTML = textoResumen;
 
-        id('tasaWrapper').style.display = 'block';
+        id('tasaWrapper').style.display = 'inline';
     }
 
     // Datos
