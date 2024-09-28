@@ -165,7 +165,7 @@ function imprimirResumen() {
 }
 function cambioTRM(){
     imprimirResumen();
-    
+    // TODO: actualizar setup, param TRM , valor Valor
 }
 
 function datearPopup(d) {
@@ -246,14 +246,6 @@ function filtrar(columna) {
     }
 }
 
-// Carga inicial de datos
-dataSpinner.mostrar();
-pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
-    datearGrilla(r);
-    dataSpinner.ocultar();
-    
-});
-
 // Funciones botones
 function limpiarNuevaData(){
     var inputs = document.querySelectorAll('.nuevaData input');
@@ -297,3 +289,11 @@ function registrar(){
     });
     
 }
+
+// Carga inicial de datos
+dataSpinner.mostrar();
+pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
+    datearGrilla(r);
+    dataSpinner.ocultar();
+    
+});
