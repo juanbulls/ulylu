@@ -4,7 +4,6 @@ function id(ident){return document.getElementById(ident);}
 // Validador de local o servidor
 var esLocal = false; if (window.location.protocol == 'file:') { esLocal = true; }
 
-// Ajax
 function ajax(archivo, variables=null){
     return new Promise(function(resolve) {
         var req = new XMLHttpRequest();
@@ -24,6 +23,7 @@ function getUrlParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
+
 function setUrlParam(param, value, withHistory = true) {
     const url = new URL(window.location.href);
     url.searchParams.set(param, value);

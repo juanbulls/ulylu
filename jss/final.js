@@ -291,9 +291,25 @@ function registrar(){
 }
 
 // Carga inicial de datos
-dataSpinner.mostrar();
-pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
-    datearGrilla(r);
-    dataSpinner.ocultar();
+const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+if (token || esLocal) {
+    id('loggeo').style.display = 'none';
+    titular();
+    cargaInicial();
+}
+function cargaInicial() {
+    dataSpinner.mostrar();
+    pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
+        datearGrilla(r);
+        dataSpinner.ocultar();
+    });
+}
+
+function logear() {
+    // Pedir acceso
     
-});
+    pedirData('acceso', `email=${id('email')}&pass=${id('pass')}`).then(r => {
+
+    });
+
+}

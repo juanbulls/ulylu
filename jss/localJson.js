@@ -6,9 +6,11 @@ if(bdTabla == null){
 }else{
     id('tabla').value = bdTabla;
 }
-document.title = 'ulylu | ' 
-    + bdBase.charAt(0).toUpperCase() + bdBase.slice(1) + ' - '
-    + bdTabla.charAt(0).toUpperCase() + bdTabla.slice(1);
+function titular() {
+    document.title = 'ulylu | ' 
+        + bdBase.charAt(0).toUpperCase() + bdBase.slice(1) + ' - '
+        + bdTabla.charAt(0).toUpperCase() + bdTabla.slice(1);
+}
 
 const local = {
     data: {
