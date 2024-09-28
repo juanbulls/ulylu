@@ -61,7 +61,7 @@ body{
 	border-bottom: 2px solid rgb(255 161 0);
 }
 #loggeo input::placeholder {
-	color: rgb(255, 217, 152);
+	color: rgb(175, 150, 105);
 }
 #loggeo a {
 	color: rgb(255 161 0);

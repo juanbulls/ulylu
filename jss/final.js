@@ -306,7 +306,7 @@ if (token || esLocal) {
     cargaInicial();
 }
 
-function logear() {
+function loggear() {
     // Pedir acceso
     let mail = id('email').value;
     if (mail.indexOf('@') == -1) mail=mail+'@bauer.com.co';
