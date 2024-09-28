@@ -291,13 +291,8 @@ function registrar(){
 }
 
 // Carga inicial de datos
-const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
-if (token || esLocal) {
-    id('loggeo').style.display = 'none';
-    titular();
-    cargaInicial();
-}
 function cargaInicial() {
+    id('loggeo').style.display = 'none';
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
         datearGrilla(r);
@@ -305,11 +300,22 @@ function cargaInicial() {
     });
 }
 
+const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+if (token || esLocal) {
+    titular();
+    cargaInicial();
+}
+
 function logear() {
     // Pedir acceso
-    
-    pedirData('acceso', `email=${id('email')}&pass=${id('pass')}`).then(r => {
-
+    let mail = id('email').value;
+    if (mail.indexOf('@') == -1) mail=mail+'@bauer.com.co';
+    pedirData('acceso', `base=${bdBase}&email=${mail}&pass=${id('pass').value}`).then(r => {
+        if (r.error) {
+            alert("Combinación correo clave incorrecta")
+        } else {
+            document.cookie = 'ulyluToken=' + r.token;
+            cargaInicial();
+        }
     });
-
 }
