@@ -5,7 +5,7 @@ $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[
 $email = isset($_REQUEST["email"]) ? $_REQUEST["email"] : (isset($argv[2]) ? $argv[2] : null);
 $pass = isset($_REQUEST["pass"]) ? $_REQUEST["pass"] : (isset($argv[3]) ? $argv[3] : null);
 
-$data_result = q("SELECT Activo FROM $base.usuarios WHERE Email=$email AND Hash=$pass;");
+$data_result = q("SELECT Activo FROM $base.usuarios WHERE Email='$email' AND Hash='$pass';");
 
 // Tokenize
 $data = $data_result ? $data_result[0] : null;
