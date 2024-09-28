@@ -14,7 +14,7 @@ if ($data_result === null) {
     ];
 } else {
     $token = bin2hex(random_bytes(23));
-    $insert_result = q("INSERT INTO $base.usxAccesos (`hash`, email, activo) VALUES ($token, $email, 1)");
+    $insert_result = q("INSERT INTO $base.uszAccesos (`hash`, email, activo) VALUES ($token, $email, 1)");
     $response = [
         "token" => $token
     ];
