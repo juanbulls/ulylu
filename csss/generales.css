@@ -60,6 +60,9 @@ body{
 #loggeo input:focus {
 	border-bottom: 2px solid rgb(255 161 0);
 }
+#loggeo input::placeholder {
+	color: rgb(255, 217, 152);
+}
 #loggeo a {
 	color: rgb(255 161 0);
 }
