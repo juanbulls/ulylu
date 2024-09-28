@@ -8,7 +8,7 @@ $pass = isset($_REQUEST["pass"]) ? $_REQUEST["pass"] : (isset($argv[3]) ? $argv[
 $data_result = q("SELECT Activo FROM $base.usuarios WHERE Email='$email' AND Hash='$pass' AND Activo='siclas';");
 
 // Tokenize
-if ($data_result === null) {
+if (mysqli_num_rows($data_result) > 0) {
     $response = [
         "error" => "invalidado"
     ];
