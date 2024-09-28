@@ -9,7 +9,7 @@ $data_result = q("SELECT Activo FROM $base.usuarios WHERE Email='$email' AND Has
 
 // Tokenize
 echo "SELECT Activo FROM $base.usuarios WHERE Email='$email' AND Hash='$pass' AND Activo='siclas';";
-if (!$data_result) {
+if (mysqli_num_rows($data_result) == 0) {
     $response = [
         "error" => "invalidado"
     ];
