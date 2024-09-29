@@ -12,12 +12,10 @@ if (mysqli_num_rows($data_result) == 1) {
     $modificado = new DateTime($row['modificado']);
     $hace3meses = new DateTime();
     $hace3meses->modify('-90 days');
-    echo $modificado->format('Y-m-d');;
-    echo $hace3meses->format('Y-m-d');;
     if ($modificado < $hace3meses) {
         $response = [ "error" => "vencido" ];
     } else {
-        $actualizado = q("UPDATE $base.uszAccesos SET email = $usr;");
+        $actualizar = q("UPDATE $base.uszAccesos SET email = $usr;");
     }
 } else {
     $response = [ "error" => "invalidado" ];
