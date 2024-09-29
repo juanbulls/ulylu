@@ -291,6 +291,7 @@ function registrar(){
 }
 
 // Cosas asociadas a la seguirdad
+
 dataSpinner.mostrar();
 function cargaInicial() {
     id('loggeo').style.display = 'none';
@@ -312,7 +313,6 @@ function galleta(dias, t=token) {
 // Token existente
 if (!esLocal) {
     if (token){
-        id('loggeo').style.display = 'none';
         pedirData('validacion', `base=${bdBase}&token=${token}`).then(r => {
             if (r.email) {
                 document.cookie = galleta(90); // 90 dias, 3 meses +/-
@@ -322,6 +322,8 @@ if (!esLocal) {
                 alert('Último acceso hace más de 3 meses.');
             }
         });
+    } else {
+        id('loggeo').style.display = 'block';
     }
 } else {
     cargaInicial();
