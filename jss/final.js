@@ -311,7 +311,7 @@ function galleta(dias, t=token) {
 // Token existente
 if (!esLocal) {
     if (token){
-        pedirData('validacion', `token=${token}`).then(r => {
+        pedirData('validacion', `base=${bdBase}&token=${token}`).then(r => {
             if (r.usuario) {
                 document.cookie = galleta(90); // 90 dias, 3 meses +/-
                 cargaInicial();
