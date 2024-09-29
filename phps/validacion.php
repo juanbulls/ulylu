@@ -10,12 +10,13 @@ if (mysqli_num_rows($data_result) == 1) {
     $row = mysqli_fetch_assoc($data_result);
     $modificado = new DateTime($row['modificado']);
     $email = $row['email'];
+    $id = $row['id'];
     $hace3meses = new DateTime();
     $hace3meses->modify('-90 days');
     if ($modificado < $hace3meses) {
         $response = [ "error" => "vencido" ];
     } else {
-        $actualizar = q("UPDATE $base.uszAccesos SET hash = '$token';");
+        $actualizar = q("UPDATE $base.uszAccesos SET hash = '$token' WHERE id=$id;");
         $response = [ "email" => $email ];
     }
 } else {
