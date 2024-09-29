@@ -312,7 +312,7 @@ function galleta(dias, t=token) {
 if (!esLocal) {
     if (token){
         pedirData('validacion', `base=${bdBase}&token=${token}`).then(r => {
-            if (r.usuario) {
+            if (r.email) {
                 document.cookie = galleta(90); // 90 dias, 3 meses +/-
                 cargaInicial();
             } else {
