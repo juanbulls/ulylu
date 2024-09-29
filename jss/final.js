@@ -309,16 +309,18 @@ function galleta(dias, t=token) {
     return `ulyluToken=${token}; expires=${d.toUTCString()}`;
 }
 // Token existente
-if (!esLocal && token) {
-    pedirData('validacion', `token=${token}`).then(r => {
-        if (r.usuario) {
-            document.cookie = galleta(90); // 90 dias, 3 meses +/-
-            cargaInicial();
-        } else {
-            document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
-            alert('Último acceso hace más de 3 meses.');
-        }
-    });
+if (!esLocal) {
+    if (token){
+        pedirData('validacion', `token=${token}`).then(r => {
+            if (r.usuario) {
+                document.cookie = galleta(90); // 90 dias, 3 meses +/-
+                cargaInicial();
+            } else {
+                document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+                alert('Último acceso hace más de 3 meses.');
+            }
+        });
+    }
 } else {
     cargaInicial();
 }
