@@ -302,7 +302,7 @@ function cargaInicial() {
         dataSpinner.ocultar();
     });
 }
-const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+let token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
 function galleta(dias, t=token) {
     const d = new Date();
     d.setTime(d.getTime() + ( dias *24*60*60*1000));
@@ -334,6 +334,7 @@ function loggear() {
             alert("Combinación correo clave incorrecta")
         } else {
             document.cookie = galleta(90, r.token); // 90 dias, 3 meses +/-
+            token = r.token;
             cargaInicial();
         }
     });
