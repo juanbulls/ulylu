@@ -322,11 +322,17 @@ if (!esLocal) {
                 alert('Último acceso hace más de 3 meses.');
                 id('loggeo').style.display = 'flex';
                 dataSpinner.ocultar();
+                id('empresa').style.display = 'none';
+                id('tabla').style.display = 'none';
+                id('encabezado').style.paddingLeft = '0';
             }
         });
     } else {
         id('loggeo').style.display = 'flex';
         dataSpinner.ocultar();
+        id('empresa').style.display = 'none';
+        id('tabla').style.display = 'none';
+        id('encabezado').style.paddingLeft = '0';
     }
 } else {
     cargaInicial();

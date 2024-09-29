@@ -20,7 +20,6 @@ body{
     background-color: #a83e3e;
     height: var(--altoEncabezado);
 	width: 100%;
-	padding-left: 46%;
 }
 .contPrincipal{
 	width: min(100% - 2rem, 1100px);
