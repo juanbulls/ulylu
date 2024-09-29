@@ -324,7 +324,7 @@ if (!esLocal) {
                 dataSpinner.ocultar();
                 id('empresa').style.display = 'none';
                 id('tabla').style.display = 'none';
-                id('encabezado').style.paddingLeft = '0';
+                id('encabezado').style.paddingLeft = '46%';
             }
         });
     } else {
@@ -332,7 +332,7 @@ if (!esLocal) {
         dataSpinner.ocultar();
         id('empresa').style.display = 'none';
         id('tabla').style.display = 'none';
-        id('encabezado').style.paddingLeft = '0';
+        id('encabezado').style.paddingLeft = '46%';
     }
 } else {
     cargaInicial();
