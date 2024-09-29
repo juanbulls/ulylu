@@ -15,7 +15,7 @@ if (mysqli_num_rows($data_result) == 1) {
     if ($modificado < $hace3meses) {
         $response = [ "error" => "vencido" ];
     } else {
-        $actualizar = q("UPDATE $base.uszAccesos SET email = $usr;");
+        $actualizar = q("UPDATE $base.uszAccesos SET email = '$usr';");
     }
 } else {
     $response = [ "error" => "invalidado" ];
