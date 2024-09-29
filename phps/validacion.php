@@ -8,7 +8,7 @@ $token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[3]) ? $ar
 $data_result = q("SELECT * FROM $base.uszAccesos WHERE hash='$token' AND email='$usr';");
 
 if (mysqli_num_rows($data_result) == 1) {
-    $row = mysqli_fetch_assoc($cols_result);
+    $row = mysqli_fetch_assoc($data_result);
     $modificado = new DateTime($row['modificado']);
     $hace3meses = new DateTime();
     $hace3meses->modify('-90 days');
