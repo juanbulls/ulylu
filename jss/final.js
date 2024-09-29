@@ -290,22 +290,43 @@ function registrar(){
     
 }
 
-// Carga inicial de datos
+// Cosas asociadas a la seguirdad
 function cargaInicial() {
     id('loggeo').style.display = 'none';
+    id('empresa').style.display = 'block';
+    id('tabla').style.display = 'block';
+    id('encabezado').style.paddingLeft = '0';
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
         datearGrilla(r);
         dataSpinner.ocultar();
     });
 }
-
 const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+function galleta(dias, t=token) {
+    const d = new Date();
+    d.setTime(d.getTime() + ( dias *24*60*60*1000));
+    return `ulyluToken=${token}; expires=${d.toUTCString()}`;
+}
+// Token existente
 if (token || esLocal) {
-    titular();
+    if (!esLocal){
+        pedirData('validacion', `token=${token}`).then(r => {
+            if (r.usuario) {
+                document.cookie = galleta(90); // 90 dias, 3 meses +/-
+                cargaInicial();
+            } else {
+                document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+                alert('Último acceso hace más de 3 meses.');
+            }
+        });
+    } else {
+        cargaInicial();
+    }
+} else {
     cargaInicial();
 }
-
+titular();
 function loggear() {
     // Pedir acceso
     let mail = id('email').value;
@@ -314,7 +335,7 @@ function loggear() {
         if (r.error) {
             alert("Combinación correo clave incorrecta")
         } else {
-            document.cookie = 'ulyluToken=' + r.token;
+            document.cookie = galleta(90, r.token); // 90 dias, 3 meses +/-
             cargaInicial();
         }
     });
