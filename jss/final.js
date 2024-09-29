@@ -323,7 +323,8 @@ if (!esLocal) {
             }
         });
     } else {
-        id('loggeo').style.display = 'block';
+        id('loggeo').style.display = 'flex';
+        dataSpinner.ocultar;
     }
 } else {
     cargaInicial();
