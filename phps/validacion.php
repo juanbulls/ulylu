@@ -21,4 +21,6 @@ if (mysqli_num_rows($data_result) == 1) {
     $response = [ "error" => "invalidado" ];
 }
 
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
