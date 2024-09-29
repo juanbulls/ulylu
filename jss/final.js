@@ -306,7 +306,7 @@ const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken
 function galleta(dias, t=token) {
     const d = new Date();
     d.setTime(d.getTime() + ( dias *24*60*60*1000));
-    return `ulyluToken=${token}; expires=${d.toUTCString()}`;
+    return `ulyluToken=${t}; expires=${d.toUTCString()}`;
 }
 // Token existente
 if (!esLocal) {
