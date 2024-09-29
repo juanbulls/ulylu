@@ -5,7 +5,7 @@ $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[
 $usr = isset($_REQUEST["usr"]) ? $_REQUEST["usr"] : (isset($argv[2]) ? $argv[2] : null);
 $token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[3]) ? $argv[3] : null);
 
-$cols_result = q("SELECT * FROM $base.uszAccesos WHERE hash=$token AND email=$usr;");
+$cols_result = q("SELECT * FROM $base.uszAccesos WHERE hash='$token' AND email='$usr';");
 
 if (mysqli_num_rows($data_result) == 1) {
     $row = mysqli_fetch_assoc($cols_result);
