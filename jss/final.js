@@ -324,7 +324,7 @@ if (!esLocal) {
         });
     } else {
         id('loggeo').style.display = 'flex';
-        dataSpinner.ocultar;
+        dataSpinner.ocultar();
     }
 } else {
     cargaInicial();
