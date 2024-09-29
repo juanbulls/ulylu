@@ -320,6 +320,8 @@ if (!esLocal) {
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
                 alert('Último acceso hace más de 3 meses.');
+                id('loggeo').style.display = 'flex';
+                dataSpinner.ocultar();
             }
         });
     } else {
