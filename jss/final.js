@@ -346,3 +346,8 @@ function loggear() {
         }
     });
 }
+id('pass').addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      loggear();
+    }
+});
