@@ -10,4 +10,5 @@ function v() {
         exit;
     }
 }
+v();
 ?>
