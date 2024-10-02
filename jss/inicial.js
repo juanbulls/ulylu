@@ -5,7 +5,7 @@ function id(ident){return document.getElementById(ident);}
 var esLocal = false; if (window.location.protocol == 'file:') { esLocal = true; }
 
 // Cooike
-let token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
 function galleta(dias, t=token) {
     const d = new Date();
     d.setTime(d.getTime() + ( dias *24*60*60*1000));

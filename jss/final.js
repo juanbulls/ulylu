@@ -341,8 +341,8 @@ function loggear() {
             alert("Combinación correo clave incorrecta")
         } else {
             document.cookie = galleta(90, r.token); // 90 dias, 3 meses +/-
-            token = r.token;
-            cargaInicial();
+            location.reload();
+
         }
     });
 }
