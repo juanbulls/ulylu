@@ -307,7 +307,7 @@ function cargaInicial() {
 // Token existente
 if (!esLocal) {
     if (token){
-        pedirData('validacion', `base=${bdBase}&token=${token}`).then(r => {
+        pedirData('validacion', `base=${bdBase}`).then(r => {
             if (r.email) {
                 document.cookie = galleta(90); // 90 dias, 3 meses +/-
                 cargaInicial();
