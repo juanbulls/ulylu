@@ -1,6 +1,6 @@
 <?php
 include('marlene.php');
-function v() {
+function v($base) {
     $token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[1]) ? end($argv) : null);
     
     $data_result = q("SELECT * FROM $base.uszAccesos WHERE hash='$token';");
@@ -10,5 +10,5 @@ function v() {
         exit;
     }
 }
-v();
+v('bauer');
 ?>
