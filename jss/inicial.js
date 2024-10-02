@@ -17,7 +17,7 @@ function ajax(archivo, variables=null){
         var req = new XMLHttpRequest();
         var url = "../phps/" + archivo;
         if (variables) url += "?" + variables;
-        if (token && variables) url += "token=" + token;
+        if (token && variables) url += "&token=" + token;
         if (token && !variables) url += "?token=" + token;
         req.open("GET", url);
         req.onload = function (){
