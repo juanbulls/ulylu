@@ -4,6 +4,14 @@ function id(ident){return document.getElementById(ident);}
 // Validador de local o servidor
 var esLocal = false; if (window.location.protocol == 'file:') { esLocal = true; }
 
+// Cooike
+let token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
+function galleta(dias, t=token) {
+    const d = new Date();
+    d.setTime(d.getTime() + ( dias *24*60*60*1000));
+    return `ulyluToken=${t}; expires=${d.toUTCString()};`;
+}
+
 function ajax(archivo, variables=null){
     return new Promise(function(resolve) {
         var req = new XMLHttpRequest();

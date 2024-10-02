@@ -304,12 +304,6 @@ function cargaInicial() {
         dataSpinner.ocultar();
     });
 }
-let token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
-function galleta(dias, t=token) {
-    const d = new Date();
-    d.setTime(d.getTime() + ( dias *24*60*60*1000));
-    return `ulyluToken=${t}; expires=${d.toUTCString()};`;
-}
 // Token existente
 if (!esLocal) {
     if (token){
