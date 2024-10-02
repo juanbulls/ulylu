@@ -15,7 +15,10 @@ function galleta(dias, t=token) {
 function ajax(archivo, variables=null){
     return new Promise(function(resolve) {
         var req = new XMLHttpRequest();
-        var url = variables != null ? "../phps/" + archivo + "?" + variables : "../phps/" + archivo
+        var url = "../phps/" + archivo;
+        if (variables) url += "?" + variables;
+        if (token && variables) url += "token=" + token;
+        if (token && !variables) url += "?token=" + token;
         req.open("GET", url);
         req.onload = function (){
             if (this.readyState == 4 && this.status == 200) {
