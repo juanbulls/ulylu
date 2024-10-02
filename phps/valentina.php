@@ -3,6 +3,8 @@ include('marlene.php');
 
 $token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[1]) ? $argv[1] : null);
 
+echo "token: ".$token;
+/*
 function v($base) {
     $data_result = q("SELECT * FROM $base.uszAccesos WHERE hash='$token';");
 
@@ -12,5 +14,5 @@ function v($base) {
         exit;
     }
 }
-v('bauer');
+v('bauer');*/
 ?>
