@@ -12,5 +12,4 @@ function v($base) {
         exit;
     }
 }
-v('bauer');
 ?>
