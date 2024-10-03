@@ -7,7 +7,7 @@ $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $ar
 $orden = isset($_REQUEST["orden"]) ? $_REQUEST["orden"] : (isset($argv[2]) ? $argv[3] : null);
 $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[3]) ? $argv[4] : null);
 
-v($base);
+val($base);
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
