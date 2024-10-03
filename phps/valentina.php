@@ -1,5 +1,5 @@
 <?php
-$token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[1]) ? end($argv) : null);
+$token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : null;
 
 function v($b) {
     global $token;
