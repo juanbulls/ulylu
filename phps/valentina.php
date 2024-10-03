@@ -6,7 +6,7 @@ function v($b) {
     $data_result = q("SELECT * FROM $b.uszAccesos WHERE hash='$token';");
 
     if (is_null($token) || !mysqli_num_rows($data_result) == 1) {
-        echo json_encode(["error" => "invalidado"]);
+        echo json_encode(["error" => "Usuario no validado"]);
         exit;
     }
 }
