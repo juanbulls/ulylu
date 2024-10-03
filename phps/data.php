@@ -1,11 +1,13 @@
 <?php
 include('marlene.php');
-// TODO: validacion
+include('valentina');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
 $orden = isset($_REQUEST["orden"]) ? $_REQUEST["orden"] : (isset($argv[2]) ? $argv[3] : null);
 $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[3]) ? $argv[4] : null);
+
+v($base);
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
