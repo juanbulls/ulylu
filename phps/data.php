@@ -1,6 +1,6 @@
 <?php
 include('marlene.php');
-include('valentina');
+include('valentina.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
