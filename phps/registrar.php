@@ -35,7 +35,7 @@ $insert_data = [];
 $related_entities = [];
 
 foreach ($_REQUEST as $key => $value) {
-    if (!in_array($key, ['base', 'tabla'])) {
+    if (!in_array($key, ['base', 'tabla', 'token'])) {
         if(substr($key, -2) == '_r'){
             $entity_table = strtolower(substr($key, 0, -2) . 's');
             $entity_name = mysqli_real_escape_string($con, $value);
