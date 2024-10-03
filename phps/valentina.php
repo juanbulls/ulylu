@@ -1,7 +1,7 @@
 <?php
 include('marlene.php');
 
-$token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[1]) ? $argv[1] : null);
+$token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[1]) ? end($argv) : null);
 
 function v($base) {
     global $token;
