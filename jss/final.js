@@ -164,7 +164,7 @@ function imprimirResumen() {
     id('tasaWrapper').style.display = 'inline';
 }
 function cambioTRM(trm){
-    pedirData('tasaUp', `base=${bdBase}&base=${trm}`).then( r => {
+    pedirData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
         if(r.error) {
             alert (r.error);
         }
