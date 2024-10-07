@@ -355,3 +355,12 @@ id('pass').addEventListener("keydown", function(event) {
       loggear();
     }
 });
+
+// Carga de tasa
+pedirData('tasaRd', `base=${base}`).then(r => {
+    if(r.error) {
+        alert (r.error);
+    } else {
+        id('tasa').value = r.tasa;
+    }
+});
