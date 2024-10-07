@@ -163,9 +163,13 @@ function imprimirResumen() {
 
     id('tasaWrapper').style.display = 'inline';
 }
-function cambioTRM(){
+function cambioTRM(trm){
+    pedirData('tasaUp', `base=${bdBase}&base=${trm}`).then( r => {
+        if(r.error) {
+            alert (r.error);
+        }
+    });
     imprimirResumen();
-    // TODO: actualizar setup, param TRM , valor Valor
 }
 
 function datearPopup(d) {
