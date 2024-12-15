@@ -17,7 +17,7 @@ const local = {
         notas: {
             cols: ["Cliente_r", "Vendedor_r", "Fecha_d", "Tdoc_e", "Ndoc", "Cuenta_e", "Cantidad", "Descripcion", "Comentario"],
             data: [{
-                idnotas: "1",
+                id: "1",
                 Cliente_r: "John Doe",
                 Vendedor_r: "Jane Smith",
                 Fecha_d: "2023-05-01",
@@ -30,7 +30,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "2",
                 Cliente_r: "Alice Johnson",
                 Vendedor_r: "Bob Brown",
                 Fecha_d: "2023-05-02",
@@ -43,7 +43,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "3",
                 Cliente_r: "Charlie Williams",
                 Vendedor_r: "David Miller",
                 Fecha_d: "2023-05-03",
@@ -56,7 +56,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "4",
                 Cliente_r: "Eve Wilson",
                 Vendedor_r: "Frank Moore",
                 Fecha_d: "2023-05-04",
@@ -69,7 +69,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "5",
                 Cliente_r: "Grace Taylor",
                 Vendedor_r: "Henry Anderson",
                 Fecha_d: "2023-05-05",
@@ -82,7 +82,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "6",
                 Cliente_r: "Ivy Thomas",
                 Vendedor_r: "Jack Martin",
                 Fecha_d: "2023-05-06",
@@ -95,7 +95,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "7",
                 Cliente_r: "Kate Martinez",
                 Vendedor_r: "Leo Hernandez",
                 Fecha_d: "2023-05-07",
@@ -108,7 +108,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "8",
                 Cliente_r: "Mia Garcia",
                 Vendedor_r: "Nick Lopez",
                 Fecha_d: "2023-05-08",
@@ -121,7 +121,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "9",
                 Cliente_r: "Oscar Lee",
                 Vendedor_r: "Paul Clark",
                 Fecha_d: "2023-05-09",
@@ -134,7 +134,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "10",
                 Cliente_r: "Quinn Walker",
                 Vendedor_r: "Rachel Lewis",
                 Fecha_d: "2023-05-10",
@@ -147,7 +147,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "11",
                 Cliente_r: "Sophie Young",
                 Vendedor_r: "Thomas Hall",
                 Fecha_d: "2023-05-11",
@@ -160,7 +160,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "12",
                 Cliente_r: "Uma King",
                 Vendedor_r: "Victor Wright",
                 Fecha_d: "2023-05-12",
@@ -173,7 +173,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "13",
                 Cliente_r: "Walter Young",
                 Vendedor_r: "Xander Hall",
                 Fecha_d: "2023-05-13",
@@ -186,7 +186,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "14",
                 Cliente_r: "Yara Diaz",
                 Vendedor_r: "Zachary Kim",
                 Fecha_d: "2023-05-14",
@@ -199,7 +199,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "15",
                 Cliente_r: "Aaron Foster",
                 Vendedor_r: "Bella Evans",
                 Fecha_d: "2023-05-15",
@@ -212,7 +212,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "16",
                 Cliente_r: "Caleb Howard",
                 Vendedor_r: "Dana Morgan",
                 Fecha_d: "2023-05-16",
@@ -225,7 +225,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "17",
                 Cliente_r: "Eli Carter",
                 Vendedor_r: "Fiona Murphy",
                 Fecha_d: "2023-05-17",
@@ -238,7 +238,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "18",
                 Cliente_r: "George King",
                 Vendedor_r: "Holly Wright",
                 Fecha_d: "2023-05-18",
@@ -251,7 +251,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "19",
                 Cliente_r: "Ivy Nelson",
                 Vendedor_r: "Jack Lee",
                 Fecha_d: "2023-05-19",
@@ -264,7 +264,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "20",
                 Cliente_r: "Karen Hill",
                 Vendedor_r: "Liam Young",
                 Fecha_d: "2023-05-20",
@@ -277,7 +277,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "21",
                 Cliente_r: "Michael White",
                 Vendedor_r: "Nancy Scott",
                 Fecha_d: "2023-05-21",
@@ -290,7 +290,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "22",
                 Cliente_r: "Olivia Taylor",
                 Vendedor_r: "Paul Martinez",
                 Fecha_d: "2023-05-22",
@@ -303,7 +303,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "23",
                 Cliente_r: "Quinn Robinson",
                 Vendedor_r: "Rachel Harris",
                 Fecha_d: "2023-05-23",
@@ -316,7 +316,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "24",
                 Cliente_r: "Sophia Clark",
                 Vendedor_r: "Thomas Walker",
                 Fecha_d: "2023-05-24",
@@ -329,7 +329,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "25",
                 Cliente_r: "Tyler Lewis",
                 Vendedor_r: "Uma King",
                 Fecha_d: "2023-05-25",
@@ -342,7 +342,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "26",
                 Cliente_r: "Victoria Hernandez",
                 Vendedor_r: "Willie Martin",
                 Fecha_d: "2023-05-26",
@@ -355,7 +355,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "27",
                 Cliente_r: "Xavier Brown",
                 Vendedor_r: "Yary Young",
                 Fecha_d: "2023-05-27",
@@ -368,7 +368,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "28",
                 Cliente_r: "Aaron Foster",
                 Vendedor_r: "Bella Evans",
                 Fecha_d: "2023-05-28",
@@ -381,7 +381,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "29",
                 Cliente_r: "Caleb Howard",
                 Vendedor_r: "Dana Morgan",
                 Fecha_d: "2023-05-29",
@@ -394,7 +394,7 @@ const local = {
                 modificado: "2024-05-29 19:37:19"
             },
             {
-                idnotas: "1",
+                id: "30",
                 Cliente_r: "Eli Carter",
                 Vendedor_r: "Fiona Murphy",
                 Fecha_d: "2023-05-30",
@@ -693,7 +693,7 @@ const local = {
     registrar: {
         cols: ["Cliente_r", "Vendedor_r", "Fecha_d", "Tdoc", "Ndoc", "Cuenta", "Cantidad", "Descripcion", "Comentario"],
         data: [{
-            idnotas: "999",
+            id: "999",
             Cliente_r: "Mocking Mock",
             Vendedor_r: "Jane Smith",
             Fecha_d: "2023-05-01",
