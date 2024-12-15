@@ -292,6 +292,10 @@ tbody > tr:nth-of-type(odd) {
 	display: none;
 }
 
+.editar {
+	position: static;
+}
+
 .filtroActivo {
 	display: inline-block;
 	background-color: #000000;

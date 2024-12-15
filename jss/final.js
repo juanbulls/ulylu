@@ -60,19 +60,19 @@ const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
-        let tipo = 'text';
+        // Formulario nueva data
         const ntd = document.createElement('td');
         const input = document.createElement('input');
-        input.type = tipo;
+        input.type = 'text';
         input.id = 'n' + col;
 
         // Especificos EL para tipos especificos de columnas
-        if (col.slice(-2) == '_d'){
+        if (col.slice(-2) == '_d'){ // Fechas
             input.type = 'date';
             input.setAttribute('lang', idioma);
             input.value = today.toISOString().split('T')[0];
         }
-        if (col.slice(-2) == '_r') {
+        if (col.slice(-2) == '_r') { // Columnas RELACIONADAS a otras tablas
             input.addEventListener('focus', el.relFocus);
             input.addEventListener('blur', el.relBlur);
             input.addEventListener('keyup', el.relChange);
@@ -85,6 +85,7 @@ function datearGrilla(d) {
         ntd.appendChild(input);
         id('inputsDataNueva').appendChild(ntd); // Nueva Data
 
+        // Encabezados data existente
         const th = document.createElement('th');
         const span = document.createElement('span');
         span.textContent = col.indexOf('_') != -1 ? col.slice(0, -2): col;
@@ -108,6 +109,8 @@ function datearGrilla(d) {
     datearRegistros(d);
 }
 
+/* Se usa para llenar datos, pero el llenado de datos tambien se ejectua,
+    en busquedas filtrados y desflitrados */
 let resumen = null;
 function datearRegistros(d) {
     // Si hay resumentes se llenan
@@ -122,10 +125,24 @@ function datearRegistros(d) {
         d.cols.forEach((c) => {
             const td = document.createElement('td');
             td.setAttribute('data-cell', hayUnderscore.test(c) ? c.slice(0, -2) : c);
-            td.innerHTML = f[c];
+
+            // Valor
+            const span = document.createElement('span');
+            span.textContent = f[c];
+            td.appendChild(span);
+
+            // Icono de edicion
+            if (c.slice(-2) != '_r'){
+                const iconoCelda = document.createElement('button');
+                iconoCelda.innerHTML = '✎';
+                iconoCelda.classList.add('icono');
+                iconoCelda.classList.add('editar');
+                iconoCelda.addEventListener('click', () => editarCelda(col));
+                td.appendChild(iconoCelda);
+            }
 
             tr.appendChild(td);
-            tr.id = f['id'];
+            tr.id = f['id'];            
         });
 
         id('dataVieja').appendChild(tr);
@@ -137,6 +154,11 @@ function datearRegistros(d) {
         imprimirResumen();
     }
 }
+
+function editarCelda(id) {
+
+}
+
 function imprimirResumen() {
     let textoResumen = '<b>Totales: </b>';
     const llaves = Object.keys(resumen[0]);
