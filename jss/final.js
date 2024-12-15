@@ -137,12 +137,12 @@ function datearRegistros(d) {
                 iconoCelda.innerHTML = '✎';
                 iconoCelda.classList.add('icono');
                 iconoCelda.classList.add('editar');
-                iconoCelda.addEventListener('click', () => editarCelda(col));
+                iconoCelda.addEventListener('click', () => editarCelda(span, iconoCelda));
                 td.appendChild(iconoCelda);
             }
 
             tr.appendChild(td);
-            tr.id = f['id'];            
+            tr.id = f['id'];
         });
 
         id('dataVieja').appendChild(tr);
@@ -155,8 +155,23 @@ function datearRegistros(d) {
     }
 }
 
-function editarCelda(id) {
+function editarCelda(t, b) {
+    b.classList.add('iconoEscondido');
+    t.style.display = 'none';
+    const input = document.createElement('input');
+    input.value = t.innerHTML;
+    input.classList.add('celdaEnEdicion');
+    t.parentNode.appendChild(input);
+    input.focus();
 
+    input.addEventListener('blur', () => {
+        t.textContent = input.value;
+        input.remove();
+        b.classList.remove('iconoEscondido');
+        t.style.display = 'inline';
+
+        // TODO: guardar el nuevo dato
+    });
 }
 
 function imprimirResumen() {
