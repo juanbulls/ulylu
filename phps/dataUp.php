@@ -11,7 +11,7 @@ $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] 
 v($base);
                 
 try {
-    if ( is_null($val) ){
+    if ( is_null($val) || $val === "" ){
         $insert_result = q("UPDATE $base.`$tab` SET `$col` = NULL WHERE id = '$reg';");
     } else {
         $insert_result = q("UPDATE $base.`$tab` SET `$col` = '$val' WHERE id = '$reg';");
