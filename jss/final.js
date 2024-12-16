@@ -132,7 +132,10 @@ function datearRegistros(d) {
             td.appendChild(span);
 
             // Icono de edicion
-            if (c.slice(-2) != '_r'){
+            if (
+                (!bdTabla.includes('_') && c.slice(-2) !== '_r') ||
+                (bdTabla.includes('_') && c.slice(-2) !== '_e')
+            ){
                 const iconoCelda = document.createElement('button');
                 iconoCelda.innerHTML = '✎';
                 iconoCelda.classList.add('icono');
