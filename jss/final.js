@@ -137,7 +137,7 @@ function datearRegistros(d) {
                 iconoCelda.innerHTML = '✎';
                 iconoCelda.classList.add('icono');
                 iconoCelda.classList.add('editar');
-                iconoCelda.addEventListener('click', () => editarCelda(span, iconoCelda));
+                iconoCelda.addEventListener('click', () => editarCelda(span, iconoCelda, c, f['id']));
                 td.appendChild(iconoCelda);
             }
 
@@ -155,7 +155,7 @@ function datearRegistros(d) {
     }
 }
 
-function editarCelda(t, b) {
+function editarCelda(t, b, c, i) { // texto, boton editar, columna, id del reg
     b.classList.add('iconoEscondido');
     t.style.display = 'none';
     const input = document.createElement('input');
@@ -169,8 +169,12 @@ function editarCelda(t, b) {
         input.remove();
         b.classList.remove('iconoEscondido');
         t.style.display = 'inline';
-
-        // TODO: guardar el nuevo dato
+        
+        pedirData('dataUp', `base=${bdBase}&tab=${bdTabla}&col=${c}&reg=${i}&val=${input.value}`).then( r => {
+            if(r.error){
+                alert( r.error );
+            }
+        });
     });
 }
 
