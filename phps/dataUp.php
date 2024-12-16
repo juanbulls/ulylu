@@ -11,8 +11,8 @@ $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] 
 // v($base);
                 
 try {
-    echo "UPDATE $base.`$tab` SET `$col` ='$val' WHERE id = '$val';";
-    $insert_result = q("UPDATE $base.`$tab` SET `$col` ='$val' WHERE id = '$val';");
+    // echo "UPDATE $base.`$tab` SET `$col` = '$val' WHERE id = '$reg';";
+    $insert_result = q("UPDATE $base.`$tab` SET `$col` ='$val' WHERE id = '$reg';");
 
     $response = [
         "estado" => 'actualizado'
