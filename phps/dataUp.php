@@ -9,6 +9,8 @@ $reg = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $argv[4] 
 $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] : null);
 
 v($base);
+
+$tab = explode('_', $tab)[0];
                 
 try {
     if ( is_null($val) || $val === "" ){
