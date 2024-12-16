@@ -176,6 +176,7 @@ function editarCelda(t, b, c, i) { // texto, boton editar, columna, id del reg
         pedirData('dataUp', `base=${bdBase}&tab=${bdTabla}&col=${c}&reg=${i}&val=${input.value}`).then( r => {
             if(r.error){
                 alert( r.error );
+                t.style.color = 'red';
             }
         });
     });
