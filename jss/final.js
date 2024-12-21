@@ -192,13 +192,15 @@ function editarCelda(t, b, c, i) { // texto, boton editar, columna, id del reg
     });
 }
 function borrarFila(reg){
+    if ( confirm("Seguro que quiere eliminar este registro?") ) {
         pedirData('borrarFila', `base=${bdBase}&tabla=${bdTabla}&reg=${reg}`).then( r => {
-        if( r.error ){
-            alert( r.error );
-        } else {
-            id(reg).remove();
-        }
-    });
+            if( r.error ){
+                alert( r.error );
+            } else {
+                id(reg).remove();
+            }
+        });
+    }
 }
 
 function imprimirResumen() {
