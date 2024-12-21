@@ -18,7 +18,7 @@ try {
     ];
 } catch (mysqli_sql_exception $e) {
     $response = [
-        "error" => "Error eliminando: " . $e->getMessage();
+        "error" => "Error eliminando: " . $e->getMessage()
     ];
 }
 

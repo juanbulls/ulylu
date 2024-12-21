@@ -73,7 +73,7 @@ try {
     ];
 } catch (mysqli_sql_exception $e) {
     $response = [
-        "error" => "Error ingresando: " . $e->getMessage();
+        "error" => "Error ingresando: " . $e->getMessage()
     ];
 }
 
