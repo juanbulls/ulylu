@@ -6,7 +6,7 @@ $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
 $registro = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[3]) ? $argv[3] : null);
 
-// v($base);
+v($base);
 
 $tabla = explode('_', $tabla)[0];
                 
@@ -14,7 +14,7 @@ try {
     q("DELETE FROM $base.`$tabla` WHERE id = '$registro';");
 
     $response = [
-        "estado" => 'actualizado'
+        "estado" => 'Registro eliminado.'
     ];
 } catch (mysqli_sql_exception $e) {
     echo "DELETE $base.`$tabla` WHERE id = '$registro';";
