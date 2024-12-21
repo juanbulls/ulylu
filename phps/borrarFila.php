@@ -11,7 +11,7 @@ $registro = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[3]) ? $arg
 $tabla = explode('_', $tabla)[0];
                 
 try {
-    q("DELETE $base.`$tabla` WHERE id = '$registro';");
+    q("DELETE FROM $base.`$tabla` WHERE id = '$registro';");
 
     $response = [
         "estado" => 'actualizado'
