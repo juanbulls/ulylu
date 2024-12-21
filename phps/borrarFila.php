@@ -4,7 +4,7 @@ include('valentina.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
-$registro = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $argv[4] : null);
+$registro = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[3]) ? $argv[3] : null);
 
 // v($base);
 
