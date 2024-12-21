@@ -8,7 +8,7 @@ $registro = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $arg
 
 // v($base);
 
-$tab = explode('_', $tab)[0];
+$tabla = explode('_', $tabla)[0];
                 
 try {
     q("DELETE $base.`$tabla` WHERE id = '$registro';");
