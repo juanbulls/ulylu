@@ -707,9 +707,13 @@ const local = {
         }]
     },
     tasaRd: {
-        tasa: "4000"
+        notas: {
+            tasa: "4000"
+        }
     },
     borrarFila: {
-        res: "Borrado Existoso."
+        notas: {
+            res: "Borrado Existoso."
+        }
     }
 }

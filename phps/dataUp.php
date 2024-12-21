@@ -24,7 +24,7 @@ try {
     ];
 } catch (mysqli_sql_exception $e) {
     $response = [
-        "error" => "Error ingresando dato"
+        "error" => "Error actualizando dato: " . $e->getMessage();
     ];
 }
 

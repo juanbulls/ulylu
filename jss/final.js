@@ -196,7 +196,6 @@ function borrarFila(reg){
         if( r.error ){
             alert( r.error );
         } else {
-            const fila = id(reg);
             id(reg).remove();
         }
     });
