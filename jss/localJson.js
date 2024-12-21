@@ -705,5 +705,11 @@ const local = {
             Comentario: "Cualquier cosa para que este quede completo",
             modificado: "2024-05-29 19:37:19"
         }]
+    },
+    tasaRd: {
+        tasa: "4000"
+    },
+    borrarFila: {
+        res: "Borrado Existoso."
     }
 }

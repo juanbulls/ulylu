@@ -98,8 +98,6 @@ function datearGrilla(d) {
             iconoCelda.addEventListener('click', () => filtrar(col));
             iconoCelda.id = 'filtro_' + col;
             th.appendChild(iconoCelda);
-        } else if (col.slice(-2) == '_r') {
-            //iconoCelda.innerHTML = '✎';
         }
         
         id('headerDataVieja').appendChild(th); // Encabezado
@@ -148,6 +146,18 @@ function datearRegistros(d) {
             tr.id = f['id'];
         });
 
+        // Ultima columna de acciones
+        const borrarBoton = document.createElement('button');
+        borrarBoton.innerHTML = '⨯';
+        borrarBoton.classList.add('icono');
+        borrarBoton.classList.add('botAct');
+        borrarBoton.addEventListener('click', () => borrarFila(f['id']));
+
+        const colAct = document.createElement('td');
+        colAct.classList.add('colAct');
+        colAct.append(borrarBoton);
+        tr.appendChild(colAct);
+
         id('dataVieja').appendChild(tr);
     });
 
@@ -173,12 +183,22 @@ function editarCelda(t, b, c, i) { // texto, boton editar, columna, id del reg
         b.classList.remove('iconoEscondido');
         t.style.display = 'inline';
         
-        pedirData('dataUp', `base=${bdBase}&tab=${bdTabla}&col=${c}&reg=${i}&val=${input.value}`).then( r => {
-            if(r.error){
+        mandarData('dataUp', `base=${bdBase}&tabla=${bdTabla}&col=${c}&reg=${i}&val=${input.value}`).then( r => {
+            if( r.error ){
                 alert( r.error );
                 t.style.color = 'red';
             }
         });
+    });
+}
+function borrarFila(reg){
+        pedirData('borrarFila', `base=${bdBase}&tabla=${bdTabla}&reg=${reg}`).then( r => {
+        if( r.error ){
+            alert( r.error );
+        } else {
+            const fila = id(reg);
+            id(reg).remove();
+        }
     });
 }
 
@@ -402,8 +422,8 @@ id('pass').addEventListener("keydown", function(event) {
 });
 
 // Carga de tasa
-pedirData('tasaRd', `base=${bdBase}`).then(r => {
-    if(r.error) {
+pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
+    if( r.error ) {
         alert (r.error);
     } else {
         id('tasa').value = r.tasa;

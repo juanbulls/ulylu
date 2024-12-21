@@ -3,7 +3,7 @@ include('marlene.php');
 include('valentina.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
-$tab = isset($_REQUEST["tab"]) ? $_REQUEST["tab"] : (isset($argv[2]) ? $argv[2] : null);
+$tab = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
 $col = isset($_REQUEST["col"]) ? $_REQUEST["col"] : (isset($argv[3]) ? $argv[3] : null);
 $reg = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $argv[4] : null);
 $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] : null);

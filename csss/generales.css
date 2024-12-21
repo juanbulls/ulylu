@@ -139,6 +139,9 @@ th:hover .icono,
 td:hover .icono {
 	display: inline-block;
 }
+tr:hover .botAct{
+	display: inline-block;
+}
 th {
 	position: -webkit-sticky;
 	position: sticky;
@@ -302,9 +305,18 @@ tbody > tr:nth-of-type(odd) {
 .iconoEscondido {
 	display: none !important;
 }
-
 .editar {
 	position: static;
+}
+.colAct{
+	width: 20px;
+	background-color: white;
+	border: none;
+}
+.botAct {
+	position: static;
+	color: #a83e3e;
+	font-size: 1.4em;
 }
 
 .filtroActivo {
