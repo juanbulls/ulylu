@@ -273,10 +273,18 @@ let procesando = false;
 function buscarRegistros(elmnt=null) {
     if (procesando) { return }
     procesando = true;
-    id('dataVieja').innerHTML = '';
+
+    const tableBody = document.getElementById("dataVieja");
+    tableBody.querySelectorAll("tr").forEach(row => {
+        const cells = row.querySelectorAll("td");
+        for (let i = 0; i < 9; i++) {
+            if (cells[i]) cells[i].innerHTML = ''; // Clear content but keep structure
+        }
+    });
 
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
+        tableBody.innerHTML = ''; // Now remove everything
         datearRegistros(r);
         dataSpinner.ocultar();
         procesando = false;
