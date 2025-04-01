@@ -287,7 +287,7 @@ function buscarRegistros(elmnt=null) {
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
         id('dataVieja').innerHTML = '';
 
-        if (!r || r.length === 0) {
+        if (r.data.length === 0) {
             id('dataVieja').innerHTML = ponerPlaceholderData("Sin coincidencias", "#888");
         } else {
             datearRegistros(r);
