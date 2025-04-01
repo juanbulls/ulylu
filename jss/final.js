@@ -268,7 +268,7 @@ function datearPopup(d) {
     });
 }
 
-function ponerPlaceholderData(text, color = "#888") {
+function ponerPlaceholderData(text, color = "#000") {
     return `<tr>
         <td colspan="10" style="height: 35px; text-align: center; font-style: italic; color: ${color};"> ${text} </td>
         <td style="width: 27px; background: white; border: none;"></td>
@@ -281,14 +281,14 @@ function buscarRegistros(elmnt=null) {
     if (procesando) { return }
     procesando = true;
 
-    id('dataVieja').innerHTML = ponerPlaceholderData("Buscando...", "#000");
+    id('dataVieja').innerHTML = ponerPlaceholderData("Buscando...");
 
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
         id('dataVieja').innerHTML = '';
 
-        if (r.length === 0) {
-            id('dataVieja').innerHTML = ponerPlaceholderData("Sin coincidencias");
+        if (!r || r.length === 0) {
+            id('dataVieja').innerHTML = ponerPlaceholderData("Sin coincidencias", "#888");
         } else {
             datearRegistros(r);
         }
