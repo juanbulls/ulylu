@@ -268,24 +268,31 @@ function datearPopup(d) {
     });
 }
 
+function ponerPlaceholderData(text, color = "#888") {
+    return `<tr>
+        <td colspan="10" style="height: 35px; text-align: center; font-style: italic; color: ${color};"> ${text} </td>
+        <td style="width: 27px; background: white; border: none;"></td>
+    </tr>`;
+}
+
 // Ejecuciones
 let procesando = false;
 function buscarRegistros(elmnt=null) {
     if (procesando) { return }
     procesando = true;
 
-    const tableBody = document.getElementById("dataVieja");
-    tableBody.querySelectorAll("tr").forEach(row => {
-        const cells = row.querySelectorAll("td");
-        for (let i = 0; i < 9; i++) {
-            if (cells[i]) cells[i].innerHTML = ''; // Clear content but keep structure
-        }
-    });
+    id('dataVieja').innerHTML = ponerPlaceholderData("Buscando...", "#000");
 
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt).then(r => {
-        tableBody.innerHTML = ''; // Now remove everything
-        datearRegistros(r);
+        id('dataVieja').innerHTML = '';
+
+        if (r.length === 0) {
+            id('dataVieja').innerHTML = ponerPlaceholderData("Sin coincidencias");
+        } else {
+            datearRegistros(r);
+        }
+        
         dataSpinner.ocultar();
         procesando = false;
     });
