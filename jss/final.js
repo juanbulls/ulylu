@@ -396,6 +396,8 @@ if (!esLocal) {
         pedirData('validacion', `base=${bdBase}`).then(r => {
             if (r.email) {
                 document.cookie = galleta(90); // 90 dias, 3 meses +/-
+                document.cookie = `ulyluUsr=${r.email};`;
+                user = r.email;
                 cargaInicial();
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
