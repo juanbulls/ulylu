@@ -3,7 +3,6 @@ const idioma = navigator.language;
 
 // Event listener dinamico para la linea azul abajo de las filas actulmente siendo editadas
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('estilos');
     var inputs = document.querySelectorAll('.nuevaData input[type="text"], .nuevaData input[type="date"]');
     inputs.forEach(function(input) {
         input.addEventListener('focus', function() {
