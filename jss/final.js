@@ -270,8 +270,8 @@ function datearPopup(d) {
 
 function ponerPlaceholderData(text, color = "#000") {
     return `<tr>
-        <td colspan="10" style="height: 35px; text-align: center; font-style: italic; color: ${color};"> ${text} </td>
-        <td style="width: 27px; background: white; border: none;"></td>
+        <td colspan="9" style="height: 35px; text-align: center; font-style: italic; color: ${color};"> ${text} </td>
+        <td style="width: 23px; background: white; border: none;"></td>
     </tr>`;
 }
 
