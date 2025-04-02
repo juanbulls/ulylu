@@ -407,6 +407,15 @@ if (!esLocal) {
                 id('encabezado').style.paddingLeft = '46%';
             }
         });
+
+        // Carga de tasa
+        pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
+            if( r.error ) {
+                alert ('Error pidiendo data: ' + r.error);
+            } else {
+                id('tasa').value = r.tasa;
+            }
+        });
     } else {
         id('loggeo').style.display = 'flex';
         dataSpinner.ocultar();
@@ -435,14 +444,5 @@ function loggear() {
 id('pass').addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
       loggear();
-    }
-});
-
-// Carga de tasa
-pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
-    if( r.error ) {
-        alert ('Error pidiendo data: ' + r.error);
-    } else {
-        id('tasa').value = r.tasa;
     }
 });
