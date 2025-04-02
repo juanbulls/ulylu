@@ -232,7 +232,7 @@ function imprimirResumen() {
 function cambioTRM(trm){
     pedirData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
         if(r.error) {
-            alert (r.error);
+            alert ('Error en TRM: ', r.error);
         }
     });
     imprimirResumen();
@@ -370,7 +370,7 @@ function registrar(){
             limpiarNuevaData()
             tr.classList.add('filaIngresada');
         } else {
-            alert (r.error);
+            alert ('Error enviando data: ', r.error);
         }
     });
     
@@ -441,7 +441,7 @@ id('pass').addEventListener("keydown", function(event) {
 // Carga de tasa
 pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     if( r.error ) {
-        alert (r.error);
+        alert ('Error pidiendo data:', r.error);
     } else {
         id('tasa').value = r.tasa;
     }
