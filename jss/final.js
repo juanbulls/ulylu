@@ -269,6 +269,7 @@ function datearPopup(d) {
 }
 
 function ponerPlaceholderData(text, color = "#000") {
+    // el Width debe ser aproximadamente el widh the clase colAct +3, actualmente 20+3
     return `<tr>
         <td colspan="9" style="height: 35px; text-align: center; font-style: italic; color: ${color};"> ${text} </td>
         <td style="width: 23px; background: white; border: none;"></td>
