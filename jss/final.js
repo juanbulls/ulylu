@@ -420,7 +420,6 @@ if (!esLocal) {
 titular();
 function loggear() {
     // Pedir acceso
-    console.log('Me llamaron');
     let mail = id('email').value;
     if (mail.indexOf('@bauer.com.co') != -1) mail = mail.replace('@bauer.com.co', '');
     pedirData('acceso', `base=${bdBase}&email=${mail}&pass=${id('pass').value}`).then(r => {
