@@ -185,7 +185,7 @@ function editarCelda(t, b, c, i) { // texto, boton editar, columna, id del reg
         
         mandarData('dataUp', `base=${bdBase}&tabla=${bdTabla}&col=${c}&reg=${i}&val=${input.value}`).then( r => {
             if( r.error ){
-                alert( 'Error editando celda', r.error );
+                alert( 'Error editando celda: ' + r.error );
                 t.style.color = 'red';
             }
         });
@@ -195,7 +195,7 @@ function borrarFila(reg){
     if ( confirm("Seguro que quiere eliminar este registro?") ) {
         pedirData('borrarFila', `base=${bdBase}&tabla=${bdTabla}&reg=${reg}`).then( r => {
             if( r.error ){
-                alert( 'Error borrando fila', r.error );
+                alert( 'Error borrando fila: ' + r.error );
             } else {
                 id(reg).remove();
             }
@@ -232,7 +232,7 @@ function imprimirResumen() {
 function cambioTRM(trm){
     pedirData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
         if(r.error) {
-            alert ('Error en TRM: ', r.error);
+            alert ('Error en TRM: ' + r.error);
         }
     });
     imprimirResumen();
@@ -370,7 +370,7 @@ function registrar(){
             limpiarNuevaData()
             tr.classList.add('filaIngresada');
         } else {
-            alert ('Error registrando data: ', r.error);
+            alert ('Error registrando data: ' + r.error);
         }
     });
     
@@ -441,7 +441,7 @@ id('pass').addEventListener("keydown", function(event) {
 // Carga de tasa
 pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
     if( r.error ) {
-        alert ('Error pidiendo data:', r.error);
+        alert ('Error pidiendo data: ' + r.error);
     } else {
         id('tasa').value = r.tasa;
     }
