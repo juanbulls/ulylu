@@ -431,6 +431,7 @@ if (!esLocal) {
 } else {
     cargaInicial();
 }
+
 titular();
 function loggear() {
     // Pedir acceso
@@ -446,6 +447,12 @@ function loggear() {
         }
     });
 }
+function deslogear(){
+    document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+    document.cookie = `ulyluUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+    location.reload();
+}
+
 id('pass').addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
       loggear();
