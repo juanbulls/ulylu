@@ -36,6 +36,9 @@ body{
     font-weight: bold;
     margin-right: 1rem; /* Ensures spacing from the edge */
 }
+#usuario a {
+	color: rgb(255 161 0);
+}
 
 .contPrincipal{
 	width: min(100% - 2rem, 1100px);
