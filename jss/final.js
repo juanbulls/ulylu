@@ -426,6 +426,7 @@ if (!esLocal) {
         dataSpinner.ocultar();
         id('empresa').style.display = 'none';
         id('tabla').style.display = 'none';
+        id('usuario').style.display = 'none';
         id('encabezado').style.paddingLeft = '46%';
     }
 } else {
