@@ -398,7 +398,7 @@ if (!esLocal) {
                 document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
                 document.cookie = galleta('user', r.email, 90);
                 user = r.email;
-                id('usuario').innerHTML = pascalCase(user) + ' ( <a href="javascript:void(0);" onclick="deslogear()">salir</a> )';
+                id('usuario').innerHTML = pascalCase(user) + '<a href="javascript:void(0);" onclick="deslogear()">🚪</a> ';
 
                 cargaInicial();
             } else {
