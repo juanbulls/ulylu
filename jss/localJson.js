@@ -9,8 +9,8 @@ if(bdTabla == null){
 }
 function titular() {
     document.title = 'ulylu | ' 
-        + bdBase.charAt(0).toUpperCase() + bdBase.slice(1) + ' - '
-        + bdTabla.charAt(0).toUpperCase() + bdTabla.slice(1);
+        + pascalCase(bdBase) + ' - '
+        + pascalCase(bdTabla);
 }
 
 const local = {

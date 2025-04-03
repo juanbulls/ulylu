@@ -4,12 +4,16 @@ function id(ident){return document.getElementById(ident);}
 // Validador de local o servidor
 var esLocal = false; if (window.location.protocol == 'file:') { esLocal = true; }
 
+
+function pascalCase(texto){
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+}
 // Cooike
 const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
 function galleta(nombre, valor, dias) {
     const d = new Date();
     d.setTime(d.getTime() + ( dias *24*60*60*1000));
-    const n = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+    const n = pascalCase(nombre);
 
     return `ulylu${n}=${valor}; expires=${d.toUTCString()};`;
 }
