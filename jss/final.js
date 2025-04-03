@@ -395,12 +395,13 @@ if (!esLocal) {
     if (token){
         pedirData('validacion', `base=${bdBase}`).then(r => {
             if (r.email) {
-                document.cookie = galleta(90); // 90 dias, 3 meses +/-
-                document.cookie = `ulyluUsr=${r.email};`;
+                document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
+                document.cookie = galleta('User', r.email, 90);
                 user = r.email;
                 cargaInicial();
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+                document.cookie = `ulyluUsr=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
                 alert('Último acceso hace más de 3 meses.');
                 id('loggeo').style.display = 'flex';
                 dataSpinner.ocultar();
@@ -437,9 +438,9 @@ function loggear() {
         if (r.error) {
             alert("Combinación correo clave incorrecta")
         } else {
-            document.cookie = galleta(90, r.token); // 90 dias, 3 meses +/-
+            document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
+            document.cookie = galleta('User', r.email, 90);
             location.reload();
-
         }
     });
 }

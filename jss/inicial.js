@@ -6,10 +6,12 @@ var esLocal = false; if (window.location.protocol == 'file:') { esLocal = true; 
 
 // Cooike
 const token = document.cookie.split('; ').find(row => row.startsWith('ulyluToken='))?.split('=')[1] || null;
-function galleta(dias, t=token) {
+function galleta(nombre, valor, dias) {
     const d = new Date();
     d.setTime(d.getTime() + ( dias *24*60*60*1000));
-    return `ulyluToken=${t}; expires=${d.toUTCString()};`;
+    const n = nombre.charAt(0).toUpperCase() + nombre.slice(1);
+
+    return `ulylu${n}=${valor}; expires=${d.toUTCString()};`;
 }
 
 function ajax(archivo, variables=null){
