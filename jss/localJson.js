@@ -1,5 +1,5 @@
 const bdBase = 'bauer';
-let user = 'Local';
+let user = 'Usuario';
 let bdTabla = getUrlParam('tabla');
 if(bdTabla == null){
     bdTabla = 'notas';
