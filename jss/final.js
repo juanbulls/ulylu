@@ -401,7 +401,7 @@ if (!esLocal) {
                 cargaInicial();
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
-                document.cookie = `ulyluUsr=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+                document.cookie = `ulyluUser=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
                 alert('Último acceso hace más de 3 meses.');
                 id('loggeo').style.display = 'flex';
                 dataSpinner.ocultar();
@@ -438,8 +438,8 @@ function loggear() {
         if (r.error) {
             alert("Combinación correo clave incorrecta")
         } else {
-            document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
-            document.cookie = galleta('user', r.email, 90);
+            document.cookie = galleta('token', r.token, 90); // 90 dias, 3 meses +/-
+            document.cookie = galleta('user', mail, 90);
             location.reload();
         }
     });
