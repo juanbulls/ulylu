@@ -398,6 +398,7 @@ if (!esLocal) {
                 document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
                 document.cookie = galleta('user', r.email, 90);
                 user = r.email;
+                id('usuario').innerHTML = pascalCase(user) + "(<a href=# onClick('deslogear()')> salir </a>)";
                 cargaInicial();
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
@@ -410,6 +411,7 @@ if (!esLocal) {
                 id('encabezado').style.paddingLeft = '46%';
             }
         });
+
 
         // Carga de tasa
         pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
