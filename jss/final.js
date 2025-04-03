@@ -396,7 +396,7 @@ if (!esLocal) {
         pedirData('validacion', `base=${bdBase}`).then(r => {
             if (r.email) {
                 document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
-                document.cookie = galleta('User', r.email, 90);
+                document.cookie = galleta('user', r.email, 90);
                 user = r.email;
                 cargaInicial();
             } else {
@@ -439,7 +439,7 @@ function loggear() {
             alert("Combinación correo clave incorrecta")
         } else {
             document.cookie = galleta('token', token, 90); // 90 dias, 3 meses +/-
-            document.cookie = galleta('User', r.email, 90);
+            document.cookie = galleta('user', r.email, 90);
             location.reload();
         }
     });
