@@ -13,14 +13,30 @@ body{
 	margin: 0 auto;
 	font-family: Futura, sans-serif;
 }
-#encabezado{
-	position: fixed;
-	display: flex;
+#encabezado {
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Spaces elements to edges */
+    align-items: center;
     margin: 0;
     background-color: #a83e3e;
     height: var(--altoEncabezado);
-	width: 100%;
+    width: 100%;
+    padding: 0 1rem; /* Adds space on left and right */
 }
+
+.left {
+    display: flex;
+    align-items: center; /* Ensures items stay in one line */
+    gap: 0.5rem; /* Adds spacing between elements */
+}
+
+#usuario {
+    color: white;
+    font-weight: bold;
+    margin-right: 1rem; /* Ensures spacing from the edge */
+}
+
 .contPrincipal{
 	width: min(100% - 2rem, 1100px);
 	margin-inline: auto;  
