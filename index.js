@@ -1,4 +1,5 @@
 const scripts = [
+    "csss/tablas.js",
     "csss/estilos.js",
     "jss/localJson.js",
     "jss/el.js",
