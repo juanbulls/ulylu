@@ -2,6 +2,7 @@ const scripts = [
     "csss/estilos.js",
     "jss/tablas.js",
     "jss/servicios.js",
+    "jss/populador.js", //aqui voy
     "jss/localJson.js",
     "jss/el.js",
     "jss/final.js"
