@@ -18,6 +18,6 @@ const scripts = [
 for (let src of scripts) {
     const script = document.createElement("script");
     script.src = src;
-    script.async = false; // 👈 Tells the browser to maintain execution order
+    script.async = false; // Le dice al explorador que mantenga el orden de ejecucion
     document.body.appendChild(script);
 }
