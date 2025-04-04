@@ -1,17 +1,17 @@
 const scripts = [
     "csss/estilos.js",
-    "jss/tablas.js",
+    "jss/header/tablas.js",
     "jss/servicios.js",
     "jss/populador.js",
-    "jss/celdas.js",
-    "jss/resumen.js",
-    "jss/popup.js", //aqui voy
-    "jss/buscador.js", //aqui voy
-    "jss/filtros.js", //aqui voy
-    "jss/ingresarLimpiar.js", //aqui voy
-    "jss/loggeo.js", //aqui voy
+    "jss/tabla/celdas.js",
+    "jss/tabla/resumen.js",
+    "jss/nuevaData/popup.js",
+    "jss/tabla/buscador.js",
+    "jss/tabla/filtros.js",
+    "jss/nuevaData/ingresarLimpiar.js",
+    "jss/header/loggeo.js", //aqui voy
     "jss/localJson.js",
-    "jss/el.js",
+    "jss/nuevaData/el.js",
     "jss/final.js"
 ];
 
