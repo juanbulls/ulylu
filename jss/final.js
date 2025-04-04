@@ -1,10 +1,3 @@
-function cambiarTabla(tabla){
-    const url = new URL(window.location.href);
-    url.search = '';
-    url.searchParams.set('tabla', tabla);
-    window.location.href = url.toString();
-}
-
 // Solicitud de Data
 async function esperarEscritura(elmnt) {
     if (elmnt === null) {
@@ -20,13 +13,20 @@ async function esperarEscritura(elmnt) {
     return patronAnterior;
 }
 
+function cambiarTabla(tabla){
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.searchParams.set('tabla', tabla);
+    window.location.href = url.toString();
+}
+
 if(id('tabla').value == 'notas'){
     id('buscador').style.visibility = 'visible';
 } else {
     id('buscador').style.visibility = 'hidden';
 }
 
-let filtrando = false; // Se activa en el filtro
+let filtrando = false; // se activa en el filtro
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
