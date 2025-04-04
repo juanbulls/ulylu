@@ -4,7 +4,11 @@ const scripts = [
     "jss/servicios.js",
     "jss/populador.js",
     "jss/celdas.js",
-    "jss/resumen.js", //aqui voy
+    "jss/resumen.js",
+    "jss/popup.js", //aqui voy
+    "jss/buscador.js", //aqui voy
+    "jss/filtros.js", //aqui voy
+    "jss/ingresarLimpiar.js", //aqui voy
     "jss/localJson.js",
     "jss/el.js",
     "jss/final.js"
