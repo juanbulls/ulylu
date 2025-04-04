@@ -9,6 +9,7 @@ const scripts = [
     "jss/buscador.js", //aqui voy
     "jss/filtros.js", //aqui voy
     "jss/ingresarLimpiar.js", //aqui voy
+    "jss/loggeo.js", //aqui voy
     "jss/localJson.js",
     "jss/el.js",
     "jss/final.js"
