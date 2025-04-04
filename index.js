@@ -15,11 +15,9 @@ const scripts = [
     "jss/final.js"
 ];
 
-scripts.reduce((p, src) =>
-    p.then(() => new Promise(res => {
-        let s = document.createElement("script");
-        s.src = src;
-        s.onload = res;
-        document.body.appendChild(s);
-    }
-)), Promise.resolve());
+for (let src of scripts) {
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = false; // 👈 Tells the browser to maintain execution order
+    document.body.appendChild(script);
+}
