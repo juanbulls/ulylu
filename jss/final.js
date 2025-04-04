@@ -1,3 +1,16 @@
+function cambiarTabla(tabla){
+    const url = new URL(window.location.href);
+    url.search = '';
+    url.searchParams.set('tabla', tabla);
+    window.location.href = url.toString();
+}
+
+if(id('tabla').value == 'notas'){
+    id('buscador').style.visibility = 'visible';
+} else {
+    id('buscador').style.visibility = 'hidden';
+}
+
 // Solicitud de Data
 async function esperarEscritura(elmnt) {
     if (elmnt === null) {
@@ -11,19 +24,6 @@ async function esperarEscritura(elmnt) {
         await new Promise(resolve => setTimeout(resolve, blurDelay));
     }
     return patronAnterior;
-}
-
-function cambiarTabla(tabla){
-    const url = new URL(window.location.href);
-    url.search = '';
-    url.searchParams.set('tabla', tabla);
-    window.location.href = url.toString();
-}
-
-if(id('tabla').value == 'notas'){
-    id('buscador').style.visibility = 'visible';
-} else {
-    id('buscador').style.visibility = 'hidden';
 }
 
 let filtrando = false; // se activa en el filtro
