@@ -1,6 +1,6 @@
 const scripts = [
-    "csss/tablas.js",
     "csss/estilos.js",
+    "jss/tablas.js",
     "jss/localJson.js",
     "jss/el.js",
     "jss/final.js"
