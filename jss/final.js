@@ -12,7 +12,6 @@ function cargaInicial() {
     });
 }
 
-const limiteAI = 15; // Actualizar tambien en backData
 // Token existente
 if (!esLocal) {
     if (token){
