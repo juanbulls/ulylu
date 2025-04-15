@@ -15,6 +15,14 @@ async function esperarEscritura(elmnt) {
 
 // Pedir Data que usa ajax
 let filtrando = false;
+/* elmnt puede ser:
+    string, el patron de busqueda, por ejemplo 'Juan Ru'... sin terminar de escribir o
+    un html element (especificamente event.target en el caso de Event Listener EL
+
+    No dejarlo solo como un string, porque esperar esritura necesita evaluar tanto
+        elmnt = event como (objeto {html})
+        elmnt.value = event.value (string)
+*/
 async function pedirData(php, variables = null, elmnt = null){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
