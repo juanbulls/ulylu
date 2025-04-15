@@ -12,6 +12,7 @@ function cargaInicial() {
     });
 }
 
+const limiteAI = 15; // Actualizar tambien en backData
 // Token existente
 if (!esLocal) {
     if (token){
@@ -39,7 +40,7 @@ if (!esLocal) {
         // Carga de tasa
         pedirData('tasaRd', `base=${bdBase}&tabla=${bdTabla}`).then(r => {
             if( r.error ) {
-                alert ('Error pidiendo data: ' + r.error);
+                alert ('Error pidiendo parametros: ' + r.error);
             } else {
                 id('tasa').value = r.tasa;
             }

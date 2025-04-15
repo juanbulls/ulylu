@@ -9,10 +9,10 @@ const scripts = [
     "jss/tabla/buscador.js",
     "jss/tabla/filtros.js",
     "jss/nuevaData/ingresarLimpiar.js",
-    "jss/header/loggeo.js", //aqui voy
-    "jss/localJson.js",
-    "jss/nuevaData/el.js",
-    "jss/final.js"
+    "jss/header/loggeo.js",
+    "jss/localJson.js", // idealmente de ultimo
+    "jss/nuevaData/el.js", // idealmente de ultimo
+    "jss/final.js" // idealmente de ultimo
 ];
 
 for (let src of scripts) {
