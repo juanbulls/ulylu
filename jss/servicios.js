@@ -28,15 +28,6 @@ async function pedirData(php, variables = null, elmnt = null){
         }else if (filtroActivo != '' && !filtrando){ // cuando se hace una busqueda con un filtro existente
             variables += `&orden=${filtroActivo}`;
         }
-
-        // Add offset and limit if not already present
-        if (!variables.includes('offset=')) {
-            variables += '&offset=0';
-        }
-        if (!variables.includes('limit=')) {
-            variables += '&limit=15';
-        }
-
         local.data = ajax( php + '.php', variables + patron);
         
         filtrando = false;
