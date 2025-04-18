@@ -9,7 +9,7 @@ $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $ar
 $orden = isset($_REQUEST["orden"]) ? $_REQUEST["orden"] : (isset($argv[3]) ? $argv[3] : null);
 $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[4]) ? $argv[4] : null);
 $offset = isset($_REQUEST["offset"]) ? $_REQUEST["offset"] : (isset($argv[5]) ? $argv[5] : null);
-$limit = 15;
+$limit = 20;
 
 v($base); // Descomentar cuando termine debugg
 
