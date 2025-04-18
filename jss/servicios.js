@@ -15,6 +15,7 @@ async function esperarEscritura(elmnt) {
 
 // Pedir Data que usa ajax
 let filtrando = false;
+let offset = 0;
 /* elmnt puede ser:
     string, el patron de busqueda, por ejemplo 'Juan Ru'... sin terminar de escribir o
     un html element (especificamente event.target en el caso de Event Listener EL
@@ -23,7 +24,7 @@ let filtrando = false;
         elmnt = event como (objeto {html})
         elmnt.value = event.value (string)
 */
-async function pedirData(php, variables = null,  elmnt = null, offset = null){
+async function pedirData(php, variables = null,  elmnt = null, offset = offset){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
         await esperarEscritura(elmnt);
@@ -36,8 +37,8 @@ async function pedirData(php, variables = null,  elmnt = null, offset = null){
         }else if (filtroActivo != '' && !filtrando){ // cuando se hace una busqueda con un filtro existente
             variables += `&orden=${filtroActivo}`;
         }
-        let limOff = offset ? '&offset=' + offset : '';
-        local.data = ajax( php + '.php', variables + patron + limOff);
+        let limtOff = offset !== null ? '&offset=' + offset : '';
+        local.data = ajax( php + '.php', variables + patron + limtOff);
         
         filtrando = false;
         return local.data;
