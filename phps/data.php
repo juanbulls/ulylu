@@ -39,7 +39,7 @@ $response = [
     "cols" => $cols,
     "data" => $data
 ];
-
+/*
 if (!is_null($orden)) {
     $patronResumen = "";
     if(!is_null($patron)) { $patronResumen = "WHERE Cliente_r LIKE '%$patron%'"; }
@@ -51,7 +51,7 @@ if (!is_null($orden)) {
     }
     $response['resumen'] = $resumen;
 }
-
+*/
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
