@@ -4,11 +4,12 @@ include('valentina.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
-$orden = isset($_REQUEST["orden"]) ? $_REQUEST["orden"] : (isset($argv[2]) ? $argv[3] : null);
-$patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[3]) ? $argv[4] : null);
-$limiteIS = 15;
+$orden = isset($_REQUEST["orden"]) ? $_REQUEST["orden"] : (isset($argv[3]) ? $argv[3] : null);
+$patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[4]) ? $argv[4] : null);
+$offset = isset($_REQUEST["offset"]) ? $_REQUEST["offset"] : (isset($argv[5]) ? $argv[5] : null);
+$limit = 15;
 
-// v($base);
+// v($base); // Descomentar cuando termine debugg
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
@@ -17,13 +18,17 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
         $cols[] = $row['Field'];
     }
 }
-$ordenQ = "ORDER BY id DESC";
-if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
 
 $patronQ = "";
 if(!is_null($patron)) { $patronQ = "WHERE Cliente_r LIKE '%$patron%'"; }
 
-$data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ;");
+$ordenQ = "ORDER BY id DESC";
+if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
+
+$limitQ = "";
+if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $offset";}
+
+$data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
     $data[] = $row;
