@@ -23,7 +23,7 @@ let filtrando = false;
         elmnt = event como (objeto {html})
         elmnt.value = event.value (string)
 */
-async function pedirData(php, variables = null, elmnt = null){
+async function pedirData(php, variables = null,  elmnt = null, offset = null){
     if ( esLocal ) {
         let accion = variables.split('&').find(parte => parte.startsWith('tabla=')).split('=')[1].toLowerCase();
         await esperarEscritura(elmnt);
@@ -36,7 +36,8 @@ async function pedirData(php, variables = null, elmnt = null){
         }else if (filtroActivo != '' && !filtrando){ // cuando se hace una busqueda con un filtro existente
             variables += `&orden=${filtroActivo}`;
         }
-        local.data = ajax( php + '.php', variables + patron);
+        let limOff = offset ? '&offset=' + offset : '';
+        local.data = ajax( php + '.php', variables + patron + limOff);
         
         filtrando = false;
         return local.data;
