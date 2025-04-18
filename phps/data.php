@@ -28,6 +28,7 @@ if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
 $limitQ = "";
 if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $offset";}
 
+echo "SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;";
 $data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
