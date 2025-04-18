@@ -28,7 +28,7 @@ $ordenQ = "ORDER BY id DESC";
 if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
 
 $limitQ = "";
-if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $offset";}
+if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $limit*$offset"; }
 
 $data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;");
 $data = [];
