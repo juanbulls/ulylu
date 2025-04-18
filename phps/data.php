@@ -1,4 +1,6 @@
 <?php
+// se puede probar comentando v()
+
 include('marlene.php');
 include('valentina.php');
 
@@ -9,7 +11,7 @@ $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[4]) ? 
 $offset = isset($_REQUEST["offset"]) ? $_REQUEST["offset"] : (isset($argv[5]) ? $argv[5] : null);
 $limit = 15;
 
-// v($base); // Descomentar cuando termine debugg
+v($base); // Descomentar cuando termine debugg
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
@@ -28,7 +30,6 @@ if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
 $limitQ = "";
 if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $offset";}
 
-echo "SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;";
 $data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
@@ -39,7 +40,8 @@ $response = [
     "cols" => $cols,
     "data" => $data
 ];
-/*
+
+// Seccion ordenado por ... lo mismo que decir filtros
 if (!is_null($orden)) {
     $patronResumen = "";
     if(!is_null($patron)) { $patronResumen = "WHERE Cliente_r LIKE '%$patron%'"; }
@@ -51,7 +53,7 @@ if (!is_null($orden)) {
     }
     $response['resumen'] = $resumen;
 }
-*/
+
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
