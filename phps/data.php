@@ -11,7 +11,7 @@ $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[4]) ? 
 $offset = isset($_REQUEST["offset"]) ? $_REQUEST["offset"] : (isset($argv[5]) ? $argv[5] : null);
 $limit = 20;
 
-// v($base); // Descomentar cuando termine debugg
+v($base); // Descomentar cuando termine debugg
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
@@ -28,8 +28,11 @@ $ordenQ = "ORDER BY id DESC";
 if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
 
 $limitQ = "";
-if(!is_null($offset)) { $limitQ = "LIMIT $limit OFFSET $limit*$offset"; }
-echo "SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;";
+if(!is_null($offset)) { 
+    $offsetPosition = $offset * $limit;
+    $limitQ = "LIMIT $limit OFFSET $offsetPosition";
+}
+
 $data_result = q("SELECT * FROM $base.$tabla $patronQ $ordenQ $limitQ;");
 $data = [];
 while ($row = mysqli_fetch_assoc($data_result)) {
@@ -40,7 +43,7 @@ $response = [
     "cols" => $cols,
     "data" => $data
 ];
-/*
+
 // Seccion ordenado por ... lo mismo que decir filtros
 if (!is_null($orden)) {
     $patronResumen = "";
@@ -53,7 +56,7 @@ if (!is_null($orden)) {
     }
     $response['resumen'] = $resumen;
 }
-*/
+
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
