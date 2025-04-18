@@ -1,7 +1,8 @@
 const scripts = [
     "csss/estilos.js",
     "jss/header/tablas.js",
-    "jss/servicios.js",
+    "jss/servicios/util.js",
+    "jss/servicios/data.js",
     "jss/populador.js",
     "jss/tabla/celdas.js",
     "jss/tabla/resumen.js",

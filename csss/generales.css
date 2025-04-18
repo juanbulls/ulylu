@@ -344,3 +344,9 @@ tbody > tr:nth-of-type(odd) {
 .filtroActivo:hover {
 	background-color: #b60000;
 }
+
+.espacio-final{
+	background-color: #a83e3e;
+	height: 100px;
+	width: 100%;
+}
