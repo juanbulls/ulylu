@@ -1,6 +1,7 @@
 const bdBase = 'bauer';
 let user = 'Usuario';
 let bdTabla = getUrlParam('tabla');
+let gOffset = 0;
 if(bdTabla == null){
     bdTabla = 'notas';
     setUrlParam('tabla', 'notas', false);

@@ -10,7 +10,7 @@ function filtrar(columna) {
         id('dataVieja').innerHTML = '';
         dataSpinner.mostrar();
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
-        pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, patron).then(r => {
+        pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, patron, gOffset).then(r => {
             datearRegistros(r);
             dataSpinner.ocultar();
             id('filtro_' + columna).classList.add('filtroActivo');
