@@ -11,7 +11,7 @@ $patron = isset($_REQUEST["patron"]) ? $_REQUEST["patron"] : (isset($argv[4]) ? 
 $offset = isset($_REQUEST["offset"]) ? $_REQUEST["offset"] : (isset($argv[5]) ? $argv[5] : null);
 $limit = 20;
 
-v($base); // Descomentar cuando termine debugg
+// v($base); // Descomentar cuando termine debugg
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
@@ -40,7 +40,7 @@ $response = [
     "cols" => $cols,
     "data" => $data
 ];
-
+/*
 // Seccion ordenado por ... lo mismo que decir filtros
 if (!is_null($orden)) {
     $patronResumen = "";
@@ -53,7 +53,7 @@ if (!is_null($orden)) {
     }
     $response['resumen'] = $resumen;
 }
-
+*/
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
