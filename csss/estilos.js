@@ -29,10 +29,10 @@ const spinner = {
 
 const dataSpinner = {
     mostrar: function () {
-        id('dataLoader').style.display = 'block';
+        id('dataLoader').style.visibility = 'visible';
     },
     ocultar: function () {
-        id('dataLoader').style.display = 'none';
+        id('dataLoader').style.visibility = 'hidden';
     },
 }
 
