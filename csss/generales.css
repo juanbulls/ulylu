@@ -346,6 +346,7 @@ tbody > tr:nth-of-type(odd) {
 }
 
 .espacio-final{
+	box-sizing: border-box;
 	background-color: #a83e3e;
 	height: 100px;
 	width: 100%;
