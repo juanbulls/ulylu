@@ -31,7 +31,8 @@ async function pedirData(php, variables = null,  elmnt = null, offset = null){
     }else{
         const str = await esperarEscritura(elmnt);
         let patron = str ? '&patron=' + str : '';
-        if (filtrando && elmnt != null){ // cuando se hace un filtro con un patron existente
+        // cuando se hace un filtro con un patron existente o un scroll con busqueda
+        if ((filtrando || scrolleando) && elmnt != null){
             patron = '&patron=' + elmnt
         }else if (filtroActivo != '' && !filtrando){ // cuando se hace una busqueda con un filtro existente
             variables += `&orden=${filtroActivo}`;
