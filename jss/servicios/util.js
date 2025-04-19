@@ -23,6 +23,4 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// que funcione con busquedas, filtros 
-
 // añadir un mensaje que diga cargando siguiente bloque de datos

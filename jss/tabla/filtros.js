@@ -1,6 +1,8 @@
 let filtroActivo = '';
 function filtrar(columna) {
     filtrando = true;
+    gOffset = 0;
+    
     if (filtroActivo != '') {
         const elmConFiltro = id('filtro_' + filtroActivo);
         elmConFiltro.classList.remove('filtroActivo');
