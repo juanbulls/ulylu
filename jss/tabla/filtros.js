@@ -14,6 +14,7 @@ function filtrar(columna) {
 
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
         pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, patron, gOffset).then(r => {
+            id('dataVieja').innerHTML = '';
             datearRegistros(r);
             dataSpinner.ocultar();
             id('filtro_' + columna).classList.add('filtroActivo');
@@ -27,6 +28,7 @@ function filtrar(columna) {
         
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
         pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, patron).then(r => {
+            id('dataVieja').innerHTML = '';
             datearRegistros(r);
             dataSpinner.ocultar();
         });
