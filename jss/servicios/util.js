@@ -4,10 +4,18 @@ window.addEventListener('scroll', () => {
     if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 100) {
         if (!scrolleando) {
             scrolleando = true;
+            id("final").innerHTML = "Cargando siguiente data...";
+
             const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
             gOffset ++;
+
             pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, patron, gOffset).then(r => {
-                datearRegistros(r);
+                if (r.data.length === 0) {
+                    id("final").innerHTML = "Fin de la data.";
+                } else {
+                    datearRegistros(r);
+                    id("final").innerHTML = "";
+                }
                 dataSpinner.ocultar();
                 scrolleando = false;
             });
