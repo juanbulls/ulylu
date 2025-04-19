@@ -284,7 +284,7 @@ tbody > tr:nth-of-type(odd) {
 
 #dataLoader {
 	position: fixed;
-	transform: translateX(300px);
+	transform: translateY(-150px);
 }
 .dataL{
 	--c:no-repeat radial-gradient(farthest-side,#000000 93%,#ffffff00);
