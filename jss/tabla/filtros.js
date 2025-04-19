@@ -9,8 +9,9 @@ function filtrar(columna) {
     }
     if (filtroActivo != columna) {
         // Filtrar
-        id('dataVieja').innerHTML = '';
+        id('dataVieja').innerHTML = ponerPlaceholderData("filtrando...");
         dataSpinner.mostrar();
+
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
         pedirData('data', `base=${bdBase}&tabla=${bdTabla}&orden=${columna}`, patron, gOffset).then(r => {
             datearRegistros(r);
@@ -21,8 +22,9 @@ function filtrar(columna) {
     }
     else {
         // Desfiltrar
-        id('dataVieja').innerHTML = '';
+        id('dataVieja').innerHTML = ponerPlaceholderData("Eliminando filtro...");
         dataSpinner.mostrar();
+        
         const patron = id('buscTexto').value != '' ? id('buscTexto').value : null;
         pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, patron).then(r => {
             datearRegistros(r);
