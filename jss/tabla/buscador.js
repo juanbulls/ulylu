@@ -5,6 +5,7 @@ function buscarRegistros(elmnt=null) {
 
     id('dataVieja').innerHTML = ponerPlaceholderData("Buscando...");
 
+    gOffset = 0;
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, elmnt, gOffset).then(r => {
         id('dataVieja').innerHTML = '';
