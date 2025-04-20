@@ -8,6 +8,7 @@ const scripts = [
     "jss/tabla/resumen.js",
     "jss/nuevaData/popup.js",
     "jss/tabla/buscador.js",
+    "jss/tabla/csv.js",
     "jss/tabla/filtros.js",
     "jss/nuevaData/ingresarLimpiar.js",
     "jss/header/loggeo.js",
