@@ -15,7 +15,7 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
     }
 }
 
-$data_result = q("SELECT * FROM $base.$tabla;");
+$data_result = q("SELECT * FROM $base.$tabla ORDER BY id DESC;");
 $data = [];
 
 // Add column headers as first row
