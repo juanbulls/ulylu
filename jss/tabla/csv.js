@@ -6,7 +6,7 @@ function descargarCSV() {
                 return;
             }
 
-            let contenido = 'data:text/csv;charset=utf-8,';
+            let contenido = '\uFEFF' + 'data:text/csv;charset=utf-8,';
             r.data.forEach(row => {
                 contenido += row.join(',') + '\n';
             });
