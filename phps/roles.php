@@ -1,5 +1,5 @@
 <?php
-$role = [
+$rol = [
     'ADMIN' => [
         'exportarCSV',
         'crearNotas',
