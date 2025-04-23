@@ -1,6 +1,6 @@
 const bdBase = 'bauer';
 let user = 'Usuario';
-let permisos = [];
+let permisos = ['exportarCSV', 'crearNotas', 'verNotas', 'editarNotas', 'crearClientes', 'editarClientes', 'eliminarNotas', 'verClientes', 'verNotas', 'buscador', 'filtros'];
 let bdTabla = getUrlParam('tabla');
 let gOffset = 0;
 if(bdTabla == null){

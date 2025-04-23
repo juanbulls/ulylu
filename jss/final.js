@@ -5,6 +5,8 @@ function cargaInicial() {
     id('empresa').style.display = 'block';
     id('tabla').style.display = 'block';
     id('encabezado').style.paddingLeft = '0';
+    if( !permisos.includes('exportarCSV') ) { id('descargador').style.display = 'none' }
+
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, null, gOffset).then(r => {
         datearGrilla(r);
