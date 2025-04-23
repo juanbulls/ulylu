@@ -14,6 +14,7 @@ const scripts = [
     "jss/header/loggeo.js",
     "jss/localJson.js", // idealmente de ultimo
     "jss/nuevaData/el.js", // idealmente de ultimo
+    "csss/permisor.js", // idealmente de ultimo
     "jss/final.js" // idealmente de ultimo
 ];
 
