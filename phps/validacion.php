@@ -18,8 +18,10 @@ if (mysqli_num_rows($data_result) == 1) {
         $response = [ "error" => "vencido" ];
     } else {
         $actualizar = q("UPDATE $base.uszAccesos SET hash = '$token' WHERE id=$id;");
-        $response = [ "email" => $email ];
-        $response = [ "rol" => $rol ];
+        $response = [
+            "email" => $email,
+            "rol" => $rol
+        ];
     }
 } else {
     $response = [ "error" => "invalidado" ];
