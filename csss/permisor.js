@@ -3,6 +3,4 @@ function estilosPermisos() {
         id('descargador').style.display = 'none';
         id('buscTexto').style.right = '65px';
     }
-
-    // Demas permisos
 }
