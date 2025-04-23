@@ -16,7 +16,7 @@ if (mysqli_num_rows($data_result) == 0) {
     $row = mysqli_fetch_assoc($data_result);
     $rol = $row['Rol'];
 
-    $insert_result = q("INSERT INTO $base.uszAccesos (`hash`, email, rol) VALUES ('$token', '$rol')");
+    $insert_result = q("INSERT INTO $base.uszAccesos (`hash`, email, rol) VALUES ('$token', '$email', '$rol')");
     $response = [
         "token" => $token
     ];
