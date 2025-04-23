@@ -1,5 +1,6 @@
 <?php
 include('marlene.php');
+include('roles.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $token = isset($_REQUEST["token"]) ? $_REQUEST["token"] : (isset($argv[2]) ? $argv[2] : null);
@@ -20,7 +21,8 @@ if (mysqli_num_rows($data_result) == 1) {
         $actualizar = q("UPDATE $base.uszAccesos SET hash = '$token' WHERE id=$id;");
         $response = [
             "email" => $email,
-            "rol" => $rol
+            "rol" => $rol,
+            "permisos" => $roles[$rol]
         ];
     }
 } else {
