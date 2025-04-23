@@ -30,6 +30,9 @@
     border: none;
     outline: none;
 }
+#buscTexto.descargador-hidden {
+    right: 65px;
+}
 
 #tasaWrapper {
     display: inline;
