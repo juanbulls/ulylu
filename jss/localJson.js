@@ -1,5 +1,6 @@
 const bdBase = 'bauer';
 let user = 'Usuario';
+let permisos = [];
 let bdTabla = getUrlParam('tabla');
 let gOffset = 0;
 if(bdTabla == null){

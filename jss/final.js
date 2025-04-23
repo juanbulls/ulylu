@@ -22,6 +22,8 @@ if (!esLocal) {
                 user = r.email;
                 id('usuario').innerHTML = pascalCase(user) + ' <a href="javascript:void(0);" onclick="deslogear()" title="Salir">🏃‍➡️</a> ';
 
+                permisos = r.permisos;
+
                 cargaInicial();
             } else {
                 document.cookie = `ulyluToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
