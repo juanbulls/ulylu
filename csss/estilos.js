@@ -41,7 +41,6 @@ const rect = id('buscRect');
 const line = id('buscLine');
 const lx1 = id('cancLin1');
 const lx2 = id('cancLin2');
-const buscTexto = id('buscTexto');
 const desplazoX = buscador.clientWidth - 30;
 const ajusteX = -3;
 
@@ -66,24 +65,14 @@ function buscExpandir() {
     rect.setAttribute("rx", 2);
     rect.setAttribute("ry", 2);
     rect.setAttribute("stroke-width", 2);
-
-    const rectBounds = rect.getBoundingClientRect();
-    const svgBounds = id('buscador').getBoundingClientRect();
-
     line.style.display = 'none';
     id('lupa').classList.remove('buscClickeable');
     id('buscador').removeEventListener('click', buscExpandir);
-
     id('buscCancelar').style.display = 'block';
-
-    buscTexto.style.position = 'absolute';
-    buscTexto.style.left = (rectBounds.x - svgBounds.x + 5) + 'px'; // 5px padding
-    buscTexto.style.top = (rectBounds.y - svgBounds.y) + 'px';
-    buscTexto.style.width = (rectBounds.width - 10) + 'px'; // 5px padding on each side
-    buscTexto.style.height = rectBounds.height + 'px';
-    buscTexto.style.display = 'block';
-
     setTimeout(() => { expandido = true }, 100);
+    id('buscTexto').style.display = 'block';
+    id('buscTexto').style.width = (desplazoX - 10) + 'px';
+    id('buscTexto').focus();
 }
 function buscColapsar(){
     rect.setAttribute("x", desplazoX + 3);
