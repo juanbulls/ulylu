@@ -317,7 +317,8 @@ tbody > tr:nth-of-type(odd) {
 	color: black;
 	padding: none;
 	margin: 0;
-	padding: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
 	display: none;
 }
 .iconoEscondido {
