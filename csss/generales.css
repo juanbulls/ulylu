@@ -154,7 +154,7 @@ td, th {
 }
 th:hover .icono,
 td:hover .icono {
-	visibility: visible;
+	display: inline-block;
 }
 tr:hover .botAct{
 	display: inline-block;
@@ -319,7 +319,7 @@ tbody > tr:nth-of-type(odd) {
 	padding: none;
 	margin: 0;
 	padding: 2px;
-	visibility: hidden;
+	display: none;
 }
 .iconoEscondido {
 	display: none !important;
