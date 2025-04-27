@@ -73,7 +73,7 @@ function datearRegistros(d) {
             td.appendChild(span);
 
             // Icono de edicion
-            if ( permisos.includes('editarNotas') ) {
+            if ( permisos.includes('editarNotas') ) { // Permiso editarNotas
                 if (
                     (!bdTabla.includes('_') && c.slice(-2) !== '_r') ||
                     (bdTabla.includes('_') && c.slice(-2) !== '_e')
@@ -96,7 +96,7 @@ function datearRegistros(d) {
         colAct.classList.add('colAct');
         tr.appendChild(colAct);
 
-        if ( permisos.includes('editarNotas') ) {
+        if ( permisos.includes('eliminarNotas') ) {  // Permiso eliminarNotas
             const borrarBoton = document.createElement('button');
             borrarBoton.innerHTML = '⨯';
             borrarBoton.classList.add('icono');
