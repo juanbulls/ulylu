@@ -72,16 +72,19 @@ function datearRegistros(d) {
             td.appendChild(span);
 
             // Icono de edicion
-            if (
-                (!bdTabla.includes('_') && c.slice(-2) !== '_r') ||
-                (bdTabla.includes('_') && c.slice(-2) !== '_e')
-            ){
-                const iconoCelda = document.createElement('button');
-                iconoCelda.innerHTML = '✎';
-                iconoCelda.classList.add('icono');
-                iconoCelda.classList.add('editar');
-                iconoCelda.addEventListener('click', () => editarCelda(span, iconoCelda, c, f['id']));
-                td.appendChild(iconoCelda);
+
+            if ( permisos.includes('editarNotas') ) {
+                if (
+                    (!bdTabla.includes('_') && c.slice(-2) !== '_r') ||
+                    (bdTabla.includes('_') && c.slice(-2) !== '_e')
+                ){
+                    const iconoCelda = document.createElement('button');
+                    iconoCelda.innerHTML = '✎';
+                    iconoCelda.classList.add('icono');
+                    iconoCelda.classList.add('editar');
+                    iconoCelda.addEventListener('click', () => editarCelda(span, iconoCelda, c, f['id']));
+                    td.appendChild(iconoCelda);
+                }
             }
 
             tr.appendChild(td);
