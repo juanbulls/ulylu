@@ -91,6 +91,9 @@ function datearRegistros(d) {
         });
 
         // Ultima columna de acciones
+        const colAct = document.createElement('td');
+        colAct.classList.add('colAct');
+
         if ( permisos.includes('editarNotas') ) {
             const borrarBoton = document.createElement('button');
             borrarBoton.innerHTML = '⨯';
@@ -98,8 +101,6 @@ function datearRegistros(d) {
             borrarBoton.classList.add('botAct');
             borrarBoton.addEventListener('click', () => borrarFila(f['id']));
 
-            const colAct = document.createElement('td');
-            colAct.classList.add('colAct');
             colAct.append(borrarBoton);
             tr.appendChild(colAct);
         }
