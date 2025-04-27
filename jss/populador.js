@@ -72,7 +72,6 @@ function datearRegistros(d) {
             td.appendChild(span);
 
             // Icono de edicion
-
             if ( permisos.includes('editarNotas') ) {
                 if (
                     (!bdTabla.includes('_') && c.slice(-2) !== '_r') ||
@@ -92,16 +91,18 @@ function datearRegistros(d) {
         });
 
         // Ultima columna de acciones
-        const borrarBoton = document.createElement('button');
-        borrarBoton.innerHTML = '⨯';
-        borrarBoton.classList.add('icono');
-        borrarBoton.classList.add('botAct');
-        borrarBoton.addEventListener('click', () => borrarFila(f['id']));
+        if ( permisos.includes('editarNotas') ) {
+            const borrarBoton = document.createElement('button');
+            borrarBoton.innerHTML = '⨯';
+            borrarBoton.classList.add('icono');
+            borrarBoton.classList.add('botAct');
+            borrarBoton.addEventListener('click', () => borrarFila(f['id']));
 
-        const colAct = document.createElement('td');
-        colAct.classList.add('colAct');
-        colAct.append(borrarBoton);
-        tr.appendChild(colAct);
+            const colAct = document.createElement('td');
+            colAct.classList.add('colAct');
+            colAct.append(borrarBoton);
+            tr.appendChild(colAct);
+        }
 
         id('dataVieja').appendChild(tr);
     });
