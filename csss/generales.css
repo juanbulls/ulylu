@@ -324,7 +324,7 @@ tbody > tr:nth-of-type(odd) {
 	display: none !important;
 }
 .editar {
-	position: static;
+	position: absolute;
 }
 .colAct{
 	width: 20px;
