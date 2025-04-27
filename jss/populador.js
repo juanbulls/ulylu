@@ -93,6 +93,7 @@ function datearRegistros(d) {
         // Ultima columna de acciones
         const colAct = document.createElement('td');
         colAct.classList.add('colAct');
+        colAct.append(borrarBoton);
 
         if ( permisos.includes('editarNotas') ) {
             const borrarBoton = document.createElement('button');
@@ -101,7 +102,6 @@ function datearRegistros(d) {
             borrarBoton.classList.add('botAct');
             borrarBoton.addEventListener('click', () => borrarFila(f['id']));
 
-            colAct.append(borrarBoton);
             tr.appendChild(colAct);
         }
 
