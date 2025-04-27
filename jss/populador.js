@@ -37,6 +37,7 @@ function datearGrilla(d) {
             const iconoCelda = document.createElement('button');
             iconoCelda.innerHTML = '▾';
             iconoCelda.classList.add('icono');
+            iconoCelda.classList.add('editar');
             iconoCelda.addEventListener('click', () => filtrar(col));
             iconoCelda.id = 'filtro_' + col;
             th.appendChild(iconoCelda);
