@@ -6,7 +6,7 @@ function cargaInicial() {
     id('tabla').style.display = 'block';
     id('encabezado').style.paddingLeft = '0';
 
-    estilosPermisos();
+    permisosHTML();
 
     dataSpinner.mostrar();
     pedirData('data', `base=${bdBase}&tabla=${bdTabla}`, null, gOffset).then(r => {
