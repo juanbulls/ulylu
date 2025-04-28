@@ -9,5 +9,8 @@ function v($b) {
         echo json_encode(["error" => "Usuario no validado"]);
         exit;
     }
+
+    $row = mysqli_fetch_assoc($data_result);
+    return $row['rol'];
 }
 ?>

@@ -16,5 +16,4 @@ function permisosHTML() {
     if ( !permisos.includes('verClientes') ) {
         id('opcionClientes').style.display = 'none';
     }
-    // editarClientes
 }
