@@ -1,6 +1,10 @@
 function descargarCSV() {
     pedirData("csv", `base=${bdBase}&tabla=${bdTabla}`)
         .then(r => {
+            if(r.error) {
+                alert("Error:", r.error);
+                return;
+            }
             if (r.data.length <= 1) {
                 alert("Error Data: no hay datos que descargar.");
                 return;
