@@ -9,4 +9,12 @@ function permisosHTML() {
         id('inputsDataNueva').style.display = 'none';
         id('botonesNuevos').style.display = 'none';
     }
+
+    // Permisos de editarNotas y eliminarNotas estan en populador
+
+    // verClientes
+    if ( !permisos.includes('verClientes') ) {
+        id('verClientes').style.display = 'none';
+    }
+    // editarClientes
 }
