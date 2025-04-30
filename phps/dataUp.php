@@ -1,6 +1,7 @@
 <?php
 include('marlene.php');
 include('valentina.php');
+include('roles.php');
 
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tab = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
@@ -9,7 +10,7 @@ $reg = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $argv[4] 
 $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] : null);
 
 $rol = v($base);
-if (!in_array('editarNotas', $roles[$rol])) {
+if (!in_array('editarClientes', $roles[$rol])) {
     echo json_encode(["error" => "Usuario sin permisos"]);
     exit;
 }
