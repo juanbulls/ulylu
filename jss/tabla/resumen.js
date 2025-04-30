@@ -25,7 +25,7 @@ function imprimirResumen() {
     id('tasaWrapper').style.display = 'inline';
 }
 function cambioTRM(trm){
-    pedirData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
+    mandarData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
         if(r.error) {
             alert ('Error en TRM: ' + r.error);
         }
