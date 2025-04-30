@@ -17,6 +17,9 @@ function registrar(){ // El boton dice ingresar
     });
     vars = vars.slice(0, -1);
     mandarData('registrar', vars).then(r => {
+        if ( r.error && r.error == 'Usuario sin permisos') {
+            alert('Error: ' + r.error)
+        }
         if (!r.error) {
             // Llenar Linea, repetido en 2 partes
             const tr = document.createElement('tr');
