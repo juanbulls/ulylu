@@ -25,9 +25,10 @@ function imprimirResumen() {
     id('tasaWrapper').style.display = 'inline';
 }
 function cambioTRM(trm){
-    mandarData('tasaUp', `base=${bdBase}&tasa=${trm}`).then( r => {
+    mandarData('tasaUp', `base=${bdBase}&tasa=${trm.value}`).then( r => {
         if(r.error) {
             alert ('Error en TRM: ' + r.error);
+            trm.value = trm.dataset.previousValue || trm.dataset.defaultValue;
         }
     });
     imprimirResumen();
