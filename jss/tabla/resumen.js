@@ -24,11 +24,13 @@ function imprimirResumen() {
 
     id('tasaWrapper').style.display = 'inline';
 }
-function cambioTRM(trm){
-    mandarData('tasaUp', `base=${bdBase}&tasa=${trm.value}`).then( r => {
+function cambioTRM(campo){
+    mandarData('tasaUp', `base=${bdBase}&tasa=${campo.value}`).then( r => {
         if(r.error) {
             alert ('Error en TRM: ' + r.error);
-            trm.value = trm.dataset.previousValue || trm.dataset.defaultValue;
+            campo.value = TRM;
+        } else {
+            TRM = campo.value;
         }
     });
     imprimirResumen();

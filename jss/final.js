@@ -46,7 +46,8 @@ if (!esLocal) {
             if( r.error ) {
                 alert ('Error pidiendo parametros: ' + r.error);
             } else {
-                id('tasa').value = r.tasa;
+                TRM = r.tasa;
+                id('tasa').value = TRM;
             }
         });
     } else {

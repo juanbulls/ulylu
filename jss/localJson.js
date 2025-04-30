@@ -3,6 +3,8 @@ let user = 'Usuario';
 let permisos = ['exportarCSV', 'crearNotas', 'verNotas', 'editarNotas', 'crearClientes', 'editarClientes', 'eliminarNotas', 'verClientes', 'verNotas', 'buscador', 'filtros'];
 let bdTabla = getUrlParam('tabla');
 let gOffset = 0;
+let TRM;
+
 if(bdTabla == null){
     bdTabla = 'notas';
     setUrlParam('tabla', 'notas', false);
