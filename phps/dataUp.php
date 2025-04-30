@@ -8,7 +8,11 @@ $col = isset($_REQUEST["col"]) ? $_REQUEST["col"] : (isset($argv[3]) ? $argv[3] 
 $reg = isset($_REQUEST["reg"]) ? $_REQUEST["reg"] : (isset($argv[4]) ? $argv[4] : null);
 $val = isset($_REQUEST["val"]) ? $_REQUEST["val"] : (isset($argv[5]) ? $argv[5] : null);
 
-v($base);
+$rol = v($base);
+if (!in_array('editarNotas', $roles[$rol])) {
+    echo json_encode(["error" => "Usuario sin permisos"]);
+    exit;
+}
 
 $tab = explode('_', $tab)[0];
                 

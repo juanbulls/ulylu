@@ -5,7 +5,11 @@ include('valentina.php');
 $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[1] : null);
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
 
-v($base);
+$rol = v($base);
+if (!in_array('crearNotas', $roles[$rol])) {
+    echo json_encode(["error" => "Usuario sin permisos"]);
+    exit;
+}
 
 $cols_result = q("SHOW COLUMNS FROM $base.$tabla");
 $cols = [];
