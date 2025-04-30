@@ -2,24 +2,22 @@
 $roles = [
     'ADMIN' => [
         'exportarCSV',
+        'tasaUp',
         'crearNotas',
-        'verNotas',
-        'editarNotas',
-        'editarClientes',
         'eliminarNotas',
+        'editarNotas',
         'verClientes',
+        'editarClientes',
         'verNotas',
         'buscador',
-        'filtros',
-        'tasaUp'
+        'filtros'
     ],
     'CONTABLE' => [
         'crearNotas',
-        'verNotas',
-        'editarNotas',
-        'editarClientes',
         'eliminarNotas',
+        'editarNotas',
         'verClientes',
+        'editarClientes',
         'verNotas',
         'buscador',
         'filtros'
