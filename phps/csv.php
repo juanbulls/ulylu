@@ -7,7 +7,7 @@ $base = isset($_REQUEST["base"]) ? $_REQUEST["base"] : (isset($argv[1]) ? $argv[
 $tabla = isset($_REQUEST["tabla"]) ? $_REQUEST["tabla"] : (isset($argv[2]) ? $argv[2] : null);
 
 $rol = v($base);
-if (!in_array('eliminarNotas', $roles[$rol])) {
+if (!in_array('exportarCSV', $roles[$rol])) {
     echo json_encode(["error" => "Usuario sin permisos"]);
     exit;
 }
