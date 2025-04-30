@@ -31,7 +31,7 @@ function cambioTRM(campo){
             campo.value = TRM;
         } else {
             TRM = campo.value;
+            imprimirResumen();
         }
     });
-    imprimirResumen();
 }
