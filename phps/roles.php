@@ -10,7 +10,8 @@ $roles = [
         'verClientes',
         'verNotas',
         'buscador',
-        'filtros'
+        'filtros',
+        'tasaUp'
     ],
     'CONTABLE' => [
         'crearNotas',
