@@ -22,7 +22,6 @@ try {
         "estado" => 'Registro eliminado.'
     ];
 } catch (mysqli_sql_exception $e) {
-    echo "DELETE $base.`$tabla` WHERE id = '$registro';";
     $response = [
         "error" => "Error eliminando: " . $e->getMessage()
     ];
