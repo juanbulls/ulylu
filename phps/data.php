@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_assoc($cols_result)) {
 }
 
 $patronQ = "";
-if(!is_null($patron)) { $patronQ = "WHERE Cliente_r LIKE '%$patron%'"; }
+if(!is_null($patron)) { $patronQ = "WHERE `{$cols[1]}` LIKE '%$patron%'"; }
 
 $ordenQ = "ORDER BY id DESC";
 if(!is_null($orden)) { $ordenQ = "ORDER BY $orden" ; }
