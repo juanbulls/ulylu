@@ -235,7 +235,7 @@ tbody > tr:nth-of-type(odd) {
 	  var(--c) 50%  0;
 	background-size: 8px 8px;
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	clip-path: inset(-200% -100% 0 0);
