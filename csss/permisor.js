@@ -6,7 +6,7 @@ function permisosHTML() {
 
     // tasaUp solo se restringe en el back
 
-    if ( !permisos.includes('crearNotas') ) {
+    if ( !permisos.includes('crearNotas') || bdTabla == 'clientes_v') {
         id('tituloNuevo').style.display = 'none';
         id('inputsDataNueva').style.display = 'none';
         id('botonesNuevos').style.display = 'none';
