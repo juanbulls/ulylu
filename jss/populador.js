@@ -1,5 +1,8 @@
 const hayUnderscore = /_(.)$/; // Regex to match underscore followed by a letter
 function datearGrilla(d) {
+    // Ajustar los colspans
+    id('supraHeaderBoticones').colSpan = d.cols.length -1;
+
     // Nueva Data y Headers registros
     d.cols.forEach((col) => {
         // Formulario nueva data
